@@ -15,7 +15,7 @@ function cart() {
             return;
         }
     
-        fetch(`http://localhost:5000/cart?username=${username}`)
+        fetch(`/api/cart?username=${username}`)
             .then((response) => response.json())
             .then((data) => {
                // ✅ Logs API response
@@ -65,7 +65,7 @@ function cart() {
           username: username,
           id : id })
         try {
-          const response = await fetch('http://localhost:5000/rcart', {
+          const response = await fetch('/api/rcart', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -98,7 +98,7 @@ function cart() {
               name : name
         });
         try {
-          const response = await fetch('http://localhost:5000/quantity', {
+          const response = await fetch('/api/quantity', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

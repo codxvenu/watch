@@ -28,7 +28,7 @@ function nav() {
     const requestBody = JSON.stringify({ 
       name : ival })
     try {
-      const response = await fetch('http://localhost:5000/search', {
+      const response = await fetch('/api/search', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

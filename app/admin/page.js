@@ -40,7 +40,7 @@ function AddWatch() {
     data.append("file", formData.file); // Append image file
 
     try {
-      const response = await axios.post("http://localhost:5000/upload", data, {
+      const response = await axios.post("/api/upload", data, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       

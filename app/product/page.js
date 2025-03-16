@@ -26,7 +26,7 @@ function product() {
   const handleWatches = ()=>{
     console.log("wokred");
     
-    fetch('http://localhost:5000/watches')
+    fetch('/api/watches')
      .then(response=>response.json())
      .then(data=>setWatches(data))
      .catch(error=>console.log(error))
@@ -34,7 +34,7 @@ function product() {
   // const handleCart = ()=>{
   //   console.log("wokred");
   //   const username = localStorage.getItem('username');
-  //   fetch(`http://localhost:5000/cart?${username}`)
+  //   fetch(`/api/cart?${username}`)
   //    .then(response=>response.json())
   //    .then(data=>setCart(data))
   //    .catch(error=>console.log(error))
@@ -50,7 +50,7 @@ function product() {
       handleOrder();
     }else{
       alert("Login First To Order")
-        fetch('http://localhost:5000/profile', {
+        fetch('/api/profile', {
             credentials: 'include'  // Ensures cookies are sent with the request
         })
             .then(response => response.json()) 
@@ -81,7 +81,7 @@ function product() {
       
     });
     try {
-      const response = await fetch('http://localhost:5000/addcart', {
+      const response = await fetch('/api/addcart', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

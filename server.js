@@ -49,8 +49,8 @@ async function uploadToFTP(localFilePath, remoteFileName) {
  
 app.use(bodyParser.json());
 const corsOptions = {
-  // origin: process.env.FRONTEND_URL, // Use the environment variable
-  origin: "http://localhost:3000",
+  origin: process.env.FRONTEND_URL, // Use the environment variable
+ // origin: "http://localhost:3000",
   credentials: true
 };
 
@@ -103,7 +103,7 @@ const handleDisconnect = () => {
 };
 
 handleDisconnect();
-app.post("/upload", upload.single("file"), async (req, res) => {
+app.post("/api/upload", upload.single("file"), async (req, res) => {
   try {
     const { name, originalPrice, discountedPrice, description, category, gender } = req.body;
     const file = req.file;
@@ -139,15 +139,15 @@ app.post("/upload", upload.single("file"), async (req, res) => {
 });
 
 
-app.get('/auth/google',
+app.get('/api/auth/google',
   passport.authenticate('google', { scope: ['profile', 'email'] })
 );
 
-app.get('/auth/google/callback',
+app.get('/api/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/login' }),
   (req, res) => {
       // Successful authentication, redirect to your desired route
-      res.redirect('http://localhost:3000/home');
+      res.redirect(process.env.FRONTEND_URL + '/home');
   }
 );
 passport.serializeUser((user, done) => {
@@ -163,9 +163,9 @@ passport.deserializeUser((email, done) => {
   });
 });
 passport.use(new GoogleStrategy({
-  clientID: "973666784927-gqdsp4vgu9p3fr2elakp7gl7m8pk59li.apps.googleusercontent.com",
-  clientSecret: "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",
-  callbackURL: 'http://localhost:5000/auth/google/callback'
+  clientID:process.env.clientID ,//"973666784927-gqdsp4vgu9p3fr2elakp7gl7m8pk59li.apps.googleusercontent.com",
+  clientSecret: process.env.clientSecret, // "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",
+  callbackURL: process.env.callbackURL // '/api/auth/google/callback'
 }, (accessToken, refreshToken, profile, done) => {
   const googleId = profile.id;
   const name = profile.displayName;
@@ -198,7 +198,7 @@ passport.use(new GoogleStrategy({
       }
   });
 }));
-app.get('/test-db', (req, res) => {
+app.get('/api/test-db', (req, res) => {
     db.query('SELECT 1 + 1 AS result', (err, results) => {
         if (err) {
             console.error('Database Test Error:', err);
@@ -207,14 +207,14 @@ app.get('/test-db', (req, res) => {
         res.send({ message: 'Database Connected', result: results[0].result });
     });
 });
-app.get('/profile', (req, res) => {
+app.get('/api/profile', (req, res) => {
   if (req.isAuthenticated()) {
       res.json({ success: true, user: req.user });
   } else {
       res.status(401).json({ success: false, message: 'Not authenticated' });
   }
 });
-app.post('/signup', async (req, res) => {
+app.post('/api/signup', async (req, res) => {
   const { username, email, password } = req.body;
   
   if (!username || !email || !password) {
@@ -249,7 +249,7 @@ app.post('/signup', async (req, res) => {
     );
   });
 });
-app.post('/login', (req, res) => {
+app.post('/api/login', (req, res) => {
   const { email, password } = req.body;
   
   db.query('SELECT * FROM users WHERE email =?', [email], async (error, results) => {
@@ -276,7 +276,7 @@ app.post('/login', (req, res) => {
 });
 
 // Nodemailer transporter
-app.get("/watches", (req, res) => {
+app.get("/api/watches", (req, res) => {
     db.query('SELECT * FROM watches', (err, results) => {
         if (err) {
             console.error('Database Error:', err);
@@ -285,7 +285,7 @@ app.get("/watches", (req, res) => {
         res.send(results);
     });
 });
-app.get("/cart", (req, res) => {
+app.get("/api/cart", (req, res) => {
   const { username } = req.query; // Extract username
 
   if (!username) {
@@ -302,7 +302,7 @@ app.get("/cart", (req, res) => {
       
   });
 });
-app.post("/rcart", (req, res) => {
+app.post("/api/rcart", (req, res) => {
   const { username,id } = req.body; // Extract username
 
   if (!username) {
@@ -320,7 +320,7 @@ app.post("/rcart", (req, res) => {
   });
 });
 
-app.post("/addcart", (req, res) => {
+app.post("/api/addcart", (req, res) => {
   const {item,username} = req.body;
   db.query("SELECT * FROM cart WHERE username = ? AND name = ?", [username,item.name], (err, results) => {
     if (err) {
@@ -346,7 +346,7 @@ app.post("/addcart", (req, res) => {
   }
 })
 });
-app.post("/quantity", (req, res) => {
+app.post("/api/quantity", (req, res) => {
   const {quantity,name,username} = req.body;
   db.query("SELECT * FROM cart WHERE username = ? AND name = ?", [username,name], (err, results) => {
     if (err) {
@@ -364,7 +364,7 @@ app.post("/quantity", (req, res) => {
   }
 })
 });
-app.post("/search", (req, res) => {
+app.post("/api/search", (req, res) => {
   const { name } = req.body;
   db.query('SELECT * FROM watches WHERE name LIKE?', ['%' + name + '%', '%' + name + '%'], (err, results) => {
     if (err) {
@@ -374,7 +374,8 @@ app.post("/search", (req, res) => {
     res.send(results);
   });
 })
-app.listen(port, () => {
-  console.log(`Server is running on port: ${port}`);
-});
+module.exports = app;
+// app.listen(port, () => {
+//   console.log(`Server is running on port: ${port}`);
+// });
 

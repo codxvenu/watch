@@ -22,7 +22,7 @@ function page() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         
-        const url = `http://localhost:5000/signup`;
+        const url = `/api/signup`;
         const data = { username, password, email };
         console.log(data);
         
@@ -51,7 +51,7 @@ function page() {
         }
     };
     function handleGoogleSignIn() {
-        window.location.href ='http://localhost:5000/auth/google';
+        window.location.href ='/api/auth/google';
     }
 
     return (
