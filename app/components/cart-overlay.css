@@ -1,0 +1,6 @@
+.main-overlay-cart{
+    top: 111px;
+    left: auto;
+    right: 220px;
+    animation: cubic-bezier(0.23, 1, 0.320, 1) all ease;
+}

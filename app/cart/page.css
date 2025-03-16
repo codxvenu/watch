@@ -1,0 +1,14 @@
+table{
+    border-spacing: 0;
+    border-collapse: separate;
+    box-shadow: none;
+    width: 1200px;
+    display: table;
+    
+}
+th{
+    text-align: left;
+    padding-bottom: 1.8rem;
+    opacity: .85;
+    font-weight: 400;
+}
