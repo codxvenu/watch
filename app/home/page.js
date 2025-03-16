@@ -17,7 +17,10 @@ function home() {
     fetch('/api/watches')
      .then(response=>response.json())
      .then(data=>setWatches(data))
-     .catch(error=>console.log(error))
+     .catch(error=>{
+      console.log(error , "eerred");
+      
+      console.log(error)})
   }
   const handleOrder = async(id)=>{
     console.log(watches[id],"data");
