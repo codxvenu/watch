@@ -158,7 +158,7 @@ useEffect(()=>{
             <span>• MADE WITH LOVE & COMMITMENT •</span>
           </div>
           </div>
-          <div className='ml-[159px] px-12'>
+          <div className='ml-[159px] px-12 mn-w'>
       <h1 className='mb-3'>Mens Watches</h1>
       <h3 className='mb-6'>Some lost vintage watches</h3>
       <ul className='grid grid-cols-4 w-[87%] gap-2' >
