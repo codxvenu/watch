@@ -163,9 +163,9 @@ passport.deserializeUser((email, done) => {
   });
 });
 passport.use(new GoogleStrategy({
-  clientID:process.env.clientID ,//"973666784927-gqdsp4vgu9p3fr2elakp7gl7m8pk59li.apps.googleusercontent.com",
-  clientSecret: process.env.clientSecret, // "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",
-  callbackURL: process.env.callbackURL // '/api/auth/google/callback'
+  clientID:process.env.clientID ,//"",
+  clientSecret: process.env.clientSecret,
+  callbackURL: process.env.callbackURL
 }, (accessToken, refreshToken, profile, done) => {
   const googleId = profile.id;
   const name = profile.displayName;
