@@ -68,7 +68,7 @@ details {
   :focus {
     outline: none;
   }
-  @media screen and (min-width: 370px) {
+  @media screen and (max-width: 400px) {
     details {
       font-size: 12px;
   }
