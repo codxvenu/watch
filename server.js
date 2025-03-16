@@ -280,6 +280,8 @@ app.get("/api/watches", (req, res) => {
     db.query('SELECT * FROM watches', (err, results) => {
         if (err) {
             console.error('Database Error:', err);
+            console.log("Database Error:", err);
+            
             return res.status(500).send({ message: 'Database Query Failed' });
         }
         res.send(results);
