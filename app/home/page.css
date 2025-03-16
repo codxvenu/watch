@@ -67,19 +67,16 @@ li .content .btn{
     animation-delay: -47.46875s;
 }
 @media screen and (max-width: 400px) {
-    .content{
+    .context{
         left: 0;
-    }
-    .watch-div{
-        padding: 0 32px;
-        overflow: scroll;
     }
     .content h2{
         font-size: 16px;
     }
-    .mn-w{
+    .watch-div, .mn-w{
             padding-left: 1rem;
             padding-right: 2rem;
+            margin-left: 0;
     }
     .mn-w ul{
         width: 100%;
