@@ -98,12 +98,12 @@ useEffect(()=>{
         <button className='btn bg-[transparent!important]'>Shop now</button>
       </div>
       </div>
-    <div className='ml-[159px] px-12'>
+    <div className='ml-[159px] watch-div  px-12'>
       <h1 className='mb-3'>Women Watches</h1>
       <h3 className='mb-6'>HANDMADE  DESIGNS ON ORIGINAL WATCHES </h3>
       <ul className='grid grid-cols-5 gap-2'>
         {watches.slice(0,5).filter(watch => watch.type ==="bestseller").map((watch,index)=>(
- <li className='w-213px h-371px' key={watch.id} onClick={()=>{
+ <li className='w-[213px] h-[371px]' key={watch.id} onClick={()=>{
   handleProduct(index);
   }} >
  <img src={watch.img} className='mb-3 w-[213px] h-[213px]' alt="" />
@@ -163,7 +163,7 @@ useEffect(()=>{
       <h3 className='mb-6'>Some lost vintage watches</h3>
       <ul className='grid grid-cols-4 w-[87%] gap-2' >
         {watches.slice(0,4).filter(watch => watch.type ==="vintage").map((watch,index)=>(
- <li className='w-213px h-371px z-20' key={watch.id} onClick={()=>{
+ <li className='w-[213px] h-[371px] z-20' key={watch.id} onClick={()=>{
   handleProduct(index);
   }}>
  <img src={watch.img} className='mb-3 w-[213px] h-[213px]' alt="" />

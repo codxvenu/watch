@@ -66,3 +66,13 @@ li .content .btn{
     animation: runningLine2 94.9375s linear infinite;
     animation-delay: -47.46875s;
 }
+@media screen and (max-width: 400px) {
+    .content{
+        left: 0;
+    }
+    .watch-div{
+        padding: 0 32px;
+        overflow: scroll;
+    }
+
+}
