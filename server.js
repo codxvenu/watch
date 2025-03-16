@@ -19,7 +19,7 @@ app.use(session({
   secret: 'your_secret_key',
   resave: false,
   saveUninitialized: false,
-}));c
+}));
 
 // const upload = multer({ dest: "uploads/" });
 
