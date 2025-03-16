@@ -68,4 +68,24 @@ details {
   :focus {
     outline: none;
   }
-  
+  @media screen and (min-width: 370px) {
+    details {
+      font-size: 12px;
+  }
+  .q-a{
+    width: 380px;
+    padding: 26px;
+  }
+  .foot{
+    flex-direction: column;
+  }
+  .end{
+    margin-left: 15px;
+  }
+  .content h1{
+    font-size: 14px;
+  }
+  .content p{
+    font-size: 12px;
+  }
+  }

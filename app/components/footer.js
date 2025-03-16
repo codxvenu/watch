@@ -21,7 +21,7 @@ function footer() {
       </div>
       <div className="qna mt-16 mb-7 text-center">
         <h1 className="mb-5">QUESTIONS & ANSWERS</h1>
-        <div className="w-[750px] m-auto">
+        <div className="w-[750px] m-auto q-a">
         <details className="question py-[15px] border-b border-t border-[#ffffff14]">
 
 <summary className="flex items-center"><svg className="icon icon-accordion mr-3" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="white"><path d="M0 3.75156C0 3.47454 0.224196 3.24997 0.500755 3.24997H10.647C10.9235 3.24997 11.1477 3.47454 11.1477 3.75156V5.07505V5.63362V6.10938V13.6616C10.9427 14.0067 10.8813 14.1101 10.5516 14.6648L7.22339 14.6646V13.6614H10.1462V4.25316H1.00151V13.6614H2.6842V14.6646H0.500755C0.224196 14.6646 0 14.44 0 14.163V3.75156Z"></path>
