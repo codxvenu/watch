@@ -192,10 +192,10 @@ useEffect(()=>{
        
     </div>
           
-    <span className='flex justify-center'>
-
-   <a href="/women" className='underline text-[#ffffffbf] mt-3 mb-14'>View all</a>
-    </span>
+    <span className='flex justify-center mb-3 mt-2'>
+          
+          <button href="/women" className="btn m-auto">View All</button>
+          </span>
     </div>  <Footer/> </div>
   )
 }
