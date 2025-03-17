@@ -89,3 +89,8 @@ li .content .btn{
     animation: runningLine2 94.9375s linear infinite;
     animation-delay: -47.46875s;
 }
+@media screen and (max-width: 400px) {
+    .add-cart{
+        width: 330px;
+    }
+}

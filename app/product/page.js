@@ -139,7 +139,7 @@ function product() {
                     <span className="bg-[#121212] border-b-2 border-t-2 text-white border-[#ffffffbf] text-[1.2rem] h-[42.2px] text-center items-center flex mt-4">{quantity}</span>
                     <button className="btn-remove text-white text-[1.2rem] bg-[#121212] pr-3 border-t-2 border-r-2 border-b-2 border-[#ffffffbf] rounded-e pl-10 mt-4 h-[42px]" onClick={()=>{count_inc()}}>+</button>
                     </span>
-                    <button className="max-sm:w-[330px] add-cart rounded " onClick={()=>{
+                    <button className=" add-cart rounded " onClick={()=>{
                       handleUser();
                       
                     }}>
