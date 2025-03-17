@@ -157,7 +157,7 @@ function product() {
         <div className="more-items pl-[159px] my-16 text-white mn-w">
 
         <h1 className="text-[24px] mb-5">More Related Items</h1>
-        <ul className='grid grid-cols-4 max-sm:w-[100%] max-sm:grid-cols-2 w-[87%] gap-10'>
+        <ul className='grid grid-cols-4 max-sm:w-[100%] max-sm:grid-cols-2 w-[87%] gap-10 max-sm:grid-flow-row'>
 {watches.slice(0,4).filter(iwatch => iwatch.type === item.type).map(watch =>(
 
 
