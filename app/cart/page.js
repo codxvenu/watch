@@ -125,10 +125,10 @@ function cart() {
     <div className="mt-[120px]">
       <Nav/>
       <div className={nav? "main-cart-menu text-white px-[159px] border-b-[1px] border-[#ffffff1d] mb-3 hidden":"main-cart-menu text-white px-[159px] border-b-[1px] border-[#ffffff1d] mb-3 "}>
-        <span className='flex justify-between mt-2 mb-[20px]'>
+        <span className='flex justify-between mt-2 mb-[20px] items-center'>
             
-            <h1 className='text-[40px]'>Your Cart</h1>
-        <small className='underline text-[16px]'>Continue Shopping</small>
+            <h1 className='max-sm:text-[30px]text-[40px]'>Your Cart</h1>
+        <small className='underline max-sm:text-[14px] text-[16px]'>Continue Shopping</small>
             </span>
            <table>
             <thead className='text-[#ffffffbf] text-[13px]'>
@@ -180,10 +180,10 @@ function cart() {
             </tbody> )}
            </table>
       </div>
-      <div className="checkout_box text-[#ffffffbf] mb-16 ml-[auto] mr-[159px] w-[350px] flex flex-col justify-end">
+      <div className="checkout_box text-[#ffffffbf] max-sm:p-[14px] mb-16 ml-[auto] mr-[159px] w-[350px] flex flex-col justify-end">
         <span className="flex gap-5 mb-3 justify-end"><h1 className="text-white">Estimated total</h1><h1 className="tracking-[3px] text-[18px]">Rs. {total}</h1></span>
-        <small className="flex justify-end w-[100%] ml-[auto] text-end text-[16px]">Taxes included. Discounts and shipping calculated at checkout.</small>
-        <button className="checkout bg-white text-black w-[348px] h-[45px] rounded mt-4">
+        <small className="flex justify-end w-[100%] ml-[auto] max-sm-text-center text-end text-[16px]">Taxes included. Discounts and shipping calculated at checkout.</small>
+        <button className="checkout max-sm:w-[390px] bg-white text-black w-[348px] h-[45px] rounded mt-4">
             Check out
         </button>
       </div>
