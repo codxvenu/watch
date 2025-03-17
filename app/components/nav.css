@@ -86,3 +86,46 @@ a{
     opacity: 1;
     visibility: visible;
 }
+@media screen and (max-width: 400px) {
+    .social{
+        position: fixed;
+    bottom: 22px;
+    flex-direction: column;
+    gap: 10px;
+    padding: 5px 21px;
+}
+    .links{
+        position: absolute;
+        left: 0;
+        flex-direction: column;
+        background: #00000069;
+        height: 80vh;
+        top: 72px;
+        padding: 25px 0;
+        width: 100vw;
+        overflow: hidden;
+        gap: 0;
+    }
+    .icons svg, a svg {
+        width: 14px;
+        height: 14px;
+        fill: #ffffffbf;
+        margin-left: -5px;
+    }
+    nav h1{
+        left: 120px;
+        font-size: 20px;
+        right: 0;
+    }
+    .icons{
+        margin-left: 35px;
+    }
+    .social p{
+        display: none;
+    }
+    .links li{
+        padding: 20px 25px;
+        background: black;
+        font-size: 18px;
+    }
+}

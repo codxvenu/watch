@@ -3,8 +3,10 @@ import {React,useEffect,useState} from 'react'
 import Nav from '../components/nav'
 import Footer from '../components/footer'
 import "./page.css"
+import { useUser } from "../context/UserContext";
 function home() {
   const [watches,setWatches] = useState([])
+  const { nav } = useUser();
   const handleProduct = (id)=>{
     
     localStorage.setItem('product',JSON.stringify(watches[id]))
@@ -87,7 +89,7 @@ useEffect(()=>{
     <div className="div mt-[110px] z-[-1]" >
       <Nav/>
    
-    <div className=' text-white bg-[#121212]'>
+    <div className={nav? ' text-white bg-[#121212] hidden':' text-white bg-[#121212]'}>
       <div className='flex mb-10'>
 
       <img className='w-[50%] h-[420px] bg-contain blur-sm' src="https://www.punkstore.in/cdn/shop/files/D19B382B-6D5F-4D8B-948D-7CC488225E0B.jpg?v=1733584510" alt="" width={1440}/>

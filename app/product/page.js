@@ -4,12 +4,14 @@ import Nav from "../components/nav";
 import Footer from "../components/footer";
 import "./page.css";
 import CartOverlay from "../components/cart-overlay";
+import { useUser } from "../context/UserContext";
 function product() {
   const [watches,setWatches] = useState([])
   const [carts,setCart] = useState([])
   const [quantity, setQuantity] = useState(1);
   const [cart, showcart] = useState(false);
   const [item,setItem] = useState({});
+  const { nav } = useUser();
   function count_inc() {
     if (quantity < 15) {
       setQuantity(quantity + 1);
@@ -114,7 +116,7 @@ function product() {
   return (
     <div>
       <Nav /> 
-      <div className="base mt-[110px]">
+      <div className={nav? "base mt-[110px]":"base mt-[110px]"}>
         <div className="context pl-[159px] flex  gap-10 mt-10">
             <div className="img">
     <img className="h-[500px] w-[495px] rounded" src={item.img  } alt="" />

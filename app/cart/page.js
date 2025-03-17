@@ -3,10 +3,11 @@ import {React,useEffect,useState} from 'react'
 import Nav from "../components/nav";
 import Footer from "../components/footer";
 import "./page.css"
+import { useUser } from "../context/UserContext";
 function cart() {
      const[total,setTotal] = useState(0)
      const [carts,setCart] = useState([])
-   
+     const { nav } = useUser();
       const handleCart = () => {
         const username = localStorage.getItem("username");
     
@@ -123,7 +124,7 @@ function cart() {
   return (
     <div className="mt-[120px]">
       <Nav/>
-      <div className="main-cart-menu text-white px-[159px] border-b-[1px] border-[#ffffff1d] mb-3 ">
+      <div className={nav? "main-cart-menu text-white px-[159px] border-b-[1px] border-[#ffffff1d] mb-3 hidden":"main-cart-menu text-white px-[159px] border-b-[1px] border-[#ffffff1d] mb-3 "}>
         <span className='flex justify-between mt-2 mb-[20px]'>
             
             <h1 className='text-[40px]'>Your Cart</h1>

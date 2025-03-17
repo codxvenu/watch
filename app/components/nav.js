@@ -1,11 +1,12 @@
 "use client"
 import {React,useEffect,useState} from 'react'
 import './nav.css';
+import { useUser } from "../context/UserContext";
 function nav() {
   const [search,setSearch] = useState(false)
   const [searched , setSearched] = useState([])
   const [ival ,setIval] = useState("")
-  const [user, setUser] = useState(null);
+  const {nav, setNav} = useUser();
 
   const handleChange = (event) => {
     setIval(event.target.value); // Updates state with input value
@@ -53,7 +54,7 @@ function nav() {
   };  
   
  return (
-    <div className="main-nav bg-[#121212] z-50">
+    <div className="main-nav bg-[#121212] z-50 ">
         <div className="social bg-[#121212] h-[38px] border-b-[0.25px] border-b-[#ffffff14] flex justify-between items-center" >
             <div className="social-icons flex gap-5">
                 
@@ -64,7 +65,18 @@ function nav() {
             <button className='text-[#ffffffbf]  '><span className='text-[13px]'>India | INR ₹</span></button>
         </div>
       <nav className='border-b-[#ffffff14] border-b-[0.25px]'>
-        <ul>
+        {nav && (
+
+      <i onClick={()=>{setNav(false)}}><svg className='w-[17px] h-[17px] absolute left-7 top-7 cursor-pointer text-white' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 17"><path fill="currentColor" d="M.865 15.978a.5.5 0 0 0 .707.707l7.433-7.431 7.579 7.282a.501.501 0 0 0 .846-.37.5.5 0 0 0-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 1 0-.707-.708L8.991 7.853 1.413.573a.5.5 0 1 0-.693.72l7.563 7.268z"></path></svg></i>
+        )}
+      {!nav && (
+
+      <i onClick={()=>{setNav(true)}}><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" className="w-[17px] h-[17px] absolute left-7 top-7 cursor-pointer text-white" fill="none" viewBox="0 0 18 16">
+  <path d="M1 .5a.5.5 0 100 1h15.71a.5.5 0 000-1H1zM.5 8a.5.5 0 01.5-.5h15.71a.5.5 0 010 1H1A.5.5 0 01.5 8zm0 7a.5.5 0 01.5-.5h15.71a.5.5 0 010 1H1a.5.5 0 01-.5-.5z" fill="currentColor">
+</path></svg></i>
+      )} 
+       
+        <ul className={nav? "links flex":"links hidden"}>
           <li><a href="/home">Home</a></li>
           <li><a href="/men">Men</a></li>
           <li><a href="/women">Women</a></li>

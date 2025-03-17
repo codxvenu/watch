@@ -3,6 +3,7 @@ import {React,useState,useEffect} from 'react'
 import Nav from "../components/nav";
 import Footer from "../components/footer";
 import "./page.css"
+import { useUser } from "../context/UserContext";
 function page() {
     const [watches,setWatches] = useState([])
     const [automatic , setAutomatic] = useState(true)
@@ -11,6 +12,7 @@ function page() {
     const [hybrid , setHybrid] = useState(true)
     const [chronograph , setChronograph] = useState(true)
     const [fvalue, setFvalue] = useState(4)
+    const { nav } = useUser();
     const handleWatches = ()=>{
         console.log("wokred");
         
@@ -91,7 +93,7 @@ function page() {
   return (
     <div className="text-white ">
       <Nav/>
-      <div>
+      <div className={nav? "hidden": ""}>
 
       {automatic && (
         <div>
