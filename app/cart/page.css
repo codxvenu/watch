@@ -12,3 +12,23 @@ th{
     opacity: .85;
     font-weight: 400;
 }
+@media screen and (max-width: 400px) {
+    tbody tr{grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    gap: 10px;
+    display: grid};
+    .td-1{
+        grid-column: 1;
+        gap: 1rem;
+    }
+    .td-2{
+        grid-row: 2;
+        margin-left: 70px;
+        margin-top: -74px;
+    }
+    .td-3{
+        grid-column: 2;
+        margin-left: -104px;
+        width: 0px;
+    }
+}
