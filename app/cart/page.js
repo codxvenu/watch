@@ -157,13 +157,13 @@ function cart() {
             
 
                 <tr key={item.id}>
-                    <th className='flex gap-8'><img src={item.img} alt="" className='w-[110px] h-[146.66px] rounded'/>
+                    <td className='flex gap-8'><img src={item.img} alt="" className='w-[110px] h-[146.66px] rounded'/>
                <span>
                <h1 className="text-[16px]">{item.name}</h1><h1 className='mt-2 text-[15px]'>
                Rs. {item.dprice}</h1>
                 </span> 
-                </th>
-                <th> <span className="flex items-center gap-5 justify-center ">
+                </td>
+                <td> <span className="flex items-center gap-5 justify-center ">
                     
                     <span className="flex">
 
@@ -171,9 +171,9 @@ function cart() {
 <span className="bg-[#121212] border-b-2 border-t-2 text-white border-[#ffffffbf] text-[1.2rem] h-[42.2px] text-center items-center flex mt-4">{item.quantity}</span>
 <button className="btn-remove text-white text-[1.2rem] bg-[#121212] pr-3 border-t-2 border-r-2 border-b-2 border-[#ffffffbf] rounded-e pl-10 mt-4 h-[42px]" onClick={()=>{count_inc(index,item.name)}}>+</button>
 </span><svg xmlns="http://www.w3.org/2000/svg"  onClick={()=>{handleRemove(item.id)}} className="icon icon-remove w-[20px] h-[20px] mt-3" viewBox="0 0 16 16"><path fill="currentColor" d="M14 3h-3.53a3.07 3.07 0 0 0-.6-1.65C9.44.82 8.8.5 8 .5s-1.44.32-1.87.85A3.06 3.06 0 0 0 5.53 3H2a.5.5 0 0 0 0 1h1.25v10c0 .28.22.5.5.5h8.5a.5.5 0 0 0 .5-.5V4H14a.5.5 0 0 0 0-1M6.91 1.98c.23-.29.58-.48 1.09-.48s.85.19 1.09.48c.2.24.3.6.36 1.02h-2.9c.05-.42.17-.78.36-1.02m4.84 11.52h-7.5V4h7.5z"></path><path fill="currentColor" d="M6.55 5.25a.5.5 0 0 0-.5.5v6a.5.5 0 0 0 1 0v-6a.5.5 0 0 0-.5-.5m2.9 0a.5.5 0 0 0-.5.5v6a.5.5 0 0 0 1 0v-6a.5.5 0 0 0-.5-.5"></path></svg>
-                    </span> </th>
-                    <th className="tracking-[3px] text-end text-[18px]">
-                        Rs.{item.quantity * item.dprice}</th>
+                    </span> </td>
+                    <td className="tracking-[3px] text-end text-[18px]">
+                        Rs.{item.quantity * item.dprice}</td>
                         </tr>
                           ))}
               
