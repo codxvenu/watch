@@ -93,4 +93,7 @@ li .content .btn{
     .add-cart{
         width: 300px;
     }
+    .content-product{
+        width: 100%;
+    }
 }
