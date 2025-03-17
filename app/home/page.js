@@ -104,9 +104,9 @@ useEffect(()=>{
     <div className='ml-[159px] watch-div px-12 w-[87%]'>
       <h1 className='mb-3'>Women Watches</h1>
       <h3 className='mb-6'>HANDMADE  DESIGNS ON ORIGINAL WATCHES </h3>
-      <ul className='grid gap-2 grid-cols-5 max-sm:grid-cols-2' >
+      <ul className='grid gap-2 grid-cols-5 max-sm:grid-cols-2 ' >
         {watches.slice(0,5).filter(watch => watch.gender ==="women").map((watch,index)=>(
- <li className='' key={watch.id} onClick={()=>{
+ <li className='max-sm:w-[155px] h-[371px]' key={watch.id} onClick={()=>{
   handleProduct(index);
   }} >
  <img src={watch.img} className='mb-3 w-[213px] h-[213px]' alt="" />
