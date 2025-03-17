@@ -39,8 +39,6 @@ li .content .btn{
     }
     .mn-w ul{
         width: 100%;
-        gap: 10.3rem;
-        overflow: scroll;
     }
     .mn-w ul li{
         width: 155px;
