@@ -19,11 +19,10 @@ th{
     display: grid};
     .td-1{
         grid-column: 1;
-        gap: 1rem;
     }
     .td-2{
         grid-row: 2;
-        margin-left: 70px;
+        margin-left: 120px;
         margin-top: -74px;
     }
     .td-3{
@@ -36,5 +35,10 @@ th{
     }
     table{
         width: 100%;
+    }
+    .th-3{
+        
+    margin-left: -40px;
+    display: block;
     }
 }

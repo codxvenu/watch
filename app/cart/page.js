@@ -135,7 +135,7 @@ function cart() {
                 <tr>
 
                 <th className='w-[60%] text-start'>Product</th>
-                <th className='max-sm:hidden pl-[4rem] text-start'>Quantity</th>
+                <th className='max-sm:hidden pl-[4rem] text-start th-3'>Quantity</th>
                 
                 <th className="text-end">Total</th>
                 </tr>
@@ -157,7 +157,7 @@ function cart() {
             
 
                 <tr key={item.id}>
-                    <td className='flex gap-8'><img src={item.img} alt="" className='w-[110px] h-[146.66px] rounded td-1'/>
+                    <td className='flex max-sm:gap-[10px] gap-8'><img src={item.img} alt="" className='w-[110px] h-[146.66px] rounded td-1'/>
                <span>
                <h1 className="text-[16px]">{item.name}</h1><h1 className='mt-2 text-[15px]'>
                Rs. {item.dprice}</h1>
@@ -183,7 +183,7 @@ function cart() {
       <div className="checkout_box text-[#ffffffbf] max-sm:p-[14px] mb-16 ml-[auto] mr-[159px] w-[350px] flex flex-col justify-end">
         <span className="flex gap-5 mb-3 justify-end"><h1 className="text-white">Estimated total</h1><h1 className="tracking-[3px] text-[18px]">Rs. {total}</h1></span>
         <small className="flex justify-end w-[100%] ml-[auto] max-sm:text-center text-end text-[16px]">Taxes included. Discounts and shipping calculated at checkout.</small>
-        <button className="checkout  bg-white text-black w-[348px] h-[45px] rounded mt-4">
+        <button className="checkout max-sm:w-[330px] bg-white text-black w-[348px] h-[45px] rounded mt-4">
             Check out
         </button>
       </div>
