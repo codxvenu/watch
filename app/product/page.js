@@ -122,7 +122,7 @@ function product() {
             <div className="img">
     <img className="h-[500px] w-[495px] rounded" src={item.img  } alt="" />
             </div>
-            <div className="content-product text-[#ffffffbf] w-[605px]">
+            <div className="content-product text-[#ffffffbf]  max-lg:w-[605px]">
                 <h1 className="max-sm:text-[30px] text-[40px] capitalize">{item.name}</h1>
                 <p className="text-[16px] my-6 capitalize">description : {item.description}
                 </p>
