@@ -6,6 +6,7 @@ function nav() {
   const [search,setSearch] = useState(false)
   const [searched , setSearched] = useState([])
   const [ival ,setIval] = useState("")
+  const [currentPage,setCurrentPage] = useState("")
   const {nav, setNav} = useUser();
 
   const handleChange = (event) => {
@@ -52,10 +53,13 @@ function nav() {
         alert('An unexpected error occurred');
     }
   };  
-  
+  useEffect(()=>{
+    const page = localStorage.getItem('page');
+    setCurrentPage(page);
+  },[])
  return (
     <div className="main-nav bg-[#121212] z-50 ">
-        <div className="social bg-[#121212] h-[38px] border-b-[0.25px] border-b-[#ffffff14] flex justify-between items-center" >
+        <div className={nav? "social bg-[#121212] h-[38px] border-b-[0.25px] border-b-[#ffffff14] flex justify-between items-center":"social bg-[#121212] h-[38px] border-b-[0.25px] border-b-[#ffffff14] lg:flex max-sm:hidden justify-between items-center"} >
             <div className="social-icons flex gap-5">
                 
             <a href="https://www.instagram.com/watch_shree?igsh=ZzY3eHZ4ZnRvY2tm"><svg aria-hidden="true" focusable="false" className="icon icon-instagram" viewBox="0 0 20 20"><path fill="white" fillRule="evenodd" d="M13.23 3.492c-.84-.037-1.096-.046-3.23-.046-2.144 0-2.39.01-3.238.055-.776.027-1.195.164-1.487.273a2.43 2.43 0 0 0-.912.593 2.486 2.486 0 0 0-.602.922c-.11.282-.238.702-.274 1.486-.046.84-.046 1.095-.046 3.23 0 2.134.01 2.39.046 3.229.004.51.097 1.016.274 1.495.145.365.319.639.602.913.282.282.538.456.92.602.474.176.974.268 1.479.273.848.046 1.103.046 3.238.046 2.134 0 2.39-.01 3.23-.046.784-.036 1.203-.164 1.486-.273.374-.146.648-.329.921-.602.283-.283.447-.548.602-.922.177-.476.27-.979.274-1.486.037-.84.046-1.095.046-3.23 0-2.134-.01-2.39-.055-3.229-.027-.784-.164-1.204-.274-1.495a2.43 2.43 0 0 0-.593-.913 2.604 2.604 0 0 0-.92-.602c-.284-.11-.703-.237-1.488-.273ZM6.697 2.05c.857-.036 1.131-.045 3.302-.045 1.1-.014 2.202.001 3.302.045.664.014 1.321.14 1.943.374a3.968 3.968 0 0 1 1.414.922c.41.397.728.88.93 1.414.23.622.354 1.279.365 1.942C18 7.56 18 7.824 18 10.005c0 2.17-.01 2.444-.046 3.292-.036.858-.173 1.442-.374 1.943-.2.53-.474.976-.92 1.423a3.896 3.896 0 0 1-1.415.922c-.51.191-1.095.337-1.943.374-.857.036-1.122.045-3.302.045-2.171 0-2.445-.009-3.302-.055-.849-.027-1.432-.164-1.943-.364a4.152 4.152 0 0 1-1.414-.922 4.128 4.128 0 0 1-.93-1.423c-.183-.51-.329-1.085-.365-1.943C2.009 12.45 2 12.167 2 10.004c0-2.161 0-2.435.055-3.302.027-.848.164-1.432.365-1.942a4.44 4.44 0 0 1 .92-1.414 4.18 4.18 0 0 1 1.415-.93c.51-.183 1.094-.33 1.943-.366Zm.427 4.806a4.105 4.105 0 1 1 5.805 5.805 4.105 4.105 0 0 1-5.805-5.805Zm1.882 5.371a2.668 2.668 0 1 0 2.042-4.93 2.668 2.668 0 0 0-2.042 4.93Zm5.922-5.942a.958.958 0 1 1-1.355-1.355.958.958 0 0 1 1.355 1.355Z" clipRule="evenodd"></path></svg></a>
@@ -71,15 +75,15 @@ function nav() {
         )}
       {!nav && (
 
-      <i onClick={()=>{setNav(true)}}><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" className="w-[17px] h-[17px] absolute left-7 top-7 cursor-pointer text-white" fill="none" viewBox="0 0 18 16">
+      <i onClick={()=>{setNav(true)}} className="hamburger"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" className="w-[17px] h-[17px] absolute left-7 top-7 cursor-pointer text-white" fill="none" viewBox="0 0 18 16">
   <path d="M1 .5a.5.5 0 100 1h15.71a.5.5 0 000-1H1zM.5 8a.5.5 0 01.5-.5h15.71a.5.5 0 010 1H1A.5.5 0 01.5 8zm0 7a.5.5 0 01.5-.5h15.71a.5.5 0 010 1H1a.5.5 0 01-.5-.5z" fill="currentColor">
 </path></svg></i>
       )} 
        
-        <ul className={nav? "links flex":"links hidden"}>
-          <li><a href="/home">Home</a></li>
-          <li><a href="/men">Men</a></li>
-          <li><a href="/women">Women</a></li>
+        <ul className={nav? "links flex":"links  max-sm:hidden"}>
+          <li className={currentPage==="home" ? "bg-[black]":"bg-transparent"}><a href="/home">Home</a></li>
+          <li className={currentPage==="men" ? "bg-[black]":"bg-transparent"}><a href="/men">Men</a></li>
+          <li className={currentPage==="women" ? "bg-[black]":"bg-transparent"}><a href="/women">Women</a></li>
           {/* <li><a href="/about">About</a></li>
           <li><a href="/contact">Contact</a></li> */}
         </ul>

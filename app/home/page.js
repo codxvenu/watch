@@ -84,6 +84,7 @@ function home() {
   }
 useEffect(()=>{
   handleWatches();
+  localStorage.setItem("page" , "home");
 },[])
   return (
     <div className="div mt-[110px] z-[-1]" >

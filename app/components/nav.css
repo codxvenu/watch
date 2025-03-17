@@ -86,6 +86,10 @@ a{
     opacity: 1;
     visibility: visible;
 }
+.hamburger{
+    display: none;
+}
+
 @media screen and (max-width: 400px) {
     .social{
         position: fixed;
@@ -125,7 +129,9 @@ a{
     }
     .links li{
         padding: 20px 25px;
-        background: black;
         font-size: 18px;
+    }
+    .hamburger{
+        display: contents;
     }
 }

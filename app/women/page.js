@@ -23,7 +23,7 @@ function page() {
       }
       useEffect(()=>{
         handleWatches();
-
+        localStorage.setItem("page" , "women");
       },[])
       const handleProduct = (id)=>{
     

@@ -24,7 +24,7 @@ function page() {
       }
       useEffect(()=>{
         handleWatches();
-        
+        localStorage.setItem("page" , "men");
         
       },[])
       useEffect(()=>{

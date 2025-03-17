@@ -111,6 +111,7 @@ function product() {
         setQuantity(parseInt(parsedItem.quantity) || 1); // Ensure a number
     }
     handleWatches(); 
+    localStorage.setItem("page" , "product");
 }, []);
 
   return (
