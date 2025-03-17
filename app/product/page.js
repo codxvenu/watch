@@ -117,14 +117,14 @@ function product() {
   return (
     <div>
       <Nav /> 
-      <div className={nav? "base mt-[110px]":"base mt-[110px]"}>
-        <div className="context max-sm:pl-[30px] pl-[159px] flex max-sm:flex-col  gap-10 mt-10">
+      <div className={nav? "base max-sm:mt-[60px] mt-[110px]":"base mt-[110px]"}>
+        <div className="context max-sm:p-[30px] pl-[159px] flex max-sm:flex-col  gap-10 mt-10">
             <div className="img">
     <img className="h-[500px] w-[495px] rounded" src={item.img  } alt="" />
             </div>
             <div className="content-product text-[#ffffffbf] w-[605px]">
-                <h1 className="text-[40px] capitalize">{item.name}</h1>
-                <p className="text-[16px] my-6 capitalize max-sm:w-[55%]">description : {item.description}
+                <h1 className="max-sm:text-[30px] text-[40px] capitalize">{item.name}</h1>
+                <p className="text-[16px] my-6 capitalize">description : {item.description}
                 </p>
                 <span className="flex gap-2 price">
                   
@@ -154,7 +154,7 @@ function product() {
                 </div>
             </div>
         </div>
-        <div className="more-items max-sm:pl-[30px] pl-[159px] my-16 text-white mn-w">
+        <div className="more-items max-sm:p-[30px] pl-[159px] my-16 text-white mn-w">
 
         <h1 className="text-[24px] mb-5">More Related Items</h1>
         <ul className='grid grid-cols-4 max-sm:w-[100%] max-sm:grid-cols-2 w-[87%] gap-10 max-sm:grid-flow-row'>

@@ -91,6 +91,6 @@ li .content .btn{
 }
 @media screen and (max-width: 400px) {
     .add-cart{
-        width: 330px;
+        width: 300px;
     }
 }
