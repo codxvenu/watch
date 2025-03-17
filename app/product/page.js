@@ -117,7 +117,7 @@ function product() {
   return (
     <div>
       <Nav /> 
-      <div className={nav? "base max-sm:mt-[60px] mt-[110px]":"base mt-[110px]"}>
+      <div className={nav? "base max-sm:mt-[60px] mt-[110px]":"base max-sm:mt-[60px] mt-[110px]"}>
         <div className="context max-sm:p-[30px] pl-[159px] flex max-sm:flex-col  gap-10 mt-10">
             <div className="img">
     <img className="h-[500px] w-[495px] rounded" src={item.img  } alt="" />
