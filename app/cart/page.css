@@ -31,4 +31,10 @@ th{
         margin-left: -104px;
         width: 0px;
     }
+    .main-cart-menu {
+        padding: 10px;
+    }
+    table{
+        width: 100%;
+    }
 }
