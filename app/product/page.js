@@ -154,7 +154,7 @@ function product() {
                 </div>
             </div>
         </div>
-        <div className="more-items pl-[159px] my-16 text-white">
+        <div className="more-items pl-[159px] my-16 text-white mn-w">
 
         <h1 className="text-[24px] mb-5">More Related Items</h1>
         <ul className='grid grid-cols-4 w-[87%] gap-10'>

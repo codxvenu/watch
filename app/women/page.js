@@ -98,7 +98,7 @@ function page() {
       {automatic && (
         <div>
       
-      <div className='ml-[159px] px-12 mt-10'>
+      <div className='ml-[159px] px-12 mt-10 mn-w'>
       <h1 className='mb-3'>AUTOMATIC WATCH</h1>
       <h3 className='mb-6'>Some lost vintage watches</h3>
       {watches.length > 0 && (  <ul className='grid gap-2 grid-cols-4 w-[87%]' >
@@ -160,7 +160,7 @@ function page() {
 
 <div>
 
-      <div className='ml-[159px] px-12 mt-10'>
+      <div className='ml-[159px] px-12 mt-10 mn-w'>
       <h1 className='mb-3'>DIGITAL WATCH</h1>
       <h3 className='mb-6'>Some lost vintage watches</h3>
       <ul className='grid gap-2 grid-cols-4 w-[87%]' >
@@ -211,7 +211,7 @@ function page() {
           {smart && (
             <div>
          
-      <div className='ml-[159px] px-12 mt-10'>
+      <div className='ml-[159px] px-12 mt-10 mn-w'>
       <h1 className='mb-3'>SMART WATCH </h1>
       <h3 className='mb-6'>Some lost vintage watches</h3>
       <ul className='grid gap-2 grid-cols-4 w-[87%]' >
@@ -262,7 +262,7 @@ function page() {
           </div>   )}
           {hybrid && ( 
             <div>
-      <div className='ml-[159px] px-12 mt-10'>
+      <div className='ml-[159px] px-12 mt-10 mn-w'>
       <h1 className='mb-3'>HYBRID WATCH</h1>
       <h3 className='mb-6'>Some lost vintage watches</h3>
       <ul className='grid gap-2 grid-cols-4 w-[87%]' >
@@ -316,7 +316,7 @@ function page() {
        <div>
 
       
-      <div className='ml-[159px] px-12 mt-10'>
+      <div className='ml-[159px] px-12 mt-10 mn-w'>
       <h1 className='mb-3'>CHRONOGRAPH WATCH</h1>
       <h3 className='mb-6'>Some lost vintage watches</h3>
       <ul className='grid gap-2 grid-cols-4 w-[87%]' >
