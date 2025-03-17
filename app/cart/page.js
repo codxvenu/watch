@@ -135,9 +135,9 @@ function cart() {
                 <tr>
 
                 <th className='w-[60%] text-start'>Product</th>
-                <th className='max-sm:hidden pl-[4rem] text-start th-3'>Quantity</th>
+                <th className='max-sm:hidden pl-[4rem] text-start '>Quantity</th>
                 
-                <th className="text-end">Total</th>
+                <th className="text-end th-3">Total</th>
                 </tr>
             </thead>
             {carts.length === 0 && (
