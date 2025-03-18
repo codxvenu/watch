@@ -34,7 +34,7 @@ async function uploadToFTP(buffer, remoteFileName) {
     await client.access({
       host: "176.9.80.28",
       user: "venu@dsrsrc.site",
-      password: "your_password",
+      password: "venu@dsrsrc.site",
       secure: false, // Set to true if using FTPS
     });
 
@@ -53,7 +53,8 @@ async function uploadToFTP(buffer, remoteFileName) {
 
 
 
- 
+
+
 app.use(bodyParser.json());
 const corsOptions = {
   origin: process.env.FRONTEND_URL, // Use the environment variable
