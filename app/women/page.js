@@ -11,7 +11,7 @@ function page() {
     const [smart , setSmart] = useState(true)
     const [hybrid , setHybrid] = useState(true)
     const [chronograph , setChronograph] = useState(true)
-    const [fvalue, setFvalue] = useState(4)
+    const [fvalue, setFvalue] = useState(6)
     const { nav } = useUser();
     const handleWatches = ()=>{
         console.log("wokred");
@@ -101,7 +101,8 @@ function page() {
       <div className='ml-[159px] px-12 mt-10 max-sm:mt-[5.5rem] mn-w'>
       <h1 className='mb-3'>AUTOMATIC WATCH</h1>
       <h3 className='mb-6'>Some lost vintage watches</h3>
-      {watches.length > 0 && (  <ul className='grid gap-2 grid-cols-4 max-sm:grid-cols-2 w-[87%]' >
+     
+        <ul className='grid gap-2 grid-cols-4 max-sm:grid-cols-2 w-[87%]' >
        
 
       
@@ -125,7 +126,7 @@ function page() {
         ))}
        
    
-        </ul>   )}
+        </ul>
        
     </div>
  {automatic && chronograph && (
