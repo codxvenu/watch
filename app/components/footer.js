@@ -5,7 +5,7 @@ function footer() {
   const { nav } = useUser();
   return (
     <div className={nav? "bg-[#121212] text-[#ffffffbf] hidden" :"bg-[#121212] text-[#ffffffbf]"}>
-      <div className="content text-center">
+      <div className="content max-sm:mt-[40px] text-center">
         <h1>Why Buy in USD when you can buy in rupees !</h1>
         <h2 className="my-5">"AVAIL ONE TIME FREE REPAIRING FOR WATCHES"</h2>
         <p>

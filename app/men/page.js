@@ -351,7 +351,7 @@ function page() {
        
     </div> {automatic && chronograph && (
      
-    <span className='flex justify-center mb-12 mt-2'>
+    <span className='flex justify-center max-lg:mb-12 mt-2'>
           
           <button onClick={
             
