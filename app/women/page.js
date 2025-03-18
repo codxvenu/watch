@@ -121,7 +121,7 @@ function page() {
  <small className='text-[10px] text-[#ffffffbf] mt-2'>Watch Shree</small>
  <span className='flex gap-4 items-center mt-2'>
 
- <h4 className='text-[13px] line-through'>{watch.orginal}</h4><h3>{watch.discounted}</h3>
+ <h4 className='text-[13px] line-through'>{watch.oprice}</h4><h3>{watch.dprice}</h3>
  </span>
  <button href="#" className="btn z-50" onClick={(event)=>{event.stopPropagation();handleUser(index)}}>
   Add To Cart
@@ -180,7 +180,7 @@ function page() {
  <small className='text-[10px] text-[#ffffffbf] mt-2'>Watch Shree</small>
  <span className='flex gap-4 items-center mt-2'>
 
- <h4 className='text-[13px] line-through'>{watch.orginal}</h4><h3>{watch.discounted}</h3>
+ <h4 className='text-[13px] line-through'>{watch.oprice}</h4><h3>{watch.dprice}</h3>
  </span>
  <button href="#" className="btn z-50" onClick={(event)=>{event.stopPropagation();handleUser(index)}}>
   Add To Cart
@@ -231,7 +231,7 @@ function page() {
  <small className='text-[10px] text-[#ffffffbf] mt-2'>Watch Shree</small>
  <span className='flex gap-4 items-center mt-2'>
 
- <h4 className='text-[13px] line-through'>{watch.orginal}</h4><h3>{watch.discounted}</h3>
+ <h4 className='text-[13px] line-through'>{watch.oprice}</h4><h3>{watch.dprice}</h3>
  </span>
  <button href="#" className="btn z-50" onClick={(event)=>{event.stopPropagation();handleUser(index)}}>
   Add To Cart
@@ -282,7 +282,7 @@ function page() {
  <small className='text-[10px] text-[#ffffffbf] mt-2'>Watch Shree</small>
  <span className='flex gap-4 items-center mt-2'>
 
- <h4 className='text-[13px] line-through'>{watch.orginal}</h4><h3>{watch.discounted}</h3>
+ <h4 className='text-[13px] line-through'>{watch.oprice}</h4><h3>{watch.dprice}</h3>
  </span>
  <button href="#" className="btn z-50" onClick={(event)=>{event.stopPropagation();handleUser(index)}}>
   Add To Cart
@@ -336,7 +336,7 @@ function page() {
  <small className='text-[10px] text-[#ffffffbf] mt-2'>Watch Shree</small>
  <span className='flex gap-4 items-center mt-2'>
 
- <h4 className='text-[13px] line-through'>{watch.orginal}</h4><h3>{watch.discounted}</h3>
+ <h4 className='text-[13px] line-through'>{watch.oprice}</h4><h3>{watch.dprice}</h3>
  </span>
  <button href="#" className="btn z-50" onClick={(event)=>{event.stopPropagation();handleUser(index)}}>
   Add To Cart
