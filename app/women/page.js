@@ -18,9 +18,10 @@ function page() {
         
         fetch('/api/watches')
          .then(response=>response.json())
-         .then(data=>setWatches(data))
+         .then(data=>{setWatches(data);
+           console.log(data,"da",watches);
+         })
          .catch(error=>console.log(error))
-         console.log(watches);
          
       }
       useEffect(()=>{
