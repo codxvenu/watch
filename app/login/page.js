@@ -81,10 +81,10 @@ function profile() {
        <i onClick={()=>{window.location.href = "/home  ";}}><svg className='w-[17px] h-[17px] absolute left-7 top-7 cursor-pointer text-white' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 17"><path fill="currentColor" d="M.865 15.978a.5.5 0 0 0 .707.707l7.433-7.431 7.579 7.282a.501.501 0 0 0 .846-.37.5.5 0 0 0-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 1 0-.707-.708L8.991 7.853 1.413.573a.5.5 0 1 0-.693.72l7.563 7.268z"></path></svg></i>
             
         <div
-            className="mx-auto flex w-full flex-col justify-center px-5 pt-0 md:h-[unset] md:max-w-[50%] lg:h-[100vh] min-h-[100vh] lg:max-w-[50%] lg:px-6">
+            className="mx-auto max-sm:w-[90%] flex w-full flex-col justify-center px-5 pt-0 md:h-[unset] md:max-w-[50%] lg:h-[100vh] min-h-[100vh] lg:max-w-[50%] lg:px-6">
            
             <div
-                className="my-auto mb-auto mt-8 flex flex-col md:mt-[70px] w-[350px] max-w-[450px] mx-auto md:max-w-[450px] lg:max-w-[450px]">
+                className="my-auto mb-auto mt-8 flex flex-col md:mt-[70px] max-sm:w-[335px] w-[350px] max-w-[450px] mx-auto md:max-w-[450px] lg:max-w-[450px]">
                 <p className="text-[32px] font-bold text-zinc-950 dark:text-white">Sign In</p>
                 <p className="mb-2.5 mt-2.5 font-normal text-zinc-950 dark:text-zinc-400">Enter your email and password
                     to sign
@@ -114,7 +114,7 @@ c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.
                                 </form>
                 </div>
                 <div className="relative my-4">
-                    <div className="relative flex items-center py-1">
+                    <div className="relative flex items-center py-1 max-sm:w-[90%]">
                         <div className="grow border-t border-zinc-200 dark:border-zinc-700"></div>
                         <div className="grow border-t border-zinc-200 dark:border-zinc-700"></div>
                     </div>

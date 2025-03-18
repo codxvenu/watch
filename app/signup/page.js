@@ -61,14 +61,14 @@ function page() {
                 className="mx-auto flex w-full flex-col justify-center px-5 pt-0 md:h-[unset] md:max-w-[50%] lg:h-[100vh] min-h-[100vh] lg:max-w-[50%] lg:px-6">
 
                 <div
-                    className="my-auto mb-auto mt-8 flex flex-col md:mt-[70px] w-[350px] max-w-[450px] mx-auto md:max-w-[450px] lg:max-w-[450px]">
-                    <p className="text-[32px] font-bold text-zinc-950 dark:text-white">Sign Up</p>
+                    className="my-auto mb-auto mt-8 flex flex-col md:mt-[70px] max-sm:w-[335px] w-[350px] max-w-[450px] mx-auto md:max-w-[450px] lg:max-w-[450px]">
+                    <p className="text-[32px] font-bold text-zinc-950 dark:text-white max-sm:mt-[30px]">Sign Up</p>
                     <p className="mb-2.5 mt-2.5 font-normal text-zinc-950 dark:text-zinc-400">Enter your email and password
                         to sign
                         up!</p>
                     <div className="mt-8">
                         <form className="pb-2"><input type="hidden" name="provider" value="google" onSubmit={handleGoogleSignIn} /><button onClick={handleGoogleSignIn}
-                            className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 w-full text-zinc-950 py-6 dark:text-white"
+                            className="max-sm:w-[90%] inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 w-full text-zinc-950 py-6 dark:text-white"
                             type="submit"><span className="mr-2"><svg stroke="currentColor" fill="currentColor"
                                 strokeWidth="0" version="1.1" x="0px" y="0px" viewBox="0 0 48 48"
                                 enableBackground="new 0 0 48 48" className="h-5 w-5" height="1em" width="1em"
@@ -86,7 +86,7 @@ c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.
                             </svg></span><span>Google</span></button></form>
                     </div>
                     <div className="relative my-4">
-                        <div className="relative flex items-center py-1">
+                        <div className="relative flex items-center py-1 max-sm:w-[90%]">
                             <div className="grow border-t border-zinc-200 dark:border-zinc-700"></div>
                             <div className="grow border-t border-zinc-200 dark:border-zinc-700"></div>
                         </div>
