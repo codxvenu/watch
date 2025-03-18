@@ -98,14 +98,14 @@ function page() {
       {automatic && (
         <div>
       
-      <div className='ml-[159px] px-12 mt-10 mn-w'>
+      <div className='ml-[159px] px-12 mt-10 max-sm:mt-[5.5rem] mn-w'>
       <h1 className='mb-3'>AUTOMATIC WATCH</h1>
       <h3 className='mb-6'>Some lost vintage watches</h3>
       {watches.length > 0 && (  <ul className='grid gap-2 grid-cols-4 max-sm:grid-cols-2 w-[87%]' >
        
 
       
-        {watches.slice(0,fvalue).filter(watch => watch.type ==="auto" && watch.gender === "women" ).map((watch,index)=>(
+        {watches.slice(0,fvalue).filter(watch => watch.type ==="automatic" && watch.gender === "women" ).map((watch,index)=>(
  <li className='w-213px h-371px' key={watch.id} onClick={()=>{handleProduct(index);}}>
  <img src={watch.img} className='mb-3 w-[213px] h-[213px]' alt="" />
 <div className="content p-2">
