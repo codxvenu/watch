@@ -12,6 +12,7 @@ const ftp = require("basic-ftp");
 const fs = require("fs");
 const path = require("path");
 const port = 5000;
+const { Readable } = require("stream");
 
 app.set("trust proxy", 1);
 // Middleware
@@ -22,6 +23,8 @@ app.use(session({
 }));
 
 const upload = multer({ storage: multer.memoryStorage() }); // Store in memory
+
+
 async function uploadToFTP(buffer, remoteFileName) {
   const client = new ftp.Client();
   client.ftp.verbose = true;
@@ -34,7 +37,10 @@ async function uploadToFTP(buffer, remoteFileName) {
       secure: false,
     });
 
-    await client.uploadFrom(Buffer.from(buffer), `/${remoteFileName}`);
+    // Convert Buffer to Readable Stream
+    const stream = Readable.from(buffer);
+
+    await client.uploadFrom(stream, `/${remoteFileName}`);
     client.close();
 
     return `https://dsrsrc.site/venu/${remoteFileName}`;
@@ -111,7 +117,9 @@ app.post("/api/upload", upload.single("file"), async (req, res) => {
     if (!file) return res.status(400).json({ message: "No file uploaded" });
 
     // Upload directly from memory
-    const fileUrl = await uploadToFTP(file.buffer, file.originalname);
+    const remoteFileName = file.originalname.replace(/\s+/g, '_');
+
+    const fileUrl = await uploadToFTP(file.buffer, remoteFileName);
     if (!fileUrl) return res.status(500).json({ message: "Image upload failed" });
 
     // Insert into MySQL
