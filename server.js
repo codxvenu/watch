@@ -28,21 +28,18 @@ const upload = multer({ storage: multer.memoryStorage() }); // Store in memory
 async function uploadToFTP(buffer, remoteFileName) {
   const client = new ftp.Client();
   client.ftp.verbose = true;
-
+  
   try {
     await client.access({
       host: "server959.iseencloud.net",
       user: "venu@dsrsrc.site",
       password: "venu@dsrsrc.site",
-      secure: false,
+      secure: false, // Change to true if using FTPS
     });
 
-    // Convert Buffer to Readable Stream
-    const stream = Readable.from(buffer);
-
-    await client.uploadFrom(stream, `/${remoteFileName}`);
+    // Upload buffer as a readable stream
+    await client.uploadFrom(Buffer.from(buffer), `/${remoteFileName}`);
     client.close();
-
     return `https://dsrsrc.site/venu/${remoteFileName}`;
   } catch (err) {
     console.error("FTP Upload Error:", err);
@@ -50,6 +47,7 @@ async function uploadToFTP(buffer, remoteFileName) {
     return null;
   }
 }
+
 
 
  
@@ -116,20 +114,23 @@ app.post("/api/upload", upload.single("file"), async (req, res) => {
 
     if (!file) return res.status(400).json({ message: "No file uploaded" });
 
-    // Upload directly from memory
     const remoteFileName = file.originalname.replace(/\s+/g, '_');
 
+    // Upload file to FTP using buffer
     const fileUrl = await uploadToFTP(file.buffer, remoteFileName);
     if (!fileUrl) return res.status(500).json({ message: "Image upload failed" });
 
-    // Insert into MySQL
+    // Insert data into MySQL
     const sql = "INSERT INTO watches (name, oprice, dprice, description, category, gender, img) VALUES (?, ?, ?, ?, ?, ?, ?)";
     db.query(sql, [name, originalPrice, discountedPrice, description, category, gender, fileUrl], (err) => {
-      if (err) return res.status(500).json({ message: "Database error", error: err });
-
+      if (err) {
+        console.error("Database Error:", err);
+        return res.status(500).json({ message: "Database error", error: err });
+      }
       res.status(200).json({ message: "Upload successful", imageUrl: fileUrl });
     });
   } catch (error) {
+    console.error("Server Error:", error);
     res.status(500).json({ message: "Server error", error });
   }
 });
