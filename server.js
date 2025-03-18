@@ -127,7 +127,7 @@ app.post("/api/upload", upload.single("file"), async (req, res) => {
     if (!fileUrl) return res.status(500).json({ message: "Image upload failed" });
 
     // Insert data into MySQL
-    const sql = "INSERT INTO watches (name, oprice, dprice, description, category, gender, img) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    const sql = "INSERT INTO watches (name, oprice, dprice, description, type, gender, img) VALUES (?, ?, ?, ?, ?, ?, ?)";
     db.query(sql, [name, originalPrice, discountedPrice, description, category, gender, fileUrl], (err) => {
       if (err) {
         console.error("Database Error:", err);
