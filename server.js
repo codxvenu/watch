@@ -79,12 +79,12 @@ app.use((req, res, next) => {
 
 // MySQL connection pooling
 const db = mysql.createPool({
-  host: 'server759.iseencloud.net',
-  user: 'nocash_cc_hub',
-  password: 'nocash_cc_hub',
-  database: 'nocash_cc_hub',
-  waitForConnections: true,
   connectionLimit: 10,
+  host: '46.28.44.6',
+  user: 'venu',
+  password: 'Qw8!dXz@73bG#yKp',
+  database: 'watches',
+  port: 3306,
   queueLimit: 0,
   connectTimeout: 10000, // 10 seconds
   acquireTimeout: 10000, // 10 seconds
