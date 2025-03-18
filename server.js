@@ -12,7 +12,8 @@ const ftp = require("basic-ftp");
 const fs = require("fs");
 const path = require("path");
 const port = 5000;
-const { Readable } = require("stream");
+const stream = require('stream');
+
 
 app.set("trust proxy", 1);
 // Middleware
@@ -33,7 +34,7 @@ async function uploadToFTP(buffer, remoteFileName) {
     await client.access({
       host: "176.9.80.28",
       user: "venu@dsrsrc.site",
-      password: "venu@dsrsrc.site",
+      password: "your_password",
       secure: false, // Set to true if using FTPS
     });
 
