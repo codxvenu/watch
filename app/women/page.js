@@ -112,7 +112,7 @@ function page() {
        
 
       
-        {watches.slice(0,fvalue).filter(watch => watch.type ==="automatic" && watch.gender === "women" ).map((watch,index)=>(
+        {watches.filter(watch => watch.type ==="automatic" && watch.gender === "women" ).slice(0,fvalue).map((watch,index)=>(
  <li className='w-213px h-371px' key={watch.id} onClick={()=>{handleProduct(index);}}>
  <img src={watch.img} className='mb-3 w-[213px] h-[213px]' alt="" />
 <div className="content p-2">
@@ -171,7 +171,7 @@ function page() {
       <h1 className='mb-3'>DIGITAL WATCH</h1>
       <h3 className='mb-6'>Some lost vintage watches</h3>
       <ul className='grid gap-2 grid-cols-4 max-sm:grid-cols-2 w-[87%]' >
-        {watches.slice(0,fvalue).filter(watch => watch.type ==="vintage" && watch.gender === "women").map((watch,index)=>(
+        {watches.filter(watch => watch.type ==="vintage" && watch.gender === "women").slice(0,fvalue).map((watch,index)=>(
  <li className='w-213px h-371px' key={watch.id} onClick={()=>{handleProduct(index);}}>
  <img src={watch.img} className='mb-3 w-[213px] h-[213px]' alt="" />
 <div className="content p-2">
@@ -222,7 +222,7 @@ function page() {
       <h1 className='mb-3'>SMART WATCH </h1>
       <h3 className='mb-6'>Some lost vintage watches</h3>
       <ul className='grid gap-2 grid-cols-4 max-sm:grid-cols-2 w-[87%]' >
-        {watches.slice(0,fvalue).filter(watch => watch.type ==="vintage" && watch.gender === "women").map((watch,index)=>(
+        {watches.filter(watch => watch.type ==="vintage" && watch.gender === "women").slice(0,fvalue).map((watch,index)=>(
  <li className='w-213px h-371px' key={watch.id} onClick={()=>{handleProduct(index);}}>
  <img src={watch.img} className='mb-3 w-[213px] h-[213px]' alt="" />
 <div className="content p-2">
@@ -273,7 +273,7 @@ function page() {
       <h1 className='mb-3'>HYBRID WATCH</h1>
       <h3 className='mb-6'>Some lost vintage watches</h3>
       <ul className='grid gap-2 grid-cols-4 max-sm:grid-cols-2 w-[87%]' >
-        {watches.slice(0,fvalue).filter(watch => watch.type ==="vintage" && watch.gender === "women").map((watch,index)=>(
+        {watches.filter(watch => watch.type ==="vintage" && watch.gender === "women").slice(0,fvalue).map((watch,index)=>(
  <li className='w-213px h-371px' key={watch.id} onClick={()=>{handleProduct(index);}}>
  <img src={watch.img} className='mb-3 w-[213px] h-[213px]' alt="" />
 <div className="content p-2">
@@ -327,7 +327,7 @@ function page() {
       <h1 className='mb-3'>CHRONOGRAPH WATCH</h1>
       <h3 className='mb-6'>Some lost vintage watches</h3>
       <ul className='grid gap-2 grid-cols-4 max-sm:grid-cols-2 w-[87%]' >
-        {watches.slice(0,fvalue).filter(watch => watch.type ==="vintage" && watch.gender === "women").map((watch,index)=>(
+        {watches.filter(watch => watch.type ==="vintage" && watch.gender === "women").slice(0,fvalue).map((watch,index)=>(
  <li className='w-213px h-371px' key={watch.id} onClick={()=>{handleProduct(index);}}>
  <img src={watch.img} className='mb-3 w-[213px] h-[213px]' alt="" />
 <div className="content p-2">
