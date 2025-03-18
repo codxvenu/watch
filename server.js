@@ -103,7 +103,7 @@ const handleDisconnect = () => {
 };
 
 handleDisconnect();
-app.post("/upload", upload.single("file"), async (req, res) => {
+app.post("/api/upload", upload.single("file"), async (req, res) => {
   try {
     const { name, originalPrice, discountedPrice, description, category, gender } = req.body;
     const file = req.file;
