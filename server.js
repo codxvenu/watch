@@ -21,23 +21,22 @@ app.use(session({
   saveUninitialized: false,
 }));
 
-const upload = multer({ dest: "uploads/" });
-
-async function uploadToFTP(localFilePath, remoteFileName) {
+const upload = multer({ storage: multer.memoryStorage() }); // Store in memory
+async function uploadToFTP(buffer, remoteFileName) {
   const client = new ftp.Client();
   client.ftp.verbose = true;
-  
+
   try {
     await client.access({
       host: "server959.iseencloud.net",
       user: "venu@dsrsrc.site",
       password: "venu@dsrsrc.site",
-      secure: false, // Change to true if using FTPS
+      secure: false,
     });
 
-    await client.uploadFrom(localFilePath, `/${remoteFileName}`);
+    await client.uploadFrom(Buffer.from(buffer), `/${remoteFileName}`);
     client.close();
-    
+
     return `https://dsrsrc.site/venu/${remoteFileName}`;
   } catch (err) {
     console.error("FTP Upload Error:", err);
@@ -45,6 +44,7 @@ async function uploadToFTP(localFilePath, remoteFileName) {
     return null;
   }
 }
+
 
  
 app.use(bodyParser.json());
@@ -103,40 +103,29 @@ const handleDisconnect = () => {
 };
 
 handleDisconnect();
-app.post("/api/upload", upload.single("file"), async (req, res) => {
+app.post("/upload", upload.single("file"), async (req, res) => {
   try {
     const { name, originalPrice, discountedPrice, description, category, gender } = req.body;
     const file = req.file;
 
     if (!file) return res.status(400).json({ message: "No file uploaded" });
 
-    // Upload file to FTP
-    const fileUrl = await uploadToFTP(file.path, file.originalname);
+    // Upload directly from memory
+    const fileUrl = await uploadToFTP(file.buffer, file.originalname);
     if (!fileUrl) return res.status(500).json({ message: "Image upload failed" });
 
-    // Debugging: Log received values before inserting into MySQL
-    console.log("Received Data:", { name, originalPrice, discountedPrice, description, category, gender, fileUrl });
+    // Insert into MySQL
+    const sql = "INSERT INTO watches (name, oprice, dprice, description, category, gender, img) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    db.query(sql, [name, originalPrice, discountedPrice, description, category, gender, fileUrl], (err) => {
+      if (err) return res.status(500).json({ message: "Database error", error: err });
 
-    // Insert data into MySQL
-    const sql = "INSERT INTO watches (name, oprice, dprice, description, type, gender, img) VALUES (?, ?, ?, ?, ?, ?, ?)";
-    db.query(sql, [name, originalPrice, discountedPrice, description, category, gender, fileUrl], (err, result) => {
-      if (err) {
-        console.error("Database Error:", err);
-        return res.status(500).json({ message: "Database error", error: err });
-      }
-
-      console.log("Data inserted successfully:", result);
-
-      // Remove uploaded file from local storage
-      fs.unlinkSync(file.path);
-      
       res.status(200).json({ message: "Upload successful", imageUrl: fileUrl });
     });
   } catch (error) {
-    console.error("Server Error:", error);
     res.status(500).json({ message: "Server error", error });
   }
 });
+
 
 
 app.get('/api/auth/google',
