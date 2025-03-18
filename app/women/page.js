@@ -20,6 +20,8 @@ function page() {
          .then(response=>response.json())
          .then(data=>setWatches(data))
          .catch(error=>console.log(error))
+         console.log(watches);
+         
       }
       useEffect(()=>{
         handleWatches();
