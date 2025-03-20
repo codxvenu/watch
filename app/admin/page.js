@@ -12,7 +12,7 @@ function AddWatch() {
     gender: "",
     file: null,
   });
-
+  const [loading , setLoading] = useState(false)
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -23,7 +23,7 @@ function AddWatch() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setLoading(true)
     if (!formData.file) {
       alert("Please select a file");
       return;
@@ -45,6 +45,7 @@ function AddWatch() {
       });
       
       alert(response.data.message);
+      setLoading(false)
     } catch (error) {
       console.error("Upload failed:", error);
       alert("Upload failed");
@@ -52,7 +53,14 @@ function AddWatch() {
   };
 
   return (
+    
+
+    
     <div className="flex items-center justify-center">
+      {loading && (
+        <h1 className="text-[5rem] text-center">Uploading wait</h1>
+      )}
+      {!loading && (
       <div className="mx-auto w-full max-w-[550px] bg-[#121212]">
         <form className="py-4 px-9" onSubmit={handleSubmit}>
           <div className="mb-5">
@@ -96,8 +104,9 @@ function AddWatch() {
           </div>
           <button type="submit" className="bg-blue-500 text-white p-2 w-full">Upload</button>
         </form>
-      </div>
+      </div>)}
     </div>
+  
   );
 }
 
