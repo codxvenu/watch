@@ -320,7 +320,7 @@ app.post("/api/rcart", (req, res) => {
           console.error('Database Error:', err);
           return res.status(500).send({ message: 'Database Query Failed' });
       }
-      res.send(results);
+      res.send({"message": "Item deleted successfully"});
       console.log(results,"success");
       
   });
