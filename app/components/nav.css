@@ -135,4 +135,11 @@ a{
     .hamburger{
         display: contents;
     }
+    .search-log{width: 5.4rem; top:3.2rem; right: 1.09rem;}
+    .search-log ul li{
+        padding: .5rem;
+    }
+    .search-log img{
+        display: none;
+    }
 }

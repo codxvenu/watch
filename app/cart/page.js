@@ -142,7 +142,7 @@ function cart() {
             </thead>
             {carts.length === 0 && (
                   <tbody>
-                <tr className="h-60">
+                <tr className="h-60 max-sm:block max-sm:h-[5rem] max-sm:w-[21rem]">
                     <td colSpan="3" className='text-center uppercase text-4xl'>Your cart is empty.</td>
                 </tr>
                 </tbody>
@@ -180,7 +180,7 @@ function cart() {
             </tbody> )}
            </table>
       </div>
-      <div className="checkout_box text-[#ffffffbf] max-sm:p-[14px] mb-16 ml-[auto] mr-[159px] w-[350px] flex flex-col justify-end">
+      <div className={nav? "checkout_box text-[#ffffffbf] max-sm:p-[14px] mb-16 ml-[auto] mr-[159px] w-[350px] flex-col justify-end hidden" : "checkout_box text-[#ffffffbf] max-sm:p-[14px] mb-16 ml-[auto] mr-[159px] w-[350px] flex flex-col justify-end" }>
         <span className="flex gap-5 mb-3 justify-end"><h1 className="text-white">Estimated total</h1><h1 className="tracking-[3px] text-[18px]">Rs. {total}</h1></span>
         <small className="flex justify-end w-[100%] ml-[auto] max-sm:text-center text-end text-[16px]">Taxes included. Discounts and shipping calculated at checkout.</small>
         <button className="checkout max-sm:w-[330px] bg-white text-black w-[348px] h-[45px] rounded mt-4">
