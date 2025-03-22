@@ -4,7 +4,7 @@
     right: 220px;
     animation: cubic-bezier(0.23, 1, 0.320, 1) all ease;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
     .main-overlay-cart{
     right: 0px;
 }}

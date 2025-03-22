@@ -12,7 +12,7 @@ th{
     opacity: .85;
     font-weight: 400;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
     tbody tr{grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto auto;
     gap: 10px;
