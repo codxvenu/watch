@@ -94,7 +94,7 @@ function nav() {
               <input type="text"  onChange={
                 
                 handleChange
-                } className={ search ? "search-hovers search-hover z-10 !max-sm:w-[90px]":"search-hover z-10 "} name="" placeholder="Search..." />
+                } className={ search ? "search-hovers search-hover z-10 max-sm:!w-[90px]":"search-hover z-10 "} name="" placeholder="Search..." />
               <div className={ search && searched.length > 0 ? "search-h search-log bg-[#131313] w-[12.4rem] fixed top-[5rem] right-[17.7rem] z-0  border-[whitesmoke] border-x-[1px] border-y-[1px] rounded-b-xl block"  : " bg-[#131313] w-[12.4rem] fixed top-[5rem] right-[17.7rem] z-0  border-[whitesmoke] border-x-[1px] border-y-[1px] rounded-b-xl hidden search-log"}>
                 <ul className="mt-5 flex flex-col gap-0 ">
 {searched.map((swatch,index)=>(
@@ -109,7 +109,7 @@ function nav() {
                 </li>
                 ))}
                  </ul> </div>
-              <svg id="search-i" className={search ? "!max-sm:ml-[-20px] ml-[-30px] z-10 " : "ml-[-30px] z-10" } onClick={()=>{search===false ?setSearch(true):setSearch(false)}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" ><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+              <svg id="search-i" className={search ? "max-sm:!ml-[-20px] ml-[-30px] z-10 " : "ml-[-30px] z-10" } onClick={()=>{search===false ?setSearch(true):setSearch(false)}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" ><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
               </span>
             <a href="/login" className={search ? "max-sm:hidden":"block" }><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"/></svg></span>
             </a><a href="/cart" className={search ? "max-sm:hidden":"block"}><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M160 112c0-35.3 28.7-64 64-64s64 28.7 64 64l0 48-128 0 0-48zm-48 48l-64 0c-26.5 0-48 21.5-48 48L0 416c0 53 43 96 96 96l256 0c53 0 96-43 96-96l0-208c0-26.5-21.5-48-48-48l-64 0 0-48C336 50.1 285.9 0 224 0S112 50.1 112 112l0 48zm24 48a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm152 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/></svg></span></a>
