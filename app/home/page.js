@@ -105,7 +105,7 @@ useEffect(()=>{
       <h1 className='mb-3'>Mens Watches</h1>
       <h3 className='mb-6'>Best Seller Watches</h3>
       <ul className='grid grid-cols-4 w-[87%] gap-2' >
-        {watches.slice(0,4).filter(watch =>watch.gender==="men" && watch.type ==="bestseller").map((watch,index)=>(
+        {watches.filter(watch =>watch.gender==="men" && watch.type ==="bestseller").slice(0,4).map((watch,index)=>(
  <li className='w-[213px] h-[371px] z-20' key={watch.id} onClick={()=>{
   handleProduct(index);
   }}>
@@ -166,7 +166,7 @@ useEffect(()=>{
       <h1 className='mb-3'>Women Watches</h1>
       <h3 className='mb-6'>Best Seller Watches </h3>
       <ul className='grid gap-2 grid-cols-5 max-sm:grid-cols-2 ' >
-        {watches.slice(0,5).filter(watch => watch.gender==="women" && watch.type ==="bestseller").map((watch,index)=>(
+        {watches.filter(watch => watch.gender==="women" && watch.type ==="bestseller").slice(0,5).map((watch,index)=>(
  <li className='max-sm:w-[155px] h-[371px]' key={watch.id} onClick={()=>{
   handleProduct(index);
   }} >
