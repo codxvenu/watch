@@ -246,7 +246,7 @@ function page() {
         </ul>
        
     </div>
-    {digital && chronograph && (
+    {digital &&  (
     <span className='flex justify-center mb-3 mt-2 '>
           
           <button onClick={
