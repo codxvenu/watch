@@ -9,11 +9,8 @@ function page() {
     const [watches,setWatches] = useState([])
     const [automatic , setAutomatic] = useState(true)
     const [digital , setDigital] = useState(true)
-    const [smart , setSmart] = useState(true)
-    const [hybrid , setHybrid] = useState(true)
-    const [chronograph , setChronograph] = useState(true)
-    const [fvalue, setFvalue] = useState(6)
     const [analog , setAnalog] = useState(true)
+    const [fvalue, setFvalue] = useState(6)
     const { nav } = useUser();
     const handleWatches = ()=>{
         console.log("wokred");
@@ -113,7 +110,7 @@ function page() {
        
 
       
-        {watches.filter(watch => watch.type ==="automatic" && watch.gender === "women" ).slice(0,fvalue).map((watch,index)=>(
+        {watches.filter(watch => watch.type ==="automatic" && watch.gender === "wall-clocks" ).slice(0,fvalue).map((watch,index)=>(
  <li className='w-213px h-371px' key={watch.id} onClick={()=>{handleProduct(watch);}}>
  <img src={watch.img} className='mb-3 w-[213px] h-[213px]' alt="" />
 <div className="content p-2">
@@ -136,7 +133,7 @@ function page() {
         </ul>   
        
     </div>
- {automatic && chronograph && (
+ {automatic &&(
 
 
     <span className='flex justify-center mb-3 mt-2'>
@@ -145,19 +142,13 @@ function page() {
           ()=>{
             setFvalue();
             if(automatic){
-              setSmart(false);
-              setHybrid(false);
-              setChronograph(false);
-              setDigital(false);
               setAnalog(false);
+              setDigital(false);
               
              } else{
-              setSmart(false);
-              setHybrid(false);
-              setChronograph(false);
+              setAnalog(false);
               setDigital(false);
               setAutomatic(true);
-              setAnalog(false);
             }
 
           }}
@@ -166,7 +157,7 @@ function page() {
            )}
           </div>
              )}
-              {analog && (
+      {analog && (
         <div>
       
       <div className='ml-[159px] px-12 mt-10 mn-w'>
@@ -176,7 +167,7 @@ function page() {
        
 
       
-        {watches.filter(watch => watch.type ==="analog" && watch.gender === "men" ).slice(0,fvalue).map((watch,index)=>(
+        {watches.filter(watch => watch.type ==="analog" && watch.gender === "wall-clocks" ).slice(0,fvalue).map((watch,index)=>(
  <li className='w-213px h-371px' key={watch.id} onClick={()=>{handleProduct(watch);}}>
  <img src={watch.img} className='mb-3 w-[213px] h-[213px]' alt="" />
 <div className="content p-2">
@@ -199,7 +190,7 @@ function page() {
         </ul>   
        
     </div>
- {analog && chronograph && (
+ {analog && (
 
 
     <span className='flex justify-center mb-3 mt-2'>
@@ -208,17 +199,11 @@ function page() {
           ()=>{
             setFvalue();
             if(analog){
-              setSmart(false);
-              setHybrid(false);
-              setChronograph(false);
-              setDigital(false);
               setAutomatic(false);
+              setDigital(false);
               
               
              } else{
-              setSmart(false);
-              setHybrid(false);
-              setChronograph(false);
               setDigital(false);
               setAutomatic(false);
               setAnalog(true);
@@ -238,7 +223,7 @@ function page() {
       <h1 className='mb-3'>DIGITAL WATCH</h1>
       <h3 className='mb-6'>Some lost vintage watches</h3>
       <ul className='grid gap-2 grid-cols-4 max-sm:grid-cols-2 w-[87%]' >
-        {watches.filter(watch => watch.type ==="vintage" && watch.gender === "women").slice(0,fvalue).map((watch,index)=>(
+        {watches.filter(watch => watch.type ==="digital" && watch.gender === "wall-clocks").slice(0,fvalue).map((watch,index)=>(
  <li className='w-213px h-371px' key={watch.id} onClick={()=>{handleProduct(watch);}}>
  <img src={watch.img} className='mb-3 w-[213px] h-[213px]' alt="" />
 <div className="content p-2">
@@ -267,189 +252,17 @@ function page() {
           <button onClick={
           ()=>{
             setFvalue();
-            if(digital){setSmart(false);
-              setHybrid(false);
-              setChronograph(false);
+            if(digital){
               setAnalog(false);
               setAutomatic(false);
-
             }else{
-              setSmart(false);
-              setHybrid(false);
-              setChronograph(false);
+              setAnalog(false);
               setDigital(true);
               setAutomatic(false);
-              setAnalog(false);
             }
 
           }}  className="btn m-auto">View All</button>
           </span>)}   </div>   )}
-          {smart && (
-            <div>
-         
-      <div className='ml-[159px] px-12 mt-10 mn-w'>
-      <h1 className='mb-3'>SMART WATCH </h1>
-      <h3 className='mb-6'>Some lost vintage watches</h3>
-      <ul className='grid gap-2 grid-cols-4 max-sm:grid-cols-2 w-[87%]' >
-        {watches.filter(watch => watch.type ==="vintage" && watch.gender === "women").slice(0,fvalue).map((watch,index)=>(
- <li className='w-213px h-371px' key={watch.id} onClick={()=>{handleProduct(watch);}}>
- <img src={watch.img} className='mb-3 w-[213px] h-[213px]' alt="" />
-<div className="content p-2">
-
- <h4 className='text-[13px]'>{watch.name}</h4>
- <small className='text-[10px] text-[#ffffffbf] mt-2'>Watch Shree</small>
- <span className='flex gap-4 items-center mt-2'>
-
- <h4 className='text-[13px] line-through'>Rs.{watch.oprice}</h4><h3>Rs.{watch.dprice}</h3>
- </span>
- <button href="#" className="btn z-50" onClick={(event)=>{event.stopPropagation();handleUser(index)}}>
-  Add To Cart
- </button>
-</div>
-
- </li>
-        ))}
-
-        
-        </ul>
-       
-    </div>
-    {smart && chronograph && (
-    <span className='flex justify-center mb-3 mt-2'>
-          
-          <button onClick={
-          ()=>{
-            setFvalue();
-            if(smart){
-              setHybrid(false);
-              setChronograph(false);
-              setDigital(false);
-              setAutomatic(false);
-              setAnalog(false);
-            } else{
-              setSmart(true);
-              setHybrid(false);
-              setChronograph(false);
-              setDigital(false);
-              setAutomatic(false);
-              setAnalog(false);
-            }
-
-          }}  className="btn m-auto">View All</button>
-          </span>  )}
-          </div>   )}
-          {hybrid && ( 
-            <div>
-      <div className='ml-[159px] px-12 mt-10 mn-w'>
-      <h1 className='mb-3'>HYBRID WATCH</h1>
-      <h3 className='mb-6'>Some lost vintage watches</h3>
-      <ul className='grid gap-2 grid-cols-4 max-sm:grid-cols-2 w-[87%]' >
-        {watches.filter(watch => watch.type ==="vintage" && watch.gender === "women").slice(0,fvalue).map((watch,index)=>(
- <li className='w-213px h-371px' key={watch.id} onClick={()=>{handleProduct(watch);}}>
- <img src={watch.img} className='mb-3 w-[213px] h-[213px]' alt="" />
-<div className="content p-2">
-
- <h4 className='text-[13px]'>{watch.name}</h4>
- <small className='text-[10px] text-[#ffffffbf] mt-2'>Watch Shree</small>
- <span className='flex gap-4 items-center mt-2'>
-
- <h4 className='text-[13px] line-through'>Rs.{watch.oprice}</h4><h3>Rs.{watch.dprice}</h3>
- </span>
- <button href="#" className="btn z-50" onClick={(event)=>{event.stopPropagation();handleUser(index)}}>
-  Add To Cart
- </button>
-</div>
-
- </li>
-        ))}
-       
-        
-        </ul>
-       
-    </div>
-    {hybrid && chronograph && (
-    <span className='flex justify-center mb-3 mt-2'>
-          
-          <button onClick={
-          ()=>{
-            setFvalue();
-            if(hybrid){setSmart(false);
-              setAutomatic(false);
-              setChronograph(false);
-              setDigital(false);
-              setAutomatic(false);
-              setAnalog(false);
-            }else{
-              setSmart(false);
-              setHybrid(true);
-              setChronograph(false);
-              setDigital(false);
-              setAutomatic(false);
-              setAnalog(false);
-            }
-
-          }}  className="btn m-auto">View All</button>
-          </span>  )}
-          </div>    )}
-          {chronograph && (
-
-       <div>
-
-      
-      <div className='ml-[159px] px-12 mt-10 mn-w'>
-      <h1 className='mb-3'>CHRONOGRAPH WATCH</h1>
-      <h3 className='mb-6'>Some lost vintage watches</h3>
-      <ul className='grid gap-2 grid-cols-4 max-sm:grid-cols-2 w-[87%]' >
-        {watches.filter(watch => watch.type ==="vintage" && watch.gender === "women").slice(0,fvalue).map((watch,index)=>(
- <li className='w-213px h-371px' key={watch.id} onClick={()=>{handleProduct(watch);}}>
- <img src={watch.img} className='mb-3 w-[213px] h-[213px]' alt="" />
-<div className="content p-2">
-
- <h4 className='text-[13px]'>{watch.name}</h4>
- <small className='text-[10px] text-[#ffffffbf] mt-2'>Watch Shree</small>
- <span className='flex gap-4 items-center mt-2'>
-
- <h4 className='text-[13px] line-through'>Rs.{watch.oprice}</h4><h3>Rs.{watch.dprice}</h3>
- </span>
- <button href="#" className="btn z-50" onClick={(event)=>{event.stopPropagation();handleUser(index)}}>
-  Add To Cart
- </button>
-</div>
-
- </li>
-        ))}
-       
-        
-        </ul>
-       
-    </div> {automatic && chronograph && (
-     
-    <span className='flex justify-center mb-12 mt-2'>
-          
-          <button onClick={
-            
-          ()=>{
-            setFvalue();
-            if(chronograph){
-              setSmart(false);
-              setHybrid(false);
-              setDigital(false);
-              setAnalog(false);
-              setAutomatic(false);
-            } else{
-              setSmart(false);
-              setHybrid(false);
-              setChronograph(true);
-              setDigital(false);
-              setAutomatic(false);
-              setAnalog(false);
-            }
-
-          }} 
-           className="btn m-auto">View All</button>
-          </span> )} 
-          </div> 
-            )}
           </div>
       <Footer/>
     </div>

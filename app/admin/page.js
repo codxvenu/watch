@@ -90,6 +90,7 @@ function AddWatch() {
               <option  className='bg-[#121212]' value="hybrid">Hybrid</option>
               <option  className='bg-[#121212]' value="chronograph">Chronograph</option>
               <option  className='bg-[#121212]' value="bestseller">Best Seller</option>
+              <option  className='bg-[#121212]' value="wall-clocks">Wall clocks</option>
             </select>
           </div>
           <div className="mb-5">

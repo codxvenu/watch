@@ -149,6 +149,7 @@ function page() {
               setHybrid(false);
               setChronograph(false);
               setDigital(false);
+              setAnalog(false);
               
              } else{
               setSmart(false);
@@ -156,6 +157,7 @@ function page() {
               setChronograph(false);
               setDigital(false);
               setAutomatic(true);
+              setAnalog(false);
             }
 
           }}
@@ -197,7 +199,7 @@ function page() {
         </ul>   
        
     </div>
- {analog && (
+ {analog && chronograph && (
 
 
     <span className='flex justify-center mb-3 mt-2'>
@@ -210,6 +212,7 @@ function page() {
               setHybrid(false);
               setChronograph(false);
               setDigital(false);
+              setAutomatic(false);
               
               
              } else{
@@ -269,12 +272,14 @@ function page() {
               setChronograph(false);
               setSmart(false);
               setAutomatic(false);
+              setAnalog(false);
             }else{
               setSmart(false);
               setHybrid(false);
               setChronograph(false);
               setDigital(true);
               setAutomatic(false);
+              setAnalog(false);
             }
 
           }}  className="btn m-auto">View All</button>
@@ -320,12 +325,14 @@ function page() {
               setChronograph(false);
               setDigital(false);
               setAutomatic(false);
+              setAnalog(false);
             } else{
               setSmart(true);
               setHybrid(false);
               setChronograph(false);
               setDigital(false);
               setAutomatic(false);
+              setAnalog(false);
             }
 
           }}  className="btn m-auto">View All</button>
@@ -371,11 +378,13 @@ function page() {
               setChronograph(false);
               setDigital(false);
               setAutomatic(false);
+              setAnalog(false);
             }else{
               setSmart(false);
               setHybrid(true);
               setChronograph(false);
               setDigital(false);
+              setAnalog(false);
               setAutomatic(false);
             }
 
@@ -426,12 +435,14 @@ function page() {
               setHybrid(false);
               setDigital(false);
               setAutomatic(false);
+              setAnalog(false);
             } else{
               setSmart(false);
               setHybrid(false);
               setChronograph(true);
               setDigital(false);
               setAutomatic(false);
+              setAnalog(false);
             }
 
           }} 
