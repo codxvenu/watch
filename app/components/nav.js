@@ -84,7 +84,7 @@ function nav() {
           <li className={currentPage==="home" ? "bg-[black]":"bg-transparent"}><a href="/home">Home</a></li>
           <li className={currentPage==="men" ? "bg-[black]":"bg-transparent"}><a href="/men">Men</a></li>
           <li className={currentPage==="women" ? "bg-[black]":"bg-transparent"}><a href="/women">Women</a></li>
-          <li><a href="/wall-clocks">Wall Clocks</a></li>
+          <li><a href="/wall-clock">Wall Clocks</a></li>
           {/* <li><a href="/contact">Contact</a></li> */}
         </ul>
         <h1 >Watch Shree</h1>
