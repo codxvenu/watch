@@ -16,11 +16,11 @@ li .content .btn{
     padding: 10px 20px;
     border: 2px solid #ffffffbf;
     background: #121212;
-    color: white;
+    color: #fff;
     cursor: pointer;
     margin-top: 10px;
     text-transform: uppercase;
-    width: 100%;
+    width: 230px;
 }
 .content{
     text-decoration: none;
