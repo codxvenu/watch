@@ -86,4 +86,7 @@ li .content .btn{
     .mn-w ul li{
         width: 155px;
     }
+    li .content .btn{
+        width: 100%;
+    }
 }

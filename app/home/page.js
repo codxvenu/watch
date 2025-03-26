@@ -106,7 +106,7 @@ useEffect(()=>{
       <h3 className='mb-6'>Best Seller Watches</h3>
       <ul className='grid grid-cols-4 w-[87%] gap-2' >
         {watches.filter(watch =>watch.gender==="men" && watch.type ==="bestseller").slice(0,4).map((watch,index)=>(
- <li className='flex flex-col justify-center items-center w-[230px] h-[230px]' key={watch.id} onClick={()=>{handleProduct(index);}}>
+ <li className='flex flex-col justify-center items-center max-xl:w-[230px] max-xl:h-[230px]' key={watch.id} onClick={()=>{handleProduct(index);}}>
  <img src={watch.img} className='mb-3 w-[213px] h-[213px]' alt="" />
 <div className="content p-2">
 
@@ -165,7 +165,7 @@ useEffect(()=>{
       <h3 className='mb-6'>Best Seller Watches </h3>
       <ul className='grid gap-2 grid-cols-5 max-sm:grid-cols-2 ' >
         {watches.filter(watch => watch.gender==="women" && watch.type ==="bestseller").slice(0,5).map((watch,index)=>(
- <li className='flex flex-col justify-center items-center w-[230px] h-[230px]' key={watch.id} onClick={()=>{handleProduct(index);}}>
+          <li className='flex flex-col justify-center items-center max-xl:w-[230px] max-xl:h-[230px]' key={watch.id} onClick={()=>{handleProduct(index);}}>
  <img src={watch.img} className='mb-3 w-[213px] h-[213px]' alt="" />
 <div className="content p-2">
 
