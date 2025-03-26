@@ -93,8 +93,8 @@ useEffect(()=>{
     <div className={nav? ' text-white bg-[#121212] hidden':' text-white bg-[#121212]'}>
       <div className='flex mb-10'>
 
-      <img className='w-[50%] h-[420px] bg-contain blur-sm' src="https://www.punkstore.in/cdn/shop/files/D19B382B-6D5F-4D8B-948D-7CC488225E0B.jpg?v=1733584510" alt="" width={1440}/>
-      <img className='w-[50%] h-[420px] blur-sm' src="https://www.punkstore.in/cdn/shop/files/3C9EDCBC-232F-4B65-90DD-C6C38EF0B110.jpg?v=1735656418" alt="" width={1440} />
+      <img className='w-[50%] h-[420px] bg-contain blur-sm' src="https://dsrsrc.site/venu/WhatsApp%20Image%202025-03-26%20at%201.53.38%20PM.jpeg" alt="" width={1440}/>
+      <img className='w-[50%] h-[420px] blur-sm' src="https://dsrsrc.site/venu/WhatsApp%20Image%202025-03-26%20at%201.51.47%20PM.jpeg" alt="" width={1440} />
       <div className="context text-center absolute flex justify-center items-center flex-col left-[530px] top-[240px]">
         <h2 className='text-[24px] font-bold'>Get up to 300 off on watches and accessories .</h2>
         <h3 className='text-[16px]'>100% HANDMADE MASK AND SPIKE WATCHES</h3>
