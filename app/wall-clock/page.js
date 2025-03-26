@@ -104,8 +104,8 @@ function page() {
         <div>
       
       <div className='ml-[159px] px-12 mt-10 mn-w'>
-      <h1 className='mb-3'>AUTOMATIC WATCH</h1>
-      <h3 className='mb-6'>Some lost vintage watches</h3>
+      <h1 className='mb-3'>AUTOMATIC CLOCKS</h1>
+      <h3 className='mb-6'>Some lost vintage CLOCKS</h3>
     <ul className='grid gap-2 grid-cols-4 max-sm:grid-cols-2 w-[87%]' >
        
 
@@ -161,8 +161,8 @@ function page() {
         <div>
       
       <div className='ml-[159px] px-12 mt-10 mn-w'>
-      <h1 className='mb-3'>ANALOG WATCH</h1>
-      <h3 className='mb-6'>Some lost vintage watches</h3>
+      <h1 className='mb-3'>ANALOG CLOCKS</h1>
+      <h3 className='mb-6'>Some lost vintage CLOCKS</h3>
     <ul className='grid gap-2 grid-cols-4 max-sm:grid-cols-2 w-[87%]' >
        
 
@@ -220,8 +220,8 @@ function page() {
 <div>
 
       <div className='ml-[159px] px-12 mt-10 mn-w'>
-      <h1 className='mb-3'>DIGITAL WATCH</h1>
-      <h3 className='mb-6'>Some lost vintage watches</h3>
+      <h1 className='mb-3'>DIGITAL CLOCKS</h1>
+      <h3 className='mb-6'>Some lost vintage CLOCKS</h3>
       <ul className='grid gap-2 grid-cols-4 max-sm:grid-cols-2 w-[87%]' >
         {watches.filter(watch => watch.type ==="digital" && watch.gender === "wall-clocks").slice(0,fvalue).map((watch,index)=>(
  <li className='w-213px h-371px' key={watch.id} onClick={()=>{handleProduct(watch);}}>
