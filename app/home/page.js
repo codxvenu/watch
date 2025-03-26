@@ -96,14 +96,14 @@ useEffect(()=>{
       <img className='w-[50%] h-[420px] bg-contain blur-sm' src="https://dsrsrc.site/venu/WhatsApp%20Image%202025-03-26%20at%201.53.38%20PM.jpeg" alt="" width={1440}/>
       <img className='w-[50%] h-[420px] blur-sm' src="https://dsrsrc.site/venu/WhatsApp%20Image%202025-03-26%20at%201.51.47%20PM.jpeg" alt="" width={1440} />
       <div className="context text-center absolute flex justify-center items-center flex-col left-[530px] top-[240px]">
-        <h2 className='text-[24px] font-bold'>Get up to 300 off on watches and accessories .</h2>
-        <h3 className='text-[16px]'>100% HANDMADE MASK AND SPIKE WATCHES</h3>
+        <h2 className='text-[24px] font-bold'>MAKE A REEL WITH OUR WATCH & GET 50% CASHBACK free .</h2>
+        <h3 className='text-[16px]'>STRONG IN BUILD, STYLISH IN LOOK </h3>
         <button className='btn bg-[transparent!important]'>Shop now</button>
       </div>
       </div>
       <div className='ml-[159px] px-12 mn-w'>
       <h1 className='mb-3'>Mens Watches</h1>
-      <h3 className='mb-6'>Some lost vintage watches</h3>
+      <h3 className='mb-6'>Some vintage watches</h3>
       <ul className='grid grid-cols-4 w-[87%] gap-2' >
         {watches.slice(0,4).filter(watch => watch.type ==="vintage").map((watch,index)=>(
  <li className='w-[213px] h-[371px] z-20' key={watch.id} onClick={()=>{
