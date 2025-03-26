@@ -84,6 +84,7 @@ function AddWatch() {
             <select name="category" value={formData.category} onChange={handleChange} className="mr-2.5 mb-2 h-full min-h-[44px] w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-sm font-medium text-zinc-950 placeholder:text-zinc-400 focus:outline-0 dark:border-zinc-800 dark:bg-transparent dark:text-white dark:placeholder:text-zinc-400">
               <option  className='bg-[#121212]' value="">Select Category</option>
               <option  className='bg-[#121212]' value="automatic">Automatic</option>
+              <option  className='bg-[#121212]' value="analog">Analog</option>
               <option  className='bg-[#121212]' value="smart">Smart</option>
               <option  className='bg-[#121212]' value="digital">Digital</option>
               <option  className='bg-[#121212]' value="hybrid">Hybrid</option>

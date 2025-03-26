@@ -12,6 +12,7 @@ function page() {
     const [smart , setSmart] = useState(true)
     const [hybrid , setHybrid] = useState(true)
     const [chronograph , setChronograph] = useState(true)
+    const [analog , setAnalog] = useState(true)
     const [fvalue, setFvalue] = useState(6)
     const { nav } = useUser();
     const handleWatches = ()=>{
@@ -155,6 +156,69 @@ function page() {
               setChronograph(false);
               setDigital(false);
               setAutomatic(true);
+            }
+
+          }}
+         className="btn m-auto">View All</button>
+          </span>   
+           )}
+          </div>
+             )}
+      {analog && (
+        <div>
+      
+      <div className='ml-[159px] px-12 mt-10 mn-w'>
+      <h1 className='mb-3'>ANALOG WATCH</h1>
+      <h3 className='mb-6'>Some lost vintage watches</h3>
+    <ul className='grid gap-2 grid-cols-4 max-sm:grid-cols-2 w-[87%]' >
+       
+
+      
+        {watches.filter(watch => watch.type ==="analog" && watch.gender === "men" ).slice(0,fvalue).map((watch,index)=>(
+ <li className='w-213px h-371px' key={watch.id} onClick={()=>{handleProduct(watch);}}>
+ <img src={watch.img} className='mb-3 w-[213px] h-[213px]' alt="" />
+<div className="content p-2">
+
+ <h4 className='text-[13px]'>{watch.name}</h4>
+ <small className='text-[10px] text-[#ffffffbf] mt-2'>Watch Shree</small>
+ <span className='flex gap-4 items-center mt-2'>
+
+ <h4 className='text-[13px] line-through'>Rs.{watch.oprice}</h4><h3>Rs.{watch.dprice}</h3>
+ </span>
+ <button href="#" className="btn z-50" onClick={(event)=>{event.stopPropagation();handleUser(index)}}>
+  Add To Cart
+ </button>
+</div>
+
+ </li>
+        ))}
+       
+   
+        </ul>   
+       
+    </div>
+ {analog && (
+
+
+    <span className='flex justify-center mb-3 mt-2'>
+          
+          <button onClick={
+          ()=>{
+            setFvalue();
+            if(analog){
+              setSmart(false);
+              setHybrid(false);
+              setChronograph(false);
+              setDigital(false);
+              
+              
+             } else{
+              setSmart(false);
+              setHybrid(false);
+              setChronograph(false);
+              setDigital(false);
+              setAutomatic(false);
+              setAnalog(true);
             }
 
           }}
