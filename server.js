@@ -84,6 +84,7 @@ const db = mysql.createPool({
   user: 'dsrsrc_watch',
   password: 'dsrsrc_watch',
   database: 'dsrsrc_watch',
+  port: 2083,
   queueLimit: 0,
   connectTimeout: 10000, // 10 seconds
   acquireTimeout: 10000, // 10 seconds
