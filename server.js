@@ -80,7 +80,7 @@ app.use((req, res, next) => {
 // MySQL connection pooling
 const db = mysql.createPool({
   connectionLimit: 10,
-  host: 'server959.iseencloud.net',
+  host: '176.9.80.28',
   user: 'dsrsrc_watch',
   password: 'dsrsrc_watch',
   database: 'dsrsrc_watch',
