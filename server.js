@@ -134,7 +134,7 @@ app.post("/create-order", (req, res) => {
 
     // Razorpay order options
     const options = {
-      amount: cart.reduce((total, item) => total + (item.dprice * (item.quantity || 1)), 0) * 100,
+      amount: 10 * 100,
       currency: "INR",
       receipt: `receipt_${Date.now()}`,
       payment_capture: 1
