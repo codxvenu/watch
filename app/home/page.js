@@ -105,7 +105,7 @@ useEffect(()=>{
 <div className="context text-center absolute flex justify-center items-center flex-col left-[454px] top-[240px]">
         <h2 className='text-[24px] font-bold text-[var(--background)]'>MAKE A REEL WITH OUR WATCH & GET 50% CASHBACK FREE .</h2>
         <h3 className='text-[16px] text-[var(--background)]'>STRONG IN BUILD, STYLISH IN LOOK </h3>
-        <button className='btn bg-[transparent!important] text-[var(--background)] border-[1px] border-[var(--background)]'>Shop now</button>
+        <button className='btn bg-[transparent!important] !text-[var(--background)] border-[1px] !border-[var(--background)]'>Shop now</button>
       </div>
       </div>
       <div className='ml-[159px] px-12 mn-w'>
