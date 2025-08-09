@@ -106,10 +106,10 @@ function checkout() {
   },[])
   return (
     <div>
-       <Script
+       {/* <Script
       src="https://checkout.razorpay.com/v1/checkout.js"
       strategy="beforeInteractive"
-    />
+    /> */}
       <Nav/>
       <div className="main-checkout-menu flex justify-center ">
       <div className="personal_details w-1/2 pt-[6rem] overflow-y-auto">
