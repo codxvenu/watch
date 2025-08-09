@@ -11,7 +11,7 @@ nav{
 }
 ul li:hover{
     text-decoration: underline;
-    color: white;
+    color : var(--text);
 }
 nav h1{
     font-size: 24px;
@@ -59,7 +59,7 @@ a{
     opacity: 0;
     width: 0;
     visibility: hidden;
-    color: whitesmoke;
+    color : var(--text)smoke;
 }
 
 .search-hovers {

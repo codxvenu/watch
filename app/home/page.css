@@ -16,7 +16,7 @@ li .content .btn{
     padding: 10px 20px;
     border: 2px solid #ffffffbf;
     background: var(--background);
-    color: white;
+    color : var(--text);
     cursor: pointer;
     margin-top: 10px;
     text-transform: uppercase;
