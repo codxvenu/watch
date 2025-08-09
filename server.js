@@ -118,7 +118,7 @@ app.post("/create-order", (req, res) => {
   if (!cart || !Array.isArray(cart) || cart.length === 0) {
     return res.status(400).json({ error: "Cart is empty" });
   }
-
+  const total = cart.reduce((total, item) => total + (item.dprice * item.quantity), 0) * 100
   // Fetch user_id from DB based on username
   db.query(`SELECT id FROM users WHERE username=?`, [username], (err, userResults) => {
     if (err) {
@@ -169,34 +169,42 @@ app.post("/create-order", (req, res) => {
 
 
 // ✅ Verify Payment API
-app.post("/verify-payment", async (req, res) => {
-  try {
-    const { order_id, payment_id, signature } = req.body;
+app.post("/verify-payment", (req, res) => {
+  const { order_id, payment_id, signature } = req.body;
 
-    // Generate expected signature
-    const expectedSignature = crypto
-      .createHmac("sha256", razorpay.key_secret)
-      .update(order_id + "|" + payment_id)
-      .digest("hex");
+  // Generate expected signature
+  const expectedSignature = crypto
+    .createHmac("sha256", razorpay.key_secret)
+    .update(order_id + "|" + payment_id)
+    .digest("hex");
 
-    if (expectedSignature === signature) {
-      await db.query(
-        `UPDATE payments SET payment_id=?, status='paid' WHERE order_id=?`,
-        [payment_id, , order_id]
-      );
-      res.json({ status: "success" });
-    } else {
-      await db.query(
-        `UPDATE payments SET status='failed' WHERE order_id=?`,
-        [order_id]
-      );
-      res.status(400).json({ status: "failed" });
-    }
-  } catch (err) {
-    console.error(err);
-    res.status(500).send("Error verifying payment");
+  if (expectedSignature === signature) {
+    db.query(
+      `UPDATE payments SET payment_id=?, status='paid' WHERE razorpay_order_id=?`,
+      [payment_id, order_id],
+      (err, result) => {
+        if (err) {
+          console.error(err);
+          return res.status(500).send("Error verifying payment");
+        }
+        res.json({ status: "success" });
+      }
+    );
+  } else {
+    db.query(
+      `UPDATE payments SET status='failed' WHERE razorpay_order_id=?`,
+      [order_id],
+      (err, result) => {
+        if (err) {
+          console.error(err);
+          return res.status(500).send("Error verifying payment");
+        }
+        res.status(400).json({ status: "failed" });
+      }
+    );
   }
 });
+
 
 app.post("/api/upload", upload.single("file"), async (req, res) => {
   try {
@@ -419,7 +427,7 @@ app.post("/api/addcart", (req, res) => {
       return res.status(500).send({ message: 'Database Query Failed' });
   }
   if(results.length > 0){
-    db.query('UPDATE cart SET quantity = quantity +? WHERE id =?', [item.quantity, results[0].id], (err, result) => {
+    db.query('UPDATE cart SET quantity = quantity + ? WHERE id =?', [item.quantity, results[0].id], (err, result) => {
       if (err) {
         console.error('Database Error:', err);
         return res.status(500).send({ message: 'Database Update Failed' });
@@ -427,7 +435,7 @@ app.post("/api/addcart", (req, res) => {
       res.send({ message: 'Quantity Updated' });
     });
   }else{
-    db.query('INSERT INTO cart(name,img,oprice,dprice,description,type,username) values(?,?,?,?,?,?,?)', [item.name,item.img,item.oprice,item.dprice,item.description,item.type,username], (err, result) => {
+    db.query('INSERT INTO cart(name,img,oprice,dprice,description,type,username,quantity) values(?,?,?,?,?,?,?,1)', [item.name,item.img,item.oprice,item.dprice,item.description,item.type,username], (err, result) => {
       if (err) {
         console.error('Database Error:', err);
         return res.status(500).send({ message: 'Database Insert Failed' });
