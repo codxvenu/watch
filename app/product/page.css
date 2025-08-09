@@ -7,6 +7,7 @@
     letter-spacing: .1rem;
     line-height: 1;
     word-break: break-word;
+    color: var(--background);
 }
  .add-cart{
     display: inline-flex;
@@ -21,7 +22,7 @@
         width: 438px;
         word-spacing: 6px;
         text-decoration: none;
-        color: #121212;
+        color: var(--background);
         transition: box-shadow var(--duration-short) ease;
         -webkit-appearance: none;
         appearance: none;
