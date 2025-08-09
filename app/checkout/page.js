@@ -1,3 +1,4 @@
+"use client"
 import {React,useEffect, useState} from 'react'
 import Nav from '../components/nav'
 import { application } from 'express';
@@ -264,7 +265,7 @@ function checkout() {
             After clicking “Pay now”, you will be redirected to Razorpay Secure (UPI, Cards, Wallets, NetBanking) to complete your purchase securely.
           </p>
         </div>
-        <button className="paynow bg-blue-400 text-[18px] font-extrabold text-white py-2 mt-9 rounded w-[100%]" onClick={()=>handlePayment}>
+        <button className="paynow bg-blue-400 text-[18px] font-extrabold text-white py-2 mt-9 rounded w-[100%]" onClick={handlePayment}>
           Pay Now
         </button>
       </div>
