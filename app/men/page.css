@@ -9,14 +9,14 @@ ul li:hover{
 }
 ul{
     list-style-type: none;
-    padding: 0;
+    padding: 0; 
     margin: 0;
 }
 li .content .btn{
     padding: 10px 20px;
     border: 2px solid #ffffffbf;
-    background: #121212;
-    color: #fff;
+    background: var(--background);
+    color: var(--text);
     cursor: pointer;
     margin-top: 10px;
     text-transform: uppercase;

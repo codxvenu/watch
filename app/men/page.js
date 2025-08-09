@@ -35,7 +35,7 @@ function page() {
       },[watches])
       const handleProduct = (watch)=>{
     
-        localStorage.setItem('product',JSON.stringify(watch))
+        localStorage.setItem('product',JSON.stringify(watches[watch]))
         window.location.href = "/product";
       }
 

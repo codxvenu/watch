@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 body {
-  background: #121212;
+  background: var(--background);
   font-family:var(--font-assistant), sans-serif;
+}
+:root{
+  --background : White;
+  --text : #333;
 }
