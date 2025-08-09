@@ -99,7 +99,7 @@ useEffect(()=>{
   muted
   loop
   className="w-full h-[420px] blur-sm"
-  src="https://nocash.cc/venu/878691467923791872_resize-8216801%20(1).mp4"
+  src="878691467923791872_resize-8216801%20(1).mp4"
   style={{ objectFit: "cover" }}
 ></video>
 <div className="context text-center absolute flex justify-center items-center flex-col left-[454px] top-[240px]">
