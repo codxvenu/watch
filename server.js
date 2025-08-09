@@ -118,7 +118,9 @@ app.post("/create-order", (req, res) => {
   if (!cart || !Array.isArray(cart) || cart.length === 0) {
     return res.status(400).json({ error: "Cart is empty" });
   }
-  const total = cart.reduce((total, item) => total + (item.dprice * item.quantity), 0) * 100
+  const total = cart.reduce((total, item) => total + (item.dprice * item.quantity), 0)
+  console.log(total);
+  
   // Fetch user_id from DB based on username
   db.query(`SELECT id FROM users WHERE username=?`, [username], (err, userResults) => {
     if (err) {
