@@ -1,6 +1,7 @@
 import {React,useEffect, useState} from 'react'
 import Nav from '../components/nav'
 import { application } from 'express';
+import Script from "next/script";
 function checkout() {
   const[cart,setCart] = useState([]);
   const [formValues, setFormValues] = useState({
@@ -104,6 +105,10 @@ function checkout() {
   },[])
   return (
     <div>
+       <Script
+      src="https://checkout.razorpay.com/v1/checkout.js"
+      strategy="beforeInteractive"
+    />
       <Nav/>
       <div className="main-checkout-menu flex justify-center ">
       <div className="personal_details w-1/2 pt-[6rem] overflow-y-auto">
