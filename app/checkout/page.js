@@ -9,7 +9,7 @@ function checkout() {
      
       <div className="personal_details pl-[159px] overflow-y-auto">
        
-<div className="bg-[var(--background)] text-[#ffffffbf] shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2 border-r-[0.25px] border-[#121212]">
+<div className="bg-[var(--background)] text-[var(--border)] shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2 border-r-[0.25px] border-[#121212]">
 <h1 className='mb-5 text-[18px] text-[var(--text)]' >Personal Details</h1>
   <div className="-mx-3 md:flex mb-6">
     <div className="md:w-1/2 px-3 mb-6 md:mb-0">
@@ -83,8 +83,8 @@ function checkout() {
   <div className="payment-method">
   
   <h1 className='mt-2 text-[18px] text-[var(--text)]'> Payment</h1>
-  <small className='text-[#ffffffbf]'>All transactions are secure and encrypted.</small>
-  <div className='border-[1px] border-[#ffffffbf] border-t-[#5f91ed] rounded'>
+  <small className='text-[var(--border)]'>All transactions are secure and encrypted.</small>
+  <div className='border-[1px] border-[var(--border)] border-t-[#5f91ed] rounded'>
     <span className='border-[2px] border-[#5f91ed] flex mb-2 p-4'>
 
     <h1 className='flex gap-2'>Razorpay Secure (UPI, Cards, Wallets, NetBanking) <div className="flex"><img alt="upi" src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/upi.CmgCfll8.svg" role="img" width="38" height="24" /><img alt="visa" src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/visa.sxIq5Dot.svg" role="img" width="38" height="24" /><img alt="master" src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/master.CzeoQWmc.svg" role="img" width="38" height="24" /><div ><img alt="netbanking" src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/netbanking.C9e9yzjv.svg" role="img" width="38" height="24" /></div></div></h1>
@@ -122,20 +122,20 @@ function checkout() {
     </span>
     <span className='mt-5 flex gap-5 mb-5'>
 
-   <input type="text" placeholder='Discount Code'  className='w-[320px] rounded bg-transparent border-[1px] text-[#ffffffbf] p-2'/>
+   <input type="text" placeholder='Discount Code'  className='w-[320px] rounded bg-transparent border-[1px] text-[var(--border)] p-2'/>
    <button className="apply rounded bg-[#3885ff] py-3 px-5">Apply</button>
     </span>
     <div className="context-checkout grid grid-cols-2 grid-rows-4">
         <h1 className='text-[17px] font-bold'>Subtotal · 5 items</h1>
         <h1 className='text-[17px] font-bold'>₹22,700.00</h1>
         <h2 className='text-[17px] font-bold'>Shipping</h2>
-        <h2 className='text-[17px] font-bold text-[#ffffffbf]'>Enter shipping address</h2>
+        <h2 className='text-[17px] font-bold text-[var(--border)]'>Enter shipping address</h2>
         <h3 className='text-[22px] font-extrabold'>Total</h3>
-        <h3 className='font-extrabold text-[22px]'><span className='font-normal text-[14px] text-[#ffffffbf]'>INR</span>
+        <h3 className='font-extrabold text-[22px]'><span className='font-normal text-[14px] text-[var(--border)]'>INR</span>
 ₹22,700.00
 
 </h3>
-<small className='text-[15px] font-bold text-[#ffffffbf]'>Including ₹538.10 in taxes</small>
+<small className='text-[15px] font-bold text-[var(--border)]'>Including ₹538.10 in taxes</small>
     </div>
     </div>
 </div>

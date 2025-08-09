@@ -131,7 +131,7 @@ function cart() {
         <small className='underline max-sm:text-[14px] text-[16px]'>Continue Shopping</small>
             </span>
            <table>
-            <thead className='text-[#ffffffbf] text-[13px]'>
+            <thead className='text-[var(--border)] text-[13px]'>
                 <tr>
 
                 <th className='w-[60%] text-start'>Product</th>
@@ -167,9 +167,9 @@ function cart() {
                     
                     <span className="flex">
 
-<button className="btn-add pl-3 text-[var(--text)] text-[1.2rem] bg-[var(--background)] border-t-2 border-l-2 border-b-2 border-[#ffffffbf] rounded-s pr-10 mt-4 h-[42px]" onClick={()=>{count_dec(index,item.name)}}>-</button>
-<span className="bg-[var(--background)] border-b-2 border-t-2 text-[var(--text)] border-[#ffffffbf] text-[1.2rem] h-[42.2px] text-center items-center flex mt-4">{item.quantity}</span>
-<button className="btn-remove text-[var(--text)] text-[1.2rem] bg-[var(--background)] pr-3 border-t-2 border-r-2 border-b-2 border-[#ffffffbf] rounded-e pl-10 mt-4 h-[42px]" onClick={()=>{count_inc(index,item.name)}}>+</button>
+<button className="btn-add pl-3 text-[var(--text)] text-[1.2rem] bg-[var(--background)] border-t-2 border-l-2 border-b-2 border-[var(--border)] rounded-s pr-10 mt-4 h-[42px]" onClick={()=>{count_dec(index,item.name)}}>-</button>
+<span className="bg-[var(--background)] border-b-2 border-t-2 text-[var(--text)] border-[var(--border)] text-[1.2rem] h-[42.2px] text-center items-center flex mt-4">{item.quantity}</span>
+<button className="btn-remove text-[var(--text)] text-[1.2rem] bg-[var(--background)] pr-3 border-t-2 border-r-2 border-b-2 border-[var(--border)] rounded-e pl-10 mt-4 h-[42px]" onClick={()=>{count_inc(index,item.name)}}>+</button>
 </span><svg xmlns="http://www.w3.org/2000/svg"  onClick={()=>{handleRemove(item.id)}} className="icon icon-remove w-[20px] h-[20px] mt-3" viewBox="0 0 16 16"><path fill="var(--text)" d="M14 3h-3.53a3.07 3.07 0 0 0-.6-1.65C9.44.82 8.8.5 8 .5s-1.44.32-1.87.85A3.06 3.06 0 0 0 5.53 3H2a.5.5 0 0 0 0 1h1.25v10c0 .28.22.5.5.5h8.5a.5.5 0 0 0 .5-.5V4H14a.5.5 0 0 0 0-1M6.91 1.98c.23-.29.58-.48 1.09-.48s.85.19 1.09.48c.2.24.3.6.36 1.02h-2.9c.05-.42.17-.78.36-1.02m4.84 11.52h-7.5V4h7.5z"></path><path fill="var(--text)" d="M6.55 5.25a.5.5 0 0 0-.5.5v6a.5.5 0 0 0 1 0v-6a.5.5 0 0 0-.5-.5m2.9 0a.5.5 0 0 0-.5.5v6a.5.5 0 0 0 1 0v-6a.5.5 0 0 0-.5-.5"></path></svg>
                     </span> </td>
                     <td className="tracking-[3px] text-end text-[18px] td-3">
@@ -180,7 +180,7 @@ function cart() {
             </tbody> )}
            </table>
       </div>
-      <div className={nav? "checkout_box text-[#ffffffbf] max-sm:p-[14px] mb-16 ml-[auto] mr-[159px] w-[350px] flex-col justify-end hidden" : "checkout_box text-[#ffffffbf] max-sm:p-[14px] mb-16 ml-[auto] mr-[159px] w-[350px] flex flex-col justify-end" }>
+      <div className={nav? "checkout_box text-[var(--border)] max-sm:p-[14px] mb-16 ml-[auto] mr-[159px] w-[350px] flex-col justify-end hidden" : "checkout_box text-[var(--border)] max-sm:p-[14px] mb-16 ml-[auto] mr-[159px] w-[350px] flex flex-col justify-end" }>
         <span className="flex gap-5 mb-3 justify-end"><h1 className="text-[var(--text)]">Estimated total</h1><h1 className="tracking-[3px] text-[18px]">Rs. {total}</h1></span>
         <small className="flex justify-end w-[100%] ml-[auto] max-sm:text-center text-end text-[16px]">Taxes included. Discounts and shipping calculated at checkout.</small>
         <button className="checkout max-sm:w-[330px] bg-white text-black w-[348px] h-[45px] rounded mt-4">

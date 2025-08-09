@@ -10,7 +10,7 @@
 }
 .btn{
     padding: 10px 20px;
-    border: 2px solid #ffffffbf;
+    border: 2px solid var(--border);
     background: var(--background);
     color : var(--text);
     cursor: pointer;

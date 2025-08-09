@@ -122,7 +122,7 @@ function product() {
             <div className="img">
     <img className="h-[500px] w-[495px] rounded" src={item.img  } alt="" />
             </div>
-            <div className="content-product text-[#ffffffbf] w-[605px]">
+            <div className="content-product text-[var(--border)] w-[605px]">
                 <h1 className="max-sm:text-[30px] text-[40px] capitalize">{item.name}</h1>
                 <p className="text-[16px] my-6 capitalize">description : {item.description}
                 </p>
@@ -135,9 +135,9 @@ function product() {
                     <small className="text-[15px] capitalize ">quantity</small>
                     <span className="flex">
 
-                    <button className="btn-add pl-3 text-[var(--text)] text-[1.2rem] bg-[var(--background)] border-t-2 border-l-2 border-b-2 border-[#ffffffbf] rounded-s pr-10 mt-4 h-[42px]" onClick={()=>{count_dec()}}>-</button>
-                    <span className="bg-[var(--background)] border-b-2 border-t-2 text-[var(--text)] border-[#ffffffbf] text-[1.2rem] h-[42.2px] text-center items-center flex mt-4">{quantity}</span>
-                    <button className="btn-remove text-[var(--text)] text-[1.2rem] bg-[var(--background)] pr-3 border-t-2 border-r-2 border-b-2 border-[#ffffffbf] rounded-e pl-10 mt-4 h-[42px]" onClick={()=>{count_inc()}}>+</button>
+                    <button className="btn-add pl-3 text-[var(--text)] text-[1.2rem] bg-[var(--background)] border-t-2 border-l-2 border-b-2 border-[var(--border)] rounded-s pr-10 mt-4 h-[42px]" onClick={()=>{count_dec()}}>-</button>
+                    <span className="bg-[var(--background)] border-b-2 border-t-2 text-[var(--text)] border-[var(--border)] text-[1.2rem] h-[42.2px] text-center items-center flex mt-4">{quantity}</span>
+                    <button className="btn-remove text-[var(--text)] text-[1.2rem] bg-[var(--background)] pr-3 border-t-2 border-r-2 border-b-2 border-[var(--border)] rounded-e pl-10 mt-4 h-[42px]" onClick={()=>{count_inc()}}>+</button>
                     </span>
                     <button className=" add-cart rounded " onClick={()=>{
                       handleUser();
@@ -166,7 +166,7 @@ function product() {
        <div className="content p-2">
 
         <h4 className='text-[13px]'>{watch.name}</h4>
-        <small className='text-[10px] text-[#ffffffbf] mt-2'>Watch Shree</small>
+        <small className='text-[10px] text-[var(--border)] mt-2'>Watch Shree</small>
         <span className='flex gap-4 items-center mt-2'>
 
         <h4 className='text-[13px] line-through'>Rs.{watch.oprice}</h4><h3>Rs.{watch.dprice}</h3>

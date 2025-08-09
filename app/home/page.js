@@ -111,7 +111,7 @@ useEffect(()=>{
 <div className="content p-2">
 
  <h4 className='text-[13px]'>{watch.name}</h4>
- <small className='text-[10px] text-[#ffffffbf] mt-2'>Watch Shree</small>
+ <small className='text-[10px] text-[var(--border)] mt-2'>Watch Shree</small>
  <span className='flex gap-4 items-center mt-2'>
 
  <h4 className='text-[13px] line-through'>Rs.{watch.oprice}</h4><h3>Rs.{watch.dprice}</h3>
@@ -170,7 +170,7 @@ useEffect(()=>{
 <div className="content p-2">
 
  <h4 className='text-[13px]'>{watch.name}</h4>
- <small className='text-[10px] text-[#ffffffbf] mt-2'>Watch Shree</small>
+ <small className='text-[10px] text-[var(--border)] mt-2'>Watch Shree</small>
  <span className='flex gap-4 items-center mt-2'>
 
  <h4 className='text-[13px] line-through'>Rs.{watch.oprice}</h4><h3>Rs.{watch.dprice}</h3>

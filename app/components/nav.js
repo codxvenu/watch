@@ -66,7 +66,7 @@ function nav() {
             <a href="https://www.facebook.com/share/1A2b6jvM87/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"/></svg></a>
             </div>
             <p className='text-[var(--text)] text-[13px] m-l-[110px]'>Use code "Shree25" and get free shipping on first order</p>
-            <button className='text-[#ffffffbf]  '><span className='text-[13px]'>India | INR ₹</span></button>
+            <button className='text-[var(--border)]  '><span className='text-[13px]'>India | INR ₹</span></button>
         </div>
       <nav className='border-b-[#ffffff14] border-b-[0.25px]'>
         {nav && (
@@ -81,9 +81,9 @@ function nav() {
       )} 
        
         <ul className={nav? "links flex":"links  max-sm:hidden"}>
-          <li className={currentPage==="home" ? "bg-[black]":"bg-transparent"}><a href="/home">Home</a></li>
-          <li className={currentPage==="men" ? "bg-[black]":"bg-transparent"}><a href="/men">Men</a></li>
-          <li className={currentPage==="women" ? "bg-[black]":"bg-transparent"}><a href="/women">Women</a></li>
+          <li ><a href="/home">Home</a></li>
+          <li ><a href="/men">Men</a></li>
+          <li><a href="/women">Women</a></li>
           <li><a href="/wall-clock">Wall Clocks</a></li>
           {/* <li><a href="/contact">Contact</a></li> */}
         </ul>

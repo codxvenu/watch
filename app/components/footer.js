@@ -4,7 +4,7 @@ import { useUser } from "../context/UserContext";
 function footer() {
   const { nav } = useUser();
   return (
-    <div className={nav? "bg-[var(--background)] text-[#ffffffbf] hidden mt-[35px];" :"bg-[var(--background)] text-[#ffffffbf] mt-[35px]"}>
+    <div className={nav? "bg-[var(--background)] text-[var(--border)] hidden mt-[35px];" :"bg-[var(--background)] text-[var(--border)] mt-[35px]"}>
       <div className="content max-sm:mt-[40px] text-center">
         <h1>Why Buy in USD when you can buy in rupees !</h1>
         <h2 className="my-5">"AVAIL ONE TIME FREE REPAIRING FOR WATCHES"</h2>
@@ -96,7 +96,7 @@ function footer() {
       </div>
       <div className="end border-t-[0.25px] border-t-[#ffffff14]">
       
-      <button className='text-[#ffffffbf] flex flex-col  '><span className="mb-3">Country/region</span><span className='text-[13px] border border-white p-3'>India | INR ₹</span></button>
+      <button className='text-[var(--border)] flex flex-col  '><span className="mb-3">Country/region</span><span className='text-[13px] border border-white p-3'>India | INR ₹</span></button>
       <span>© 2025, Watch Shree Store Powered by Codx Venu</span>
       </div>
     </div>

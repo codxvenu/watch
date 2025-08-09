@@ -37,7 +37,7 @@
 }
 li .content .btn{
     padding: 10px 20px;
-    border: 2px solid #ffffffbf;
+    border: 2px solid var(--border);
     background: #121212;
     color : var(--text);
     cursor: pointer;

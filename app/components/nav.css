@@ -32,7 +32,7 @@ ul {
 .icons svg,a svg{
     width: 18px;
     height: 18px;
-    fill: #ffffffbf;
+    fill: var(--border);
 }
 .social{
     padding: 16px 219px 10px;
@@ -113,7 +113,7 @@ a{
     .icons svg, a svg {
         width: 14px;
         height: 14px;
-        fill: #ffffffbf;
+        fill: var(--border);
         margin-left: -5px;
     }
     nav h1{
