@@ -144,16 +144,13 @@ app.post("/create-order", (req, res) => {
       // Save order with user_id
       db.query(
         `INSERT INTO payments 
-        (user_id, order_id, amount, currency, status, customer_name, customer_email, customer_contact) 
-        VALUES (?, ?, ?, ?, 'created', ?, ?, ?)`,
+        (user_id, razorpay_order_id, amount, currency, status) 
+        VALUES (?, ?, ?, ?, 'created')`,
         [
           user_id,
           order.id,
           options.amount,
-          options.currency,
-          `${formData.firstName} ${formData.lastName}`,
-          formData.email,
-          formData.phone
+          options.currency
         ],
         (err, result) => {
           if (err) {
@@ -184,8 +181,8 @@ app.post("/verify-payment", async (req, res) => {
 
     if (expectedSignature === signature) {
       await db.query(
-        `UPDATE payments SET payment_id=?, signature=?, status='paid' WHERE order_id=?`,
-        [payment_id, signature, order_id]
+        `UPDATE payments SET payment_id=?, status='paid' WHERE order_id=?`,
+        [payment_id, , order_id]
       );
       res.json({ status: "success" });
     } else {
