@@ -185,8 +185,8 @@ function cart() {
       <div className={nav? "checkout_box text-[var(--border)] max-sm:p-[14px] mb-16 ml-[auto] mr-[159px] w-[350px] flex-col justify-end hidden" : "checkout_box text-[var(--border)] max-sm:p-[14px] mb-16 ml-[auto] mr-[159px] w-[350px] flex flex-col justify-end" }>
         <span className="flex gap-5 mb-3 justify-end"><h1 className="text-[var(--text)]">Estimated total</h1><h1 className="tracking-[3px] text-[18px]">Rs. {total}</h1></span>
         <small className="flex justify-end w-[100%] ml-[auto] max-sm:text-center text-end text-[16px]">Taxes included. Discounts and shipping calculated at checkout.</small>
-        <button className="checkout max-sm:w-[330px] bg-[var(--text)] text-[var(--background)] w-[348px] h-[45px] rounded mt-4" onClick={()=>router.push("/checkout")}>
-            Check out
+        <button className="checkout max-sm:w-[330px] bg-[var(--text)] text-[var(--background)] w-[348px] h-[45px] rounded mt-4" >
+           <a className="" href="/checkout">Check out</a> 
         </button>
       </div>
       <Footer/>
