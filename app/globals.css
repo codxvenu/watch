@@ -10,5 +10,7 @@ body {
   --background : White;
   --text : #333;
   --border : #1a1814;
-
+}
+a{
+  font-weight: 800;
 }
