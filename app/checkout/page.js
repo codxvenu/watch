@@ -108,7 +108,7 @@ const handlePayment = async () => {
 
     // Now open Razorpay Checkout
     const options = {
-      key: "rzp_live_vM9vYvjqtCEulr",
+      key: "rzp_test_G54BLiUb237Ye8",
       amount: data.amount,
       currency: data.currency,
       name: "Watch Store",

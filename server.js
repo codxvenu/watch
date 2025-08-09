@@ -109,8 +109,8 @@ const handleDisconnect = () => {
 handleDisconnect();
 
 const razorpay = new Razorpay({
-  key_id: "rzp_live_vM9vYvjqtCEulr",
-  key_secret: "e7NLMfYQq08uJcBGOi9nG1Eo"
+  key_id: "rzp_test_G54BLiUb237Ye8",
+  key_secret: "EAivhOX2ag3IJDMi5dKXvS4T"
 });
 app.post("/create-order", (req, res) => {
   const { cart, formData, username } = req.body;
