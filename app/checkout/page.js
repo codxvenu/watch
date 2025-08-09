@@ -43,15 +43,52 @@ function checkout() {
             })
             .catch((error) => console.log("Fetch error:", error));
     };
-    const handlePayment = async () => {
+// ... existing code ...
+const handlePayment = async () => {
   try {
+    // Check if Razorpay is loaded
+    if (typeof window.Razorpay === 'undefined') {
+      alert('Payment system is loading, please wait a moment and try again.');
+      return;
+    }
+
+    // Validate form fields
+    if (!formValues.firstName || !formValues.lastName || !formValues.email || !formValues.phone) {
+      alert('Please fill in all required fields (First Name, Last Name, Email, Phone) before proceeding to payment.');
+      return;
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formValues.email)) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+
+    // Check if cart has items
+    if (cart.length === 0) {
+      alert('Your cart is empty. Please add items before checkout.');
+      return;
+    }
+
+    // Check if user is logged in
     const username = localStorage.getItem("username");
+    if (!username) {
+      alert('Please login to continue with payment.');
+      return;
+    }
+
+    // Show loading state
+    const button = document.querySelector('.paynow');
+    const originalText = button.textContent;
+    button.textContent = 'Creating Order...';
+    button.disabled = true;
 
     const response = await fetch("/create-order", {
       method: "POST",
       body: JSON.stringify({
-        cart: cart, // lowercase key to match backend
-        formData: formValues, // lowercase key to match backend
+        cart: cart,
+        formData: formValues,
         username
       }),
       headers: { "Content-Type": "application/json" }
@@ -61,28 +98,56 @@ function checkout() {
 
     if (!response.ok) {
       console.error("Payment Creation Failed", data.error);
+      alert(`Order creation failed: ${data.error || 'Unknown error occurred'}`);
       return;
     }
+
+    // Reset button state
+    button.textContent = originalText;
+    button.disabled = false;
 
     // Now open Razorpay Checkout
     const options = {
       key: "rzp_live_vM9vYvjqtCEulr",
       amount: data.amount,
       currency: data.currency,
-      name: "Your Store Name",
-      description: "Test Transaction",
+      name: "Watch Store",
+      description: "Watch Purchase",
       order_id: data.id,
       handler: async function (paymentResult) {
-        // Verify payment
-        await fetch("/verify-payment", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            order_id: data.id,
-            payment_id: paymentResult.razorpay_payment_id,
-            signature: paymentResult.razorpay_signature
-          })
-        });
+        try {
+          // Show success message
+          alert('Payment successful! Verifying your payment...');
+          
+          // Verify payment
+          const verifyResponse = await fetch("/verify-payment", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              order_id: data.id,
+              payment_id: paymentResult.razorpay_payment_id,
+              signature: paymentResult.razorpay_signature
+            })
+          });
+          
+          const verifyData = await verifyResponse.json();
+          
+          if (verifyData.status === "success") {
+            alert("🎉 Payment verified successfully! Your order has been placed.");
+            // Clear cart or redirect to success page
+            // You can add logic here to clear cart or redirect
+          } else {
+            alert("⚠️ Payment verification failed. Please contact support with your order ID: " + data.id);
+          }
+        } catch (error) {
+          console.error("Payment verification error:", error);
+          alert("❌ Payment verification failed. Please contact support with your order ID: " + data.id);
+        }
+      },
+      modal: {
+        ondismiss: function() {
+          alert('Payment was cancelled. You can try again.');
+        }
       },
       prefill: {
         name: `${formValues.firstName} ${formValues.lastName}`,
@@ -97,9 +162,23 @@ function checkout() {
 
   } catch (err) {
     console.error("Payment error", err);
+    
+    // Reset button state
+    const button = document.querySelector('.paynow');
+    button.textContent = 'Pay Now';
+    button.disabled = false;
+    
+    // Show user-friendly error message
+    if (err.name === 'TypeError' && err.message.includes('fetch')) {
+      alert('Network error. Please check your internet connection and try again.');
+    } else if (err.name === 'SyntaxError') {
+      alert('Server response error. Please try again or contact support.');
+    } else {
+      alert('An unexpected error occurred. Please try again or contact support.');
+    }
   }
 };
-
+// ... existing code ...
   useEffect(()=>{
       handleCart();
   },[])
