@@ -4,7 +4,7 @@ import Nav from "../components/nav";
 import Footer from "../components/footer";
 import "./page.css"
 import { useUser } from "../context/UserContext";
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 function cart() {
      const[total,setTotal] = useState(0)
      const [carts,setCart] = useState([])
