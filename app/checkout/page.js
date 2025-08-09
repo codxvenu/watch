@@ -14,14 +14,14 @@ function checkout() {
       <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" htmlFor="grid-first-name">
         First Name
       </label>
-      <input className="bg-transparent appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Jane"/>
+      <input className="outline-none bg-transparent appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="grid-first-name" type="text" placeholder="Jane"/>
       <p className="text-red text-xs italic">Please fill out this field.</p>
     </div>
     <div className="md:w-1/2 px-3">
       <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" htmlFor="grid-last-name">
         Last Name
       </label>
-      <input className="bg-transparent appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="Doe"/>
+      <input className="outline-none bg-transparent appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-last-name" type="text" placeholder="Doe"/>
     </div>
   </div>
   <div className="-mx-3 md:flex mb-6">
@@ -29,7 +29,7 @@ function checkout() {
       <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" htmlFor="grid-first-name">
         Password
       </label>
-      <input className="bg-transparent appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="grid-password" type="text" placeholder="************"/>
+      <input className="outline-none bg-transparent appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3" id="grid-password" type="text" placeholder="************"/>
       <p className="text-grey-dark text-xs italic">Make it as long and as crazy as you'd like</p>
    
     </div>
@@ -37,7 +37,7 @@ function checkout() {
       <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" htmlFor="grid-last-name">
        Email
       </label>
-      <input className="bg-transparent appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-email" type="text" placeholder="Email"/>
+      <input className="outline-none bg-transparent appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-email" type="text" placeholder="Email"/>
     </div>
   </div>
 
@@ -46,7 +46,7 @@ function checkout() {
       <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" htmlFor="grid-city">
         City
       </label>
-      <input className="bg-transparent appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-city" type="text" placeholder="Albuquerque"/>
+      <input className="outline-none bg-transparent appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-city" type="text" placeholder="Albuquerque"/>
     </div>
     <div className="md:w-1/2 px-3">
       <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" htmlFor="grid-state">
@@ -58,7 +58,7 @@ function checkout() {
           <option>Missouri</option>
           <option>Texas</option>
         </select>
-        <div className="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
+        <div className="pointer-events-none pin-y pin-r flex items-center px-2 text-grey-darker absolute top-[40%] left-[80%]">
           <svg className="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
         </div>
       </div>
@@ -67,7 +67,7 @@ function checkout() {
       <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" htmlFor="grid-zip">
         Zip
       </label>
-      <input className=" bg-transparent appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-zip" type="text" placeholder="90210"/>
+      <input className="outline-none  bg-transparent appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4" id="grid-zip" type="text" placeholder="90210"/>
     </div>
   </div>
   <div className="-mx-3 md:flex mb-6">
@@ -75,7 +75,7 @@ function checkout() {
       <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" htmlFor="grid-phone">
         Phone
       </label>
-      <input className="bg-transparent appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" id="grid-phone" type="text" placeholder="xxxxxxxxx"/>
+      <input className="outline-none bg-transparent appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" id="grid-phone" type="text" placeholder="xxxxxxxxx"/>
        </div>
   </div>
   <div className="payment-method">
