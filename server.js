@@ -13,7 +13,8 @@ const fs = require("fs");
 const path = require("path");
 const port = 5000;
 const stream = require('stream');
-
+const Razorpay = require("razorpay");
+const crypto = require("crypto");
 
 app.set("trust proxy", 1);
 // Middleware
@@ -108,6 +109,90 @@ const handleDisconnect = () => {
 };
 
 handleDisconnect();
+
+const razorpay = new Razorpay({
+  key_id: "YOUR_KEY_ID",
+  key_secret: "YOUR_KEY_SECRET"
+});
+app.post("/create-order", async (req, res) => {
+  try {
+    const { cart, formData, username } = req.body;
+
+    if (!cart || !Array.isArray(cart) || cart.length === 0) {
+      return res.status(400).json({ error: "Cart is empty" });
+    }
+
+    // 🔹 Fetch user_id from DB based on username
+    const [user] = await db.query(`SELECT id FROM users WHERE username=?`, [username]);
+    if (!user || user.length === 0) {
+      return res.status(404).json({ error: "User not found" });
+    }
+    const user_id = user[0].id;
+
+    // Razorpay order options
+    const options = {
+      amount: cart.reduce((x, i) => x + i.price, 0) * 100, // paise
+      currency: "INR",
+      receipt: `receipt_${Date.now()}`,
+      payment_capture: 1
+    };
+
+    const order = await razorpay.orders.create(options);
+
+    // Save order with user_id
+    await db.query(
+      `INSERT INTO payments 
+      (user_id, order_id, amount, currency, status, customer_name, customer_email, customer_contact) 
+      VALUES (?, ?, ?, ?, 'created', ?, ?, ?)`,
+      [
+        user_id,
+        order.id,
+        options.amount,
+        options.currency,
+        `${formData.firstName} ${formData.lastName}`,
+        formData.email,
+        formData.phone
+      ]
+    );
+
+    res.json(order);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error creating order");
+  }
+});
+
+
+// ✅ Verify Payment API
+app.post("/verify-payment", async (req, res) => {
+  try {
+    const { order_id, payment_id, signature } = req.body;
+
+    // Generate expected signature
+    const expectedSignature = crypto
+      .createHmac("sha256", razorpay.key_secret)
+      .update(order_id + "|" + payment_id)
+      .digest("hex");
+
+    if (expectedSignature === signature) {
+      await db.query(
+        `UPDATE payments SET payment_id=?, signature=?, status='paid' WHERE order_id=?`,
+        [payment_id, signature, order_id]
+      );
+      res.json({ status: "success" });
+    } else {
+      await db.query(
+        `UPDATE payments SET status='failed' WHERE order_id=?`,
+        [order_id]
+      );
+      res.status(400).json({ status: "failed" });
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error verifying payment");
+  }
+});
+
 app.post("/api/upload", upload.single("file"), async (req, res) => {
   try {
     const { name, originalPrice, discountedPrice, description, category, gender } = req.body;
@@ -375,6 +460,7 @@ app.post("/api/search", (req, res) => {
     res.send(results);
   });
 })
+
 app.listen(3000, () => console.log("Server ready on port 3000."));
 module.exports = app;
 // app.listen(port, () => {
