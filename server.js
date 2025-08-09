@@ -182,7 +182,7 @@ app.post("/verify-payment", (req, res) => {
 
   if (expectedSignature === signature) {
     db.query(
-      `UPDATE payments SET payment_id=?, status='paid' WHERE razorpay_order_id=?`,
+      `UPDATE payments SET razorpay_payment_id=?, status='paid' WHERE razorpay_order_id=?`,
       [payment_id, order_id],
       (err, result) => {
         if (err) {
