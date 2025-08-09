@@ -41,7 +41,7 @@ async function uploadToFTP(buffer, remoteFileName) {
     const bufferStream = new stream.PassThrough();
     bufferStream.end(buffer);
 
-    await client.uploadFrom(bufferStream, `/venu/${remoteFileName}`);
+    await client.uploadFrom(bufferStream, `/${remoteFileName}`);
     client.close();
     return `https://nocash.cc/${remoteFileName}`;
   } catch (err) {
