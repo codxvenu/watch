@@ -135,9 +135,9 @@ function product() {
                     <small className="text-[15px] capitalize ">quantity</small>
                     <span className="flex">
 
-                    <button className="btn-add pl-3 text-white text-[1.2rem] bg-[#121212] border-t-2 border-l-2 border-b-2 border-[#ffffffbf] rounded-s pr-10 mt-4 h-[42px]" onClick={()=>{count_dec()}}>-</button>
-                    <span className="bg-[#121212] border-b-2 border-t-2 text-white border-[#ffffffbf] text-[1.2rem] h-[42.2px] text-center items-center flex mt-4">{quantity}</span>
-                    <button className="btn-remove text-white text-[1.2rem] bg-[#121212] pr-3 border-t-2 border-r-2 border-b-2 border-[#ffffffbf] rounded-e pl-10 mt-4 h-[42px]" onClick={()=>{count_inc()}}>+</button>
+                    <button className="btn-add pl-3 text-[var(--text)] text-[1.2rem] bg-[var(--background)] border-t-2 border-l-2 border-b-2 border-[#ffffffbf] rounded-s pr-10 mt-4 h-[42px]" onClick={()=>{count_dec()}}>-</button>
+                    <span className="bg-[var(--background)] border-b-2 border-t-2 text-[var(--text)] border-[#ffffffbf] text-[1.2rem] h-[42.2px] text-center items-center flex mt-4">{quantity}</span>
+                    <button className="btn-remove text-[var(--text)] text-[1.2rem] bg-[var(--background)] pr-3 border-t-2 border-r-2 border-b-2 border-[#ffffffbf] rounded-e pl-10 mt-4 h-[42px]" onClick={()=>{count_inc()}}>+</button>
                     </span>
                     <button className=" add-cart rounded " onClick={()=>{
                       handleUser();
@@ -154,7 +154,7 @@ function product() {
                 </div>
             </div>
         </div>
-        <div className="more-items max-sm:p-[30px] pl-[159px] my-16 text-white mn-w">
+        <div className="more-items max-sm:p-[30px] pl-[159px] my-16 text-[var(--text)] mn-w">
 
         <h1 className="text-[24px] mb-5">More Related Items</h1>
         <ul className='grid grid-cols-4 max-sm:w-[100%] max-sm:grid-cols-2 w-[87%] gap-10 max-sm:grid-flow-row'>

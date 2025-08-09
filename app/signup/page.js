@@ -56,19 +56,19 @@ function page() {
 
     return (
         <div className="flex flex-col justify-center items-center bg-black h-[100vh]">
-            <i onClick={()=>{window.location.href = "/home  ";}}><svg className='w-[17px] h-[17px] absolute left-7 top-7 cursor-pointer text-white' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 17"><path fill="currentColor" d="M.865 15.978a.5.5 0 0 0 .707.707l7.433-7.431 7.579 7.282a.501.501 0 0 0 .846-.37.5.5 0 0 0-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 1 0-.707-.708L8.991 7.853 1.413.573a.5.5 0 1 0-.693.72l7.563 7.268z"></path></svg></i>
+            <i onClick={()=>{window.location.href = "/home  ";}}><svg className='w-[17px] h-[17px] absolute left-7 top-7 cursor-pointer text-[var(--text)]' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 17"><path fill="currentColor" d="M.865 15.978a.5.5 0 0 0 .707.707l7.433-7.431 7.579 7.282a.501.501 0 0 0 .846-.37.5.5 0 0 0-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 1 0-.707-.708L8.991 7.853 1.413.573a.5.5 0 1 0-.693.72l7.563 7.268z"></path></svg></i>
             <div
                 className="mx-auto flex w-full flex-col justify-center px-5 pt-0 md:h-[unset] md:max-w-[50%] lg:h-[100vh] min-h-[100vh] lg:max-w-[50%] lg:px-6">
 
                 <div
                     className="my-auto mb-auto mt-8 flex flex-col md:mt-[70px] max-sm:w-[335px] w-[350px] max-w-[450px] mx-auto md:max-w-[450px] lg:max-w-[450px]">
-                    <p className="text-[32px] font-bold text-zinc-950 dark:text-white max-sm:mt-[30px]">Sign Up</p>
+                    <p className="text-[32px] font-bold text-zinc-950 dark:text-[var(--text)] max-sm:mt-[30px]">Sign Up</p>
                     <p className="mb-2.5 mt-2.5 font-normal text-zinc-950 dark:text-zinc-400">Enter your email and password
                         to sign
                         up!</p>
                     <div className="mt-8">
                         <form className="pb-2"><input type="hidden" name="provider" value="google" onSubmit={handleGoogleSignIn} /><button onClick={handleGoogleSignIn}
-                            className="max-sm:w-[90%] inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 w-full text-zinc-950 py-6 dark:text-white"
+                            className="max-sm:w-[90%] inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 w-full text-zinc-950 py-6 dark:text-[var(--text)]"
                             type="submit"><span className="mr-2"><svg stroke="currentColor" fill="currentColor"
                                 strokeWidth="0" version="1.1" x="0px" y="0px" viewBox="0 0 48 48"
                                 enableBackground="new 0 0 48 48" className="h-5 w-5" height="1em" width="1em"
@@ -94,23 +94,23 @@ c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.
                     <div>
                         <form className="mb-4" onSubmit={handleSubmit}>
                             <div className="grid gap-2">
-                                <div className="grid gap-1"><label className="text-zinc-950 dark:text-white"
+                                <div className="grid gap-1"><label className="text-zinc-950 dark:text-[var(--text)]"
                                     htmlFor="username">Username</label><input
-                                        className="mr-2.5 mb-2 h-full min-h-[44px] w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-sm font-medium text-zinc-950 placeholder:text-zinc-400 focus:outline-0 dark:border-zinc-800 dark:bg-transparent dark:text-white dark:placeholder:text-zinc-400"
+                                        className="mr-2.5 mb-2 h-full min-h-[44px] w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-sm font-medium text-zinc-950 placeholder:text-zinc-400 focus:outline-0 dark:border-zinc-800 dark:bg-transparent dark:text-[var(--text)] dark:placeholder:text-zinc-400"
                                         id="Username" placeholder="Username" value={username}
                                         onChange={handleUsernameChange} type="text" autoCapitalize="none"
                                         autoComplete="email" autoCorrect="off" name="email" />
-                                    <label className="text-zinc-950 dark:text-white"
+                                    <label className="text-zinc-950 dark:text-[var(--text)]"
                                         htmlFor="email">Email</label><input
-                                        className="mr-2.5 mb-2 h-full min-h-[44px] w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-sm font-medium text-zinc-950 placeholder:text-zinc-400 focus:outline-0 dark:border-zinc-800 dark:bg-transparent dark:text-white dark:placeholder:text-zinc-400"
+                                        className="mr-2.5 mb-2 h-full min-h-[44px] w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-sm font-medium text-zinc-950 placeholder:text-zinc-400 focus:outline-0 dark:border-zinc-800 dark:bg-transparent dark:text-[var(--text)] dark:placeholder:text-zinc-400"
                                         id="email" placeholder="name@example.com" value={email}
                                         onChange={handleEmailChange} type="email" autoCapitalize="none"
                                         autoComplete="email" autoCorrect="off" name="email" /><label
-                                            className="text-zinc-950 mt-2 dark:text-white" htmlFor="password">Password</label><input
+                                            className="text-zinc-950 mt-2 dark:text-[var(--text)]" htmlFor="password">Password</label><input
                                         id="password" placeholder="Password" type="password" value={password}
                                         onChange={handlePasswordChange}
                                         autoComplete="current-password"
-                                        className="mr-2.5 mb-2 h-full min-h-[44px] w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-sm font-medium text-zinc-950 placeholder:text-zinc-400 focus:outline-0 dark:border-zinc-800 dark:bg-transparent dark:text-white dark:placeholder:text-zinc-400"
+                                        className="mr-2.5 mb-2 h-full min-h-[44px] w-full rounded-lg border border-zinc-200 bg-white px-4 py-3 text-sm font-medium text-zinc-950 placeholder:text-zinc-400 focus:outline-0 dark:border-zinc-800 dark:bg-transparent dark:text-[var(--text)] dark:placeholder:text-zinc-400"
                                         name="password" /></div><button
                                             className="bg-[whitesmoke] whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 mt-2 flex h-[unset] w-full items-center justify-center rounded-lg px-4 py-4 text-sm font-medium"
                                             type="submit">Sign up</button>
@@ -118,7 +118,7 @@ c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.
                         </form>
 
                         <p className='text-center'><a href="/login"
-                            className="font-medium text-zinc-950 dark:text-white text-sm ">Already signed up?</a></p>
+                            className="font-medium text-zinc-950 dark:text-[var(--text)] text-sm ">Already signed up?</a></p>
                     </div>
                 </div>
             </div>

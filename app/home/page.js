@@ -90,7 +90,7 @@ useEffect(()=>{
     <div className="div mt-[110px] z-[-1]" >
       <Nav/>
    
-    <div className={nav? ' text-white bg-[#121212] hidden':' text-white bg-[#121212]'}>
+    <div className={nav? ' text-[var(--text)] bg-[var(--background)] hidden':' text-[var(--text)] bg-[var(--background)]'}>
       <div className='flex mb-10'>
 
       <img className='w-[50%] h-[420px] bg-contain blur-sm' src="https://dsrsrc.site/venu/WhatsApp%20Image%202025-03-26%20at%201.53.38%20PM.jpeg" alt="" width={1440}/>
@@ -135,7 +135,7 @@ useEffect(()=>{
           </span>
           <div className="div-banner-move">
 
-          <div className="moving-banner flex gap-[26px] text-[19px] text-white pr-[26px]">
+          <div className="moving-banner flex gap-[26px] text-[19px] text-[var(--text)] pr-[26px]">
             <span>• MADE WITH LOVE & COMMITMENT •</span>
             <span>• MADE WITH LOVE & COMMITMENT •</span>
             <span>• MADE WITH LOVE & COMMITMENT •</span>
@@ -147,7 +147,7 @@ useEffect(()=>{
             <span>• MADE WITH LOVE & COMMITMENT •</span>
             <span>• MADE WITH LOVE & COMMITMENT •</span>
           </div>
-          <div className="moving-banner flex gap-[26px] text-[19px] text-white pr-[26px]">
+          <div className="moving-banner flex gap-[26px] text-[19px] text-[var(--text)] pr-[26px]">
             <span>• MADE WITH LOVE & COMMITMENT •</span>
             <span>• MADE WITH LOVE & COMMITMENT •</span>
             <span>• MADE WITH LOVE & COMMITMENT •</span>

@@ -96,7 +96,7 @@ function page() {
         }
       }
   return (
-    <div className="text-white mt-[110px] ">
+    <div className="text-[var(--text)] mt-[110px] ">
       <Nav/>
       <div className={nav? "hidden":""}>
 

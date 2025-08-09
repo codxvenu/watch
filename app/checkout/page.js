@@ -9,8 +9,8 @@ function checkout() {
      
       <div className="personal_details pl-[159px] overflow-y-auto">
        
-<div className="bg-[#121212] text-[#ffffffbf] shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2 border-r-[0.25px] border-[#121212]">
-<h1 className='mb-5 text-[18px] text-white' >Personal Details</h1>
+<div className="bg-[var(--background)] text-[#ffffffbf] shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2 border-r-[0.25px] border-[#121212]">
+<h1 className='mb-5 text-[18px] text-[var(--text)]' >Personal Details</h1>
   <div className="-mx-3 md:flex mb-6">
     <div className="md:w-1/2 px-3 mb-6 md:mb-0">
       <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" htmlFor="grid-first-name">
@@ -82,7 +82,7 @@ function checkout() {
   </div>
   <div className="payment-method">
   
-  <h1 className='mt-2 text-[18px] text-white'> Payment</h1>
+  <h1 className='mt-2 text-[18px] text-[var(--text)]'> Payment</h1>
   <small className='text-[#ffffffbf]'>All transactions are secure and encrypted.</small>
   <div className='border-[1px] border-[#ffffffbf] border-t-[#5f91ed] rounded'>
     <span className='border-[2px] border-[#5f91ed] flex mb-2 p-4'>
@@ -101,20 +101,20 @@ function checkout() {
 </div>
 
 
-<div className='bg-[#0b0a0a] p-[38px] text-white sticky'> 
-    <span className='mt-5 flex text-white gap-4 items-center w-[410px]' >
+<div className='bg-[#0b0a0a] p-[38px] text-[var(--text)] sticky'> 
+    <span className='mt-5 flex text-[var(--text)] gap-4 items-center w-[410px]' >
 
     <img className='w-[64px] rounded' src="https://www.punkstore.in/cdn/shop/files/A2644816-EC12-48CD-9F9B-02B9FA0CC0E2.jpg?v=1738213874&width=600" alt="" />
     <h1 className='text-[17px]'>Tissot punk green</h1> <small className='ml-auto text-[18px]'>
     ₹8,100.00</small>
     </span>
-    <span className='mt-5 flex text-white gap-4 items-center w-[410px]' >
+    <span className='mt-5 flex text-[var(--text)] gap-4 items-center w-[410px]' >
 
     <img className='w-[64px] rounded' src="https://www.punkstore.in/cdn/shop/files/A2644816-EC12-48CD-9F9B-02B9FA0CC0E2.jpg?v=1738213874&width=600" alt="" />
     <h1 className='text-[17px]'>Tissot punk green</h1> <small className='ml-auto text-[18px]'>
     ₹8,100.00</small>
     </span>
-    <span className='mt-5 flex text-white gap-4 items-center w-[410px]' >
+    <span className='mt-5 flex text-[var(--text)] gap-4 items-center w-[410px]' >
 
     <img className='w-[64px] rounded' src="https://www.punkstore.in/cdn/shop/files/A2644816-EC12-48CD-9F9B-02B9FA0CC0E2.jpg?v=1738213874&width=600" alt="" />
     <h1 className='text-[17px]'>Tissot punk green</h1> <small className='ml-auto text-[18px]'>
