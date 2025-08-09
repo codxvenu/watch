@@ -1,7 +1,6 @@
 "use client"
 import {React,useEffect, useState} from 'react'
 import Nav from '../components/nav'
-import { application } from 'express';
 import Script from "next/script";
 function checkout() {
   const[cart,setCart] = useState([]);
@@ -67,7 +66,7 @@ function checkout() {
 
     // Now open Razorpay Checkout
     const options = {
-      key: "YOUR_RAZORPAY_KEY_ID",
+      key: "rzp_live_vM9vYvjqtCEulr",
       amount: data.amount,
       currency: data.currency,
       name: "Your Store Name",
@@ -106,10 +105,10 @@ function checkout() {
   },[])
   return (
     <div>
-       {/* <Script
+       <Script
       src="https://checkout.razorpay.com/v1/checkout.js"
       strategy="beforeInteractive"
-    /> */}
+    />
       <Nav/>
       <div className="main-checkout-menu flex justify-center ">
       <div className="personal_details w-1/2 pt-[6rem] overflow-y-auto">
