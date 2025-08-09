@@ -1,0 +1,145 @@
+nav{
+    width: 100%;
+    height: 72px;
+    background: #121212;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 219px 12px;
+    align-content: center;
+    color: #ffffffbf;
+}
+ul li:hover{
+    text-decoration: underline;
+    color: white;
+}
+nav h1{
+    font-size: 24px;
+    text-transform: uppercase;
+    position: fixed;
+    right: 670px;
+}
+ul {
+    display: flex;
+    gap: 40px;
+    font-size: 14px;
+}
+.icons{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.icons svg,a svg{
+    width: 18px;
+    height: 18px;
+    fill: #ffffffbf;
+}
+.social{
+    padding: 16px 219px 10px;
+}
+a{
+    text-decoration: none;
+}
+.search-span {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.search-hover {
+    border: 0.1px solid whitesmoke;
+    outline: none;
+    background-size: 22px;
+    border-radius: 10px;
+    background: #131313;
+    width: 50px;
+    height: 35px;
+    padding: 10px;
+    transition: all 0.5s;
+    opacity: 0;
+    width: 0;
+    visibility: hidden;
+    color: whitesmoke;
+}
+
+.search-hovers {
+    display: block;
+    width: 200px; /* Expanded width */
+    padding-left: 15px;
+    opacity: 1;
+    visibility: visible;
+}
+.main-nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.search-log{
+    width: 12.4rem  ;
+    opacity: 0;
+    visibility: hidden;
+   
+}
+.search-h{
+    transition: all 0.5s;
+    opacity: 1;
+    visibility: visible;
+}
+.hamburger{
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .social{
+        position: fixed;
+    bottom: 22px;
+    flex-direction: column;
+    gap: 10px;
+    padding: 5px 21px;
+}
+    .links{
+        position: absolute;
+        left: 0;
+        flex-direction: column;
+        background: #00000069;
+        height: 80vh;
+        top: 72px;
+        padding: 25px 0;
+        width: 100vw;
+        overflow: hidden;
+        gap: 0;
+    }
+    .icons svg, a svg {
+        width: 14px;
+        height: 14px;
+        fill: #ffffffbf;
+        margin-left: -5px;
+    }
+    nav h1{
+        left: 120px;
+        font-size: 20px;
+        right: 0;
+        width: 125px;
+    }
+    .icons{
+        margin-left: 35px;
+    }
+    .social p{
+        display: none;
+    }
+    .links li{
+        padding: 20px 25px;
+        font-size: 18px;
+    }
+    .hamburger{
+        display: contents;
+    }
+    .search-log{width: 5.4rem; top:3.2rem; right: 1.09rem;}
+    .search-log ul li{
+        padding: .5rem;
+    }
+    .search-log img{
+        display: none;
+    }
+}

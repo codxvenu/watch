@@ -1,0 +1,45 @@
+table{
+    border-spacing: 0;
+    border-collapse: separate;
+    box-shadow: none;
+    width: 1200px;
+    display: table;
+    
+}
+th{
+    text-align: left;
+    padding-bottom: 1.8rem;
+    opacity: .85;
+    font-weight: 400;
+}
+@media screen and (max-width: 600px) {
+    tbody tr{grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    gap: 10px;
+    display: grid};
+    .td-1{
+        grid-column: 1;
+    }
+    .td-2{
+        grid-row: 2;
+        margin-left: 120px;
+        margin-top: -74px;
+    }
+    .td-3{
+        grid-column: 2;
+        margin-left: -60px;
+        width: 0px;
+        font-size: 16px;
+    }
+    .main-cart-menu {
+        padding: 10px;
+    }
+    table{
+        width: 100%;
+    }
+    .th-3{
+        
+    margin-left: -40px;
+    display: block;
+    }
+}

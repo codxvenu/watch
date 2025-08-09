@@ -1,0 +1,91 @@
+.content h1,.content h2,.qna h1{
+    font-size: 24px;
+    color: white;
+}
+.content p {
+    font-size: 16px;
+}
+.content p{
+    font-size: 14px;
+}
+.btn{
+    padding: 10px 20px;
+    border: 2px solid #ffffffbf;
+    background: #121212;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 150px;
+    text-transform: uppercase;
+}
+.foot a{
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.end{
+    margin-left: 160px;
+    padding-top: 50px;
+}
+.end button{
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.end button span{
+    font-size: 13px;
+}
+.end span{
+    font-size: 11px;
+}
+/* qna css */
+details {
+    user-select: none; 
+    color: white;
+    font-size: 15px;
+  }
+  details summary button svg {
+    transform: rotate(90deg);
+  }
+  details[open] summary button svg {
+    transform: rotate(-90deg);
+  }
+  details[open] summary ~ * {
+    animation: ease-opacity-t-b 0.5s ease;
+  }
+  details div{
+    text-align: start;
+  }
+  summary {
+    cursor: pointer;
+  }
+  svg {
+    transition: all 0.3s;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  :focus {
+    outline: none;
+  }
+  @media screen and (max-width: 600px) {
+    details {
+      font-size: 12px;
+  }
+  .q-a{
+    width: 354px;
+    padding: 20px;
+  }
+  .foot{
+    flex-direction: column;
+  }
+  .end{
+    margin-left: 15px;
+  }
+  .content h1{
+    font-size: 18px;
+  }
+  .content p{
+    font-size: 12px;
+  }
+  }

@@ -1,0 +1,49 @@
+h1{
+    font-size: 24px;
+}
+h3{
+    font-size: 16px;
+}
+ul li:hover{
+    text-decoration: none;
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+li .content .btn{
+    padding: 10px 20px;
+    border: 2px solid #ffffffbf;
+    background: #121212;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    text-transform: uppercase;
+    width: 230px;
+}
+.content{
+    text-decoration: none;
+}
+@media screen and (max-width: 600px) {
+    .context{
+        left: 0;
+    }
+    .content h2{
+        font-size: 16px;
+    }
+    .watch-div, .mn-w{
+            padding-left: 1rem;
+            padding-right: 1rem;
+            margin-left: 0;
+    }
+    .mn-w ul{
+        width: 100%;
+    }
+    .mn-w ul li{
+        width: 155px;
+    }
+    li .content .btn{
+        width: 100%;
+    }
+}

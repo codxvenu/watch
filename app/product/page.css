@@ -1,0 +1,100 @@
+.price small{
+    padding: 5px 13px 6px;
+    border-radius: 0.4rem;
+    border: 1px solid rgb(255, 255, 255, .1);
+    font-size: 12px;
+    text-transform: capitalize;
+    letter-spacing: .1rem;
+    line-height: 1;
+    word-break: break-word;
+}
+ .add-cart{
+    display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border: 0;
+        padding: 0 3rem;
+        cursor: pointer;
+        margin-top: 20px;
+        font-size: 1.2rem;
+        height: 45px;
+        width: 438px;
+        word-spacing: 6px;
+        text-decoration: none;
+        color: #121212;
+        transition: box-shadow var(--duration-short) ease;
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: white;
+}
+ .more-items ul li:hover{
+    text-decoration: none;
+}
+.more-items ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+li .content .btn{
+    padding: 10px 20px;
+    border: 2px solid #ffffffbf;
+    background: #121212;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    text-transform: uppercase;
+    width: 100%;
+}
+.content{
+    text-decoration: none;
+}
+.div-banner-move{
+    overflow: hidden;
+    background: #1e1d1d;
+    display: flex;
+    margin: 35px 0 ;
+}
+.div-banner-move span{
+    white-space: nowrap;
+    line-height: 2;
+}
+@keyframes runningLine2 {
+    0% {
+        -moz-transform: translateX(0);
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -moz-transform: translateX(-200%);
+        -webkit-transform: translateX(-200%);
+        transform: translateX(-200%);
+    }
+}
+@keyframes runningLine {
+0% {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+}
+100% {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+}}
+.moving-banner{
+    animation: runningLine 94.9375s linear infinite;
+    animation-delay: -94.9375s;
+}
+.moving-banner:nth-child(2){
+    animation: runningLine2 94.9375s linear infinite;
+    animation-delay: -47.46875s;
+}
+@media screen and (max-width: 600px) {
+    .add-cart{
+        width: 300px;
+    }
+    .content-product{
+        width: 100%;
+    }
+   
+}

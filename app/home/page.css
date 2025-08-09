@@ -1,0 +1,92 @@
+h1{
+    font-size: 24px;
+}
+h3{
+    font-size: 16px;
+}
+ul li:hover{
+    text-decoration: none;
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+li .content .btn{
+    padding: 10px 20px;
+    border: 2px solid #ffffffbf;
+    background: #121212;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    text-transform: uppercase;
+    width: 230px;
+}
+.content{
+    text-decoration: none;
+}
+.div-banner-move{
+    overflow: hidden;
+    background: #1e1d1d;
+    display: flex;
+    margin: 35px 0 ;
+}
+.div-banner-move span{
+    white-space: nowrap;
+    line-height: 2;
+}
+@keyframes runningLine2 {
+    0% {
+        -moz-transform: translateX(0);
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -moz-transform: translateX(-200%);
+        -webkit-transform: translateX(-200%);
+        transform: translateX(-200%);
+    }
+}
+@keyframes runningLine {
+0% {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+}
+100% {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+}}
+.moving-banner{
+    animation: runningLine 94.9375s linear infinite;
+    animation-delay: -94.9375s;
+}
+.moving-banner:nth-child(2){
+    animation: runningLine2 94.9375s linear infinite;
+    animation-delay: -47.46875s;
+}
+@media screen and (max-width: 600px) {
+    .context{
+        left: 0;
+    }
+    .content h2{
+        font-size: 16px;
+    }
+    .watch-div, .mn-w{
+            padding-left: 1rem;
+            padding-right: 1rem;
+            margin-left: 0;
+    }
+    .mn-w ul{
+        width: 100%;
+        gap: 10.3rem;
+        overflow: scroll;
+    }
+    .mn-w ul li{
+        width: 155px;
+    }
+    li .content .btn{
+        width: 100%;
+    }
+}
