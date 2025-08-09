@@ -82,7 +82,7 @@ function checkout() {
   
   <h1 className='mt-2 text-[18px] text-[var(--text)]'> Payment</h1>
   <small className='text-[var(--border)]'>All transactions are secure and encrypted.</small>
-  <div className='border-[1px] border-[var(--border)] rounded'>
+  <div className='border-[1px] border-[#E5E7EB] rounded'>
     <span className='border-[2px]  flex mb-2 p-4'>
 
     <h1 className='flex gap-2'>Razorpay Secure (UPI, Cards, Wallets, NetBanking) <div className="flex"><img alt="upi" src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/upi.CmgCfll8.svg" role="img" width="38" height="24" /><img alt="visa" src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/visa.sxIq5Dot.svg" role="img" width="38" height="24" /><img alt="master" src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/master.CzeoQWmc.svg" role="img" width="38" height="24" /><div ><img alt="netbanking" src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/netbanking.C9e9yzjv.svg" role="img" width="38" height="24" /></div></div></h1>
