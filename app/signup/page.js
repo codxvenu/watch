@@ -56,7 +56,7 @@ function page() {
 
     return (
         <div className="flex flex-col justify-center items-center bg-black h-[100vh]">
-            <i onClick={()=>{window.location.href = "/home  ";}}><svg className='w-[17px] h-[17px] absolute left-7 top-7 cursor-pointer text-[var(--text)]' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 17"><path fill="currentColor" d="M.865 15.978a.5.5 0 0 0 .707.707l7.433-7.431 7.579 7.282a.501.501 0 0 0 .846-.37.5.5 0 0 0-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 1 0-.707-.708L8.991 7.853 1.413.573a.5.5 0 1 0-.693.72l7.563 7.268z"></path></svg></i>
+            <i onClick={()=>{window.location.href = "/home  ";}}><svg className='w-[17px] h-[17px] absolute left-7 top-7 cursor-pointer text-[var(--text)]' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 17"><path fill="var(--text)" d="M.865 15.978a.5.5 0 0 0 .707.707l7.433-7.431 7.579 7.282a.501.501 0 0 0 .846-.37.5.5 0 0 0-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 1 0-.707-.708L8.991 7.853 1.413.573a.5.5 0 1 0-.693.72l7.563 7.268z"></path></svg></i>
             <div
                 className="mx-auto flex w-full flex-col justify-center px-5 pt-0 md:h-[unset] md:max-w-[50%] lg:h-[100vh] min-h-[100vh] lg:max-w-[50%] lg:px-6">
 
@@ -69,7 +69,7 @@ function page() {
                     <div className="mt-8">
                         <form className="pb-2"><input type="hidden" name="provider" value="google" onSubmit={handleGoogleSignIn} /><button onClick={handleGoogleSignIn}
                             className="max-sm:w-[90%] inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 w-full text-zinc-950 py-6 dark:text-[var(--text)]"
-                            type="submit"><span className="mr-2"><svg stroke="currentColor" fill="currentColor"
+                            type="submit"><span className="mr-2"><svg stroke="currentColor" fill="var(--text)"
                                 strokeWidth="0" version="1.1" x="0px" y="0px" viewBox="0 0 48 48"
                                 enableBackground="new 0 0 48 48" className="h-5 w-5" height="1em" width="1em"
                                 xmlns="http://www.w3.org/2000/svg">

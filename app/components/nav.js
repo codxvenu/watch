@@ -71,12 +71,12 @@ function nav() {
       <nav className='border-b-[#ffffff14] border-b-[0.25px]'>
         {nav && (
 
-      <i onClick={()=>{setNav(false)}}><svg className='w-[17px] h-[17px] absolute left-7 top-7 cursor-pointer text-[var(--text)]' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 17"><path fill="currentColor" d="M.865 15.978a.5.5 0 0 0 .707.707l7.433-7.431 7.579 7.282a.501.501 0 0 0 .846-.37.5.5 0 0 0-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 1 0-.707-.708L8.991 7.853 1.413.573a.5.5 0 1 0-.693.72l7.563 7.268z"></path></svg></i>
+      <i onClick={()=>{setNav(false)}}><svg className='w-[17px] h-[17px] absolute left-7 top-7 cursor-pointer text-[var(--text)]' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 17"><path fill="var(--text)" d="M.865 15.978a.5.5 0 0 0 .707.707l7.433-7.431 7.579 7.282a.501.501 0 0 0 .846-.37.5.5 0 0 0-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 1 0-.707-.708L8.991 7.853 1.413.573a.5.5 0 1 0-.693.72l7.563 7.268z"></path></svg></i>
         )}
       {!nav && (
 
       <i onClick={()=>{setNav(true)}} className="hamburger"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" className="w-[17px] h-[17px] absolute left-7 top-7 cursor-pointer text-[var(--text)]" fill="none" viewBox="0 0 18 16">
-  <path d="M1 .5a.5.5 0 100 1h15.71a.5.5 0 000-1H1zM.5 8a.5.5 0 01.5-.5h15.71a.5.5 0 010 1H1A.5.5 0 01.5 8zm0 7a.5.5 0 01.5-.5h15.71a.5.5 0 010 1H1a.5.5 0 01-.5-.5z" fill="currentColor">
+  <path d="M1 .5a.5.5 0 100 1h15.71a.5.5 0 000-1H1zM.5 8a.5.5 0 01.5-.5h15.71a.5.5 0 010 1H1A.5.5 0 01.5 8zm0 7a.5.5 0 01.5-.5h15.71a.5.5 0 010 1H1a.5.5 0 01-.5-.5z" fill="var(--text)">
 </path></svg></i>
       )} 
        

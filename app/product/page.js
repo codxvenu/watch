@@ -147,7 +147,7 @@ function product() {
                     </button>
                     <div className="share">
                       <span className="icon flex gap-2 items-center mt-8">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="w-[13px] h-[12px] icon icon-share" fill="none" viewBox="0 0 13 12"><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" d="M1.625 8.125v2.167a1.083 1.083 0 0 0 1.083 1.083h7.584a1.083 1.083 0 0 0 1.083-1.083V8.125"></path><path fill="currentColor" fillRule="evenodd" d="M6.148 1.271a.5.5 0 0 1 .707 0L9.563 3.98a.5.5 0 0 1-.707.707L6.501 2.332 4.147 4.687a.5.5 0 1 1-.708-.707z" clipRule="evenodd"></path><path fill="currentColor" fillRule="evenodd" d="M6.5 1.125a.5.5 0 0 1 .5.5v6.5a.5.5 0 0 1-1 0v-6.5a.5.5 0 0 1 .5-.5" clipRule="evenodd"></path></svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" className="w-[13px] h-[12px] icon icon-share" fill="none" viewBox="0 0 13 12"><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" d="M1.625 8.125v2.167a1.083 1.083 0 0 0 1.083 1.083h7.584a1.083 1.083 0 0 0 1.083-1.083V8.125"></path><path fill="var(--text)" fillRule="evenodd" d="M6.148 1.271a.5.5 0 0 1 .707 0L9.563 3.98a.5.5 0 0 1-.707.707L6.501 2.332 4.147 4.687a.5.5 0 1 1-.708-.707z" clipRule="evenodd"></path><path fill="var(--text)" fillRule="evenodd" d="M6.5 1.125a.5.5 0 0 1 .5.5v6.5a.5.5 0 0 1-1 0v-6.5a.5.5 0 0 1 .5-.5" clipRule="evenodd"></path></svg>
                       <h4>Share</h4>
                       </span>
                     </div>
