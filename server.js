@@ -112,52 +112,62 @@ const razorpay = new Razorpay({
   key_id: "rzp_live_vM9vYvjqtCEulr",
   key_secret: "e7NLMfYQq08uJcBGOi9nG1Eo"
 });
-app.post("/create-order", async (req, res) => {
-  try {
-    const { cart, formData, username } = req.body;
+app.post("/create-order", (req, res) => {
+  const { cart, formData, username } = req.body;
 
-    if (!cart || !Array.isArray(cart) || cart.length === 0) {
-      return res.status(400).json({ error: "Cart is empty" });
+  if (!cart || !Array.isArray(cart) || cart.length === 0) {
+    return res.status(400).json({ error: "Cart is empty" });
+  }
+
+  // Fetch user_id from DB based on username
+  db.query(`SELECT id FROM users WHERE username=?`, [username], (err, userResults) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send("Error creating order");
     }
-
-    // 🔹 Fetch user_id from DB based on username
-    const [user] = await db.query(`SELECT id FROM users WHERE username=?`, [username]);
-    if (!user || user.length === 0) {
+    
+    if (!userResults || userResults.length === 0) {
       return res.status(404).json({ error: "User not found" });
     }
-    const user_id = user[0].id;
+    
+    const user_id = userResults[0].id;
 
     // Razorpay order options
     const options = {
-      amount: cart.reduce((x, i) => x + i.price, 0) * 100, // paise
+      amount: cart.reduce((total, item) => total + (item.dprice * (item.quantity || 1)), 0) * 100,
       currency: "INR",
       receipt: `receipt_${Date.now()}`,
       payment_capture: 1
     };
 
-    const order = await razorpay.orders.create(options);
-
-    // Save order with user_id
-    await db.query(
-      `INSERT INTO payments 
-      (user_id, order_id, amount, currency, status, customer_name, customer_email, customer_contact) 
-      VALUES (?, ?, ?, ?, 'created', ?, ?, ?)`,
-      [
-        user_id,
-        order.id,
-        options.amount,
-        options.currency,
-        `${formData.firstName} ${formData.lastName}`,
-        formData.email,
-        formData.phone
-      ]
-    );
-
-    res.json(order);
-  } catch (err) {
-    console.error(err);
-    res.status(500).send("Error creating order");
-  }
+    razorpay.orders.create(options).then(order => {
+      // Save order with user_id
+      db.query(
+        `INSERT INTO payments 
+        (user_id, order_id, amount, currency, status, customer_name, customer_email, customer_contact) 
+        VALUES (?, ?, ?, ?, 'created', ?, ?, ?)`,
+        [
+          user_id,
+          order.id,
+          options.amount,
+          options.currency,
+          `${formData.firstName} ${formData.lastName}`,
+          formData.email,
+          formData.phone
+        ],
+        (err, result) => {
+          if (err) {
+            console.error(err);
+            return res.status(500).send("Error creating order");
+          }
+          res.json(order);
+        }
+      );
+    }).catch(err => {
+      console.error(err);
+      res.status(500).send("Error creating order");
+    });
+  });
 });
 
 
