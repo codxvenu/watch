@@ -24,6 +24,10 @@ li .content .btn{
 }
 .content{
     text-decoration: none;
+   
+}
+.context{
+     transform: translate(-50%,-50%);
 }
 .div-banner-move{
     overflow: hidden;

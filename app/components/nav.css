@@ -30,11 +30,11 @@ ul {
     gap: 20px;
     align-items: center;
 }
-/* .icons svg,a svg{
+.icon-size{
     width: 18px;
     height: 18px;
-    fill: var(--border);
-} */
+    fill: var(--text);
+}
 .social{
     padding: 16px 219px 10px;
 }

@@ -91,7 +91,7 @@ useEffect(()=>{
       <Nav/>
    
     <div className={nav? ' text-[var(--text)] bg-[var(--background)] hidden':' text-[var(--text)] bg-[var(--background)]'}>
-      <div className='flex '>
+      <div className='flex relative'>
 
       <video
   autoPlay
@@ -102,8 +102,8 @@ useEffect(()=>{
   src="878691467923791872_resize-8216801%20(1).mp4"
   style={{ objectFit: "cover" }}
 ></video>
-<div className="context text-center absolute flex justify-center items-center flex-col left-[454px] top-[240px]">
-        <h2 className='text-[24px] font-bold text-[var(--background)]'>MAKE A REEL WITH OUR WATCH & GET 50% CASHBACK FREE .</h2>
+<div className="context text-center absolute flex justify-center items-center flex-col left-[50%] top-[50%]">
+        <h1 className='text-[24px] font-bold text-[var(--background)]'>MAKE A REEL WITH OUR WATCH & GET 50% CASHBACK</h1>
         <h3 className='text-[16px] text-[var(--background)]'>STRONG IN BUILD, STYLISH IN LOOK </h3>
         <button className='btn bg-[transparent!important] !text-[var(--background)] border-[1px] !border-[var(--background)]'>Shop now</button>
       </div>
