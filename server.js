@@ -32,7 +32,7 @@ async function uploadToFTP(buffer, remoteFileName) {
   try {
     await client.access({
       host: "147.93.79.55",
-      user: "u679703987",
+      user: "u679703987.watchshree",
       password: "Watch@662",
       secure: false, // Set to true if using FTPS
     });
@@ -42,7 +42,7 @@ async function uploadToFTP(buffer, remoteFileName) {
 
     await client.uploadFrom(bufferStream, `/${remoteFileName}`);
     client.close();
-    return `https://nocash.cc/${remoteFileName}`;
+    return `https://nocash.cc/venu/${remoteFileName}`;
   } catch (err) {
     console.error("FTP Upload Error:", err);
     client.close();
