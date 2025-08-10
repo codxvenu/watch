@@ -42,7 +42,7 @@ async function uploadToFTP(buffer, remoteFileName) {
 
     await client.uploadFrom(bufferStream, `/${remoteFileName}`);
     client.close();
-    return `https://nocash.cc/venu/${remoteFileName}`;
+    return `https://nocash.cc/venu/${remoteFileName}`; 
   } catch (err) {
     console.error("FTP Upload Error:", err);
     client.close();

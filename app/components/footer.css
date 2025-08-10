@@ -81,6 +81,8 @@ details {
   }
   .end{
     margin-left: 15px;
+    padding-left: 15px;
+    padding-top: 10px;
   }
   .content h1{
     font-size: 18px;
