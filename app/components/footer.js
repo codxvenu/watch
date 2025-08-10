@@ -5,7 +5,7 @@ function footer() {
   const { nav } = useUser();
   return (
     <div className={nav? "bg-[var(--background)] text-[var(--border)] hidden;" :"bg-[var(--background)] text-[var(--border)] "}>
-      <div className="content text-center bg-[#F5F5F7] mt-[1rem] py-[3rem]">
+      <div className="content text-center bg-[#F5F5F7] mt-[1rem] py-[3rem] px-[10px]">
         <h1 className="mb-[10px]">Why Buy in USD when you can buy in rupees !</h1>
         {/* <h2 className="my-5">"AVAIL ONE TIME FREE REPAIRING FOR WATCHES"</h2> */}
         <p>

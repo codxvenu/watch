@@ -87,7 +87,7 @@ useEffect(()=>{
   localStorage.setItem("page" , "home");
 },[])
   return (
-    <div className="div mt-[110px] z-[-1]" >
+    <div className="div min-[768px]:mt-[83px] z-[-1]" >
       <Nav/>
    
     <div className={nav? ' text-[var(--text)] bg-[var(--background)] hidden':' text-[var(--text)] bg-[var(--background)]'}>
