@@ -16,7 +16,7 @@ function footer() {
 
         <small className="my-2 uppercase mt-5">Watch Shree</small>
        
-        <button href="#" className="btn">
+        <button href="#" className="btn !border-0 rounded-[20px]">
           Shop Now
         </button>
         </span>
@@ -94,7 +94,7 @@ function footer() {
                 <a href="https://www.facebook.com/share/1A2b6jvM87/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"/></svg></a>
                 </div>
       </div>
-      <hr className="border-t-[0.25px] border-t-[var(--border)]" />
+     
       <div className="end mt-[1rem] py-[3rem] bg-[#F5F5F7]">
       
       <button className='text-[var(--text)] flex flex-col  '><span className="mb-3">Country/region</span><span className='text-[13px] border border-[var(--border)] p-3'>India | INR ₹</span></button>
