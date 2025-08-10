@@ -91,7 +91,7 @@ useEffect(()=>{
       <Nav/>
    
     <div className={nav? ' text-[var(--text)] bg-[var(--background)] hidden':' text-[var(--text)] bg-[var(--background)]'}>
-      <div className='flex mb-10'>
+      <div className='flex '>
 
       <video
   autoPlay
@@ -108,7 +108,7 @@ useEffect(()=>{
         <button className='btn bg-[transparent!important] !text-[var(--background)] border-[1px] !border-[var(--background)]'>Shop now</button>
       </div>
       </div>
-      <div className='ml-[159px] px-12 mn-w'>
+      <div className='pl-[159px] pr-12 mn-w bg-[#F5F5F7] min-h-[400px] pt-10'>
       <h1 className='mb-3'>Mens Watches</h1>
       <h3 className='mb-6'>Best Seller Watches</h3>
       <ul className='grid grid-cols-4 w-[87%] gap-2' >
@@ -136,10 +136,10 @@ useEffect(()=>{
        
     </div>
     
-    <span className='flex justify-center mb-3 mt-2'>
+    {/* <span className='flex justify-center mb-3 mt-2'>
           
           <button href="/men" className="btn m-auto">View All</button>
-          </span>
+          </span> */}
           <div className="div-banner-move">
 
           <div className="moving-banner flex gap-[26px] text-[19px] text-[var(--text)] pr-[26px]">
@@ -167,7 +167,7 @@ useEffect(()=>{
             <span>• MADE WITH LOVE & COMMITMENT •</span>
           </div>
           </div>
-          <div className='ml-[159px] watch-div px-12 max-sm:w-[100%] w-[87%]'>
+          <div className='pl-[159px] pr-12 mn-w bg-[#F5F5F7] min-h-[400px] pt-10'>
       <h1 className='mb-3'>Women Watches</h1>
       <h3 className='mb-6'>Best Seller Watches </h3>
       <ul className='grid gap-2 grid-cols-5 max-sm:grid-cols-2 ' >
@@ -195,10 +195,10 @@ useEffect(()=>{
        
     </div>
           
-    <span className='flex justify-center mb-3 mt-2'>
+    {/* <span className='flex justify-center mb-3 mt-2'>
           
           <button href="/women" className="btn m-auto">View All</button>
-          </span>
+          </span> */}
     </div>  <Footer/> </div>
   )
 }
