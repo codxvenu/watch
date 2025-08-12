@@ -124,3 +124,38 @@ nav{
    
     
 }
+.grow-down {
+  position: fixed;       /* start from the top of the screen */
+  top: 0;
+  left: 0;
+  width: 100%;           /* full width */
+  height: 0;             /* start height */
+  animation: growDown 1s ease forwards;
+}
+
+.grow-up{
+  position: fixed;       /* start from the top of the screen */
+  top: 0;
+  left: 0;
+  width: 100%;           /* full width */
+  height: 0;             /* start height */
+  animation: growup 1s ease forwards;
+}
+
+
+@keyframes growDown {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100vh;       /* full screen height */
+  }
+}
+@keyframes growup {
+  from {
+    height: 100vh;
+  }
+  to {
+    height: 0vh;       /* full screen height */
+  }
+}

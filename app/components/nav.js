@@ -66,7 +66,7 @@ console.log(handlePrice(1234567)); // "12,34,567" (Indian style)
     
    <>
    {search ? (
-      <div className="h-screen w-screen p-4 fixed z-[10000] bg-white">
+      <div className="grow-down h-screen w-screen p-4 fixed z-[10000] bg-white overflow-hidden">
       <span className="flex justify-end">
          <i
             onClick={() => {
