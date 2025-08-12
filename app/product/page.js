@@ -162,7 +162,7 @@ function product() {
 
 
         <li className='max-sm:w-[155px] h-[371px]' key={watch.id}>
-        <img src={watch.img} className='mb-3 w-[213px] h-[213px] rounded object-cover mx-auto' alt="" />
+        <img src={watch.img} className='mb-3 !w-[100%] h-[213px] rounded object-cover mx-auto' alt="" />
        <div className="content p-2">
 
         <h4 className='text-[13px]'>{watch.name}</h4>
@@ -171,7 +171,7 @@ function product() {
 
         <h4 className='text-[13px] line-through'>Rs.{watch.oprice}</h4><h3>Rs.{watch.dprice}</h3>
         </span>
-        <button href="#" className="text-[var(--background)]  btn" onClick={()=>{
+        <button href="#" className="!text-[var(--background)]  btn" onClick={()=>{
           
         }}>
          Add To Cart
