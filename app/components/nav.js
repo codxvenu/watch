@@ -125,7 +125,7 @@ console.log(handlePrice(1234567)); // "12,34,567" (Indian style)
                     <span className="flex flex-col gap-2">
                       
                       <h2 className="text-[18px] decoration-[none] font-medium">{swatch.name}</h2>
-                    <h2 className="text-[16px] text-[#333333c3]">₹ {handlePrice(swatch.price)}</h2>
+                    <h2 className="text-[16px] text-[#333333c3]">₹ {handlePrice(swatch.dprice)}</h2>
                       </span>
                     
                   </li>

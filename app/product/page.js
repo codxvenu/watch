@@ -120,9 +120,9 @@ function product() {
       <div className={nav? "base max-sm:mt-[60px] mt-[110px] hidden":"base max-sm:mt-[60px] mt-[110px]"}>
         <div className="context max-sm:p-[30px] pl-[159px] flex max-sm:flex-col  gap-10 mt-10">
             <div className="img">
-    <img className="h-[500px] w-[495px] rounded" src={item.img  } alt="" />
+    <img className="h-[500px] w-[495px] rounded object-cover" src={item.img  } alt="" />
             </div>
-            <div className="content-product text-[var(--border)] w-[605px]">
+            <div className="content-product text-[var(--text)] w-[605px]">
                 <h1 className="max-sm:text-[30px] text-[40px] capitalize">{item.name}</h1>
                 <p className="text-[16px] my-6 capitalize">description : {item.description}
                 </p>
@@ -162,16 +162,16 @@ function product() {
 
 
         <li className='max-sm:w-[155px] h-[371px]' key={watch.id}>
-        <img src={watch.img} className='mb-3 w-[213px] h-[213px] rounded' alt="" />
+        <img src={watch.img} className='mb-3 w-[213px] h-[213px] rounded object-cover mx-auto' alt="" />
        <div className="content p-2">
 
         <h4 className='text-[13px]'>{watch.name}</h4>
-        <small className='text-[10px] text-[var(--border)] mt-2'>Watch Shree</small>
+        <small className='text-[10px] text-[var(--text)] mt-2'>Watch Shree</small>
         <span className='flex gap-4 items-center mt-2'>
 
         <h4 className='text-[13px] line-through'>Rs.{watch.oprice}</h4><h3>Rs.{watch.dprice}</h3>
         </span>
-        <button href="#" className="btn" onClick={()=>{
+        <button href="#" className="text-[var(--background)]  btn" onClick={()=>{
           
         }}>
          Add To Cart
