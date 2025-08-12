@@ -10,10 +10,6 @@ nav{
     color: var(--text)fffbf;
    
 }
-ul li:hover{
-    text-decoration: underline;
-    color : var(--text);
-}
 /* nav h1{
     font-size: 24px;
     text-transform: uppercase;
@@ -40,11 +36,6 @@ ul {
 }
 a{
     text-decoration: none;
-}
-.search-span {
-    display: flex;
-    align-items: center;
-    position: relative;
 }
 
 .search-hover {
@@ -81,12 +72,7 @@ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(9px);
 -webkit-backdrop-filter: blur(9px);
 }
-.search-log{
-    width: 12.4rem  ;
-    opacity: 0;
-    visibility: hidden;
-   
-}
+
 .search-h{
     transition: all 0.5s;
     opacity: 1;
@@ -135,11 +121,6 @@ nav{
     .hamburger{
         display: contents;
     }
-    .search-log{width: 5.4rem; top:3.2rem; right: 1.09rem;}
-    .search-log ul li{
-        padding: .5rem;
-    }
-    .search-log img{
-        display: none;
-    }
+   
+    
 }

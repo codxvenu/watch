@@ -5,7 +5,7 @@ import { useUser } from "../context/UserContext";
 function nav() {
   const [search, setSearch] = useState(false);
   const [searched, setSearched] = useState([]);
-  const [ival, setIval] = useState("");
+    const [ival, setIval] = useState("");
   const [currentPage, setCurrentPage] = useState("");
   const { nav, setNav } = useUser();
 
@@ -26,6 +26,12 @@ function nav() {
     localStorage.setItem("product", JSON.stringify(searched[id]));
     window.location.href = "/product";
   };
+  function handlePrice(price) {
+  return Number(price).toLocaleString("en-IN");
+}
+
+console.log(handlePrice(1234567)); // "12,34,567" (Indian style)
+
   const handleSearch = async () => {
     const requestBody = JSON.stringify({
       name: ival,
@@ -57,6 +63,80 @@ function nav() {
     setCurrentPage(page);
   }, []);
   return (
+    
+   <>
+   {search ? (
+      <div className="h-screen w-screen p-4 fixed z-[10000] bg-white">
+      <span className="flex justify-end">
+         <i
+            onClick={() => {
+              setSearch(false);
+            }}
+            
+          >
+            <svg
+              className="w-4 cursor-pointer text-[var(--text)]"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 18 17"
+            >
+              <path
+                fill="var(--text)"
+                d="M.865 15.978a.5.5 0 0 0 .707.707l7.433-7.431 7.579 7.282a.501.501 0 0 0 .846-.37.5.5 0 0 0-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 1 0-.707-.708L8.991 7.853 1.413.573a.5.5 0 1 0-.693.72l7.563 7.268z"
+              ></path>
+            </svg>
+          </i>
+      </span>
+       <div className="search-span block p-[20px] mt-[10px]">
+        <label htmlFor="" className="flex gap-4 shadow-md px-2 ">
+          <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="15px"
+              height="44px"
+              viewBox="0 0 15 44"
+              onClick={()=>setSearch(!search)}
+            >
+              <path d="M14.298,27.202l-3.87-3.87c0.701-0.929,1.122-2.081,1.122-3.332c0-3.06-2.489-5.55-5.55-5.55c-3.06,0-5.55,2.49-5.55,5.55 c0,3.061,2.49,5.55,5.55,5.55c1.251,0,2.403-0.421,3.332-1.122l3.87,3.87c0.151,0.151,0.35,0.228,0.548,0.228 s0.396-0.076,0.548-0.228C14.601,27.995,14.601,27.505,14.298,27.202z M1.55,20c0-2.454,1.997-4.45,4.45-4.45 c2.454,0,4.45,1.997,4.45,4.45S8.454,24.45,6,24.45C3.546,24.45,1.55,22.454,1.55,20z"></path>
+            </svg>
+           
+         <input
+              type="text"
+              onChange={handleChange}
+              name=""
+              placeholder="Search..."
+            />
+              </label>
+            <div
+              className={
+                   "search-h search-log  z-0  border-[whitesmoke] border-x-[1px] border-y-[1px] rounded-b-xl block"
+                   }
+            >
+             
+              <ul className="mt-5 flex flex-col gap-0 ">
+                {searched.map((swatch, index) => (
+                  <li
+                    className="flex gap-5 p-4 text-[var(--text)]"
+                    key={swatch.id}
+                    onClick={() => {
+                      handleProduct(index);
+                    }}
+                  >
+                    <img className="w-10" src={swatch.img} alt="" />
+                    <span className="flex flex-col gap-2">
+                      
+                      <h2 className="text-[18px] decoration-[none] font-medium">{swatch.name}</h2>
+                    <h2 className="text-[16px] text-[#333333c3]">₹ {handlePrice(swatch.price)}</h2>
+                      </span>
+                    
+                  </li>
+                ))}
+              </ul>{" "}
+            </div>
+           
+            
+          </div>
+     </div>
+   ): (
     <div className="main-nav bg-[var(--background)] z-50 ">
       <div
         className={
@@ -120,49 +200,15 @@ function nav() {
         </ul>
 
         <ul className="icons">
-           <span className="search-span">
-            <input
-              type="text"
-              onChange={handleChange}
-              className={
-                search
-                  ? "search-hovers search-hover z-10 max-sm:!w-[90px]"
-                  : "search-hover z-10 "
-              }
-              name=""
-              placeholder="Search..."
-            />
-            <div
-              className={
-                search && searched.length > 0
-                  ? "search-h search-log bg-[#131313] w-[12.4rem] fixed top-[5rem] right-[17.7rem] z-0  border-[whitesmoke] border-x-[1px] border-y-[1px] rounded-b-xl block"
-                  : " bg-[#131313] w-[12.4rem] fixed top-[5rem] right-[17.7rem] z-0  border-[whitesmoke] border-x-[1px] border-y-[1px] rounded-b-xl hidden search-log"
-              }
-            >
-              <ul className="mt-5 flex flex-col gap-0 ">
-                {searched.map((swatch, index) => (
-                  <li
-                    className="flex gap-5 p-4 "
-                    key={swatch.id}
-                    onClick={() => {
-                      handleProduct(index);
-                    }}
-                  >
-                    <h2 className="text-sm">{swatch.name}</h2>
-                    <img className="w-10" src={swatch.img} alt="" />
-                  </li>
-                ))}
-              </ul>{" "}
-            </div>
-            <svg
+          <svg
               xmlns="http://www.w3.org/2000/svg"
               width="15px"
               height="44px"
               viewBox="0 0 15 44"
+              onClick={()=>setSearch(!search)}
             >
               <path d="M14.298,27.202l-3.87-3.87c0.701-0.929,1.122-2.081,1.122-3.332c0-3.06-2.489-5.55-5.55-5.55c-3.06,0-5.55,2.49-5.55,5.55 c0,3.061,2.49,5.55,5.55,5.55c1.251,0,2.403-0.421,3.332-1.122l3.87,3.87c0.151,0.151,0.35,0.228,0.548,0.228 s0.396-0.076,0.548-0.228C14.601,27.995,14.601,27.505,14.298,27.202z M1.55,20c0-2.454,1.997-4.45,4.45-4.45 c2.454,0,4.45,1.997,4.45,4.45S8.454,24.45,6,24.45C3.546,24.45,1.55,22.454,1.55,20z"></path>
             </svg>
-          </span>
           {/* <a href="/login" className={search ? "max-sm:hidden" : "block"}>
             <span>
               <svg
@@ -258,7 +304,7 @@ function nav() {
             onClick={() => {
               setNav(true);
             }}
-            className="hamburger"
+            className={search ? "max-sm:!hidden hamburger" : "block hamburger"}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -280,6 +326,7 @@ function nav() {
             onClick={() => {
               setNav(false);
             }}
+            
           >
             <svg
               className="icon-size cursor-pointer text-[var(--text)]"
@@ -298,6 +345,8 @@ function nav() {
         </ul>
       </nav>
     </div>
+   )}
+   </>
   );
 }
 
