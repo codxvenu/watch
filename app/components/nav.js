@@ -101,7 +101,7 @@ function nav() {
        
        
 
-        <h1>Watch Shree</h1>
+        <img src="watch.png" className="w-16" alt="" />
        
         <ul className={nav ? "links flex" : "links  max-sm:hidden"}>
           <li>
