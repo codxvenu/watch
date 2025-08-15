@@ -581,7 +581,7 @@ function home() {
             </button>
           </div>
         </div>
-        <div className=" max-[768px]:p-0 max-[768px]:pt-3 min-[768px]:pt-16 bg-[#F5F5F7] mb-[20px] !pb-[30px]">
+        <div className=" max-[768px]:p-0 max-[768px]:pt-3 min-[768px]:pt-16 bg-[white] mb-[20px] !pb-[30px]">
           <h1 className="min-[768px]:-mb-8 max-[768px]:mb-3 text-center text-[48px]">Category</h1>
           <div className="grid min-[768px]:grid-cols-[1fr_1fr_1fr] grid-cols-2  justify-items-center w-[75%] mx-auto max-[768px]:gap-5">
 
@@ -600,7 +600,7 @@ function home() {
 
           
         </div></div>
-        <div className="pl-[159px] pr-12 mn-w bg-[#F5F5F7] min-h-[400px] py-10 ">
+        <div className="px-[220px] mn-w bg-[white] min-h-[400px] py-10 ">
           <span className="flex justify-between items-center">
           
           <span>
@@ -612,7 +612,7 @@ function home() {
          
           <div className="overflow-scroll" style={{ scrollbarWidth: "none"}}>
 
-          <ul className="grid grid-cols-4 w-[87%] gap-2 " >
+          <ul className="grid grid-cols-4 w-max gap-3 " >
             {watches
               .filter(
                 (watch) => watch.gender === "men" && watch.type === "bestseller"
@@ -620,7 +620,7 @@ function home() {
               .slice(0, 4)
               .map((watch, index) => (
                 <li
-                  className="rounded-[20px] bg-white w-[256.36px]"
+                  className=" bg-white w-[256.36px] hover:shadow-md"
                   key={watch.id}
                   onClick={() => {
                     handleProduct(index);
@@ -628,7 +628,7 @@ function home() {
                 >
                   <img
                     src={watch.img}
-                    className="mb-3 w-[100%] object-cover h-[213px] rounded-[20px_20px_0_0]"
+                    className="mb-3 w-[100%] object-cover h-[270px] "
                     alt=""
                   />
                   <div className="content p-[1rem]">
@@ -643,7 +643,7 @@ function home() {
                       <h3>Rs.{watch.dprice}</h3>
                     </span>
                     <button
-                      className="btn !border-0 !rounded-xl !bg-[var(--text)] !text-white mx-auto"
+                      className="btn !border-0 !bg-[var(--text)] !text-white mx-auto"
                       onClick={(event) => {
                         event.stopPropagation();
                         handleUser(index);
@@ -688,7 +688,7 @@ function home() {
             <span>• MADE WITH LOVE & COMMITMENT •</span>
           </div>
         </div>
-        <div className="pl-[159px] pr-12 mn-w bg-[#F5F5F7] min-h-[400px] py-10">
+        <div className="px-[220px] mn-w bg-[white] min-h-[400px] py-10">
          
             <span className="flex justify-between items-center">
           
@@ -698,7 +698,7 @@ function home() {
           </span>
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-ellipsis-vertical-icon lucide-ellipsis-vertical mb-6"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
           </span>
-          <ul className="grid gap-2 grid-cols-5 max-sm:grid-cols-2 ">
+          <ul className="grid gap-3 grid-cols-4 max-sm:grid-cols-2  w-max">
             {watches
               .filter(
                 (watch) =>
@@ -707,7 +707,7 @@ function home() {
               .slice(0, 5)
               .map((watch, index) => (
                 <li
-                  className="rounded-[20px] bg-white w-[256.36px]"
+                  className=" bg-white w-[256.36px] hover:shadow-md"
                   key={watch.id}
                   onClick={() => {
                     handleProduct(index);
@@ -715,7 +715,7 @@ function home() {
                 >
                   <img
                     src={watch.img}
-                    className="mb-3 w-[100%] object-cover h-[213px] rounded-[20px_20px_0_0]"
+                    className="mb-3 w-[100%] object-cover h-[270px] "
                     alt=""
                   />
                   <div className="content p-[1rem]">
@@ -731,7 +731,7 @@ function home() {
                     </span>
                     <button
                       href="#"
-                      className="btn !border-0 !rounded-xl !bg-[var(--text)] !text-white mx-auto"
+                      className="btn !border-0 !bg-[var(--text)] !text-white mx-auto"
                       onClick={() => {
                         handleUser(index);
                       }}

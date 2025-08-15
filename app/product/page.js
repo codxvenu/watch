@@ -118,7 +118,7 @@ function product() {
     <div>
       <Nav /> 
       <div className={nav? "base max-sm:mt-[60px] mt-[110px] hidden":"base max-sm:mt-[60px] mt-[110px]"}>
-        <div className="context max-sm:p-[30px] pl-[159px] flex max-sm:flex-col  gap-10 mt-10">
+        <div className="context max-sm:p-[30px] px-[220px] flex max-sm:flex-col  gap-10 mt-10">
             <div className="img">
     <img className="h-[500px] w-[495px] rounded object-cover" src={item.img  } alt="" />
             </div>
@@ -154,7 +154,7 @@ function product() {
                 </div>
             </div>
         </div>
-        <div className="more-items max-sm:p-[30px] pl-[159px] my-16 text-[var(--text)] mn-w">
+        <div className="more-items max-sm:p-[30px] px-[220px] my-16 text-[var(--text)] mn-w">
 
         <h1 className="text-[24px] mb-5">More Related Items</h1>
         <ul className='grid grid-cols-4 max-sm:w-[100%] max-sm:grid-cols-2 w-[87%] gap-10 max-sm:grid-flow-row'>

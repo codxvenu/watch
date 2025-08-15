@@ -5,7 +5,7 @@ function footer() {
   const { nav } = useUser();
   return (
     <div className={nav? "bg-[var(--background)] text-[var(--border)] hidden;" :"bg-[var(--background)] text-[var(--border)] "}>
-      <div className="content text-center bg-[#F5F5F7] mt-[1rem] py-[3rem] px-[10px]">
+      <div className="content text-center bg-[#3a3a3a0a] mt-[1rem] py-[3rem] px-[10px]">
         <h1 className="mb-[10px]">Why Buy in USD when you can buy in rupees !</h1>
         {/* <h2 className="my-5">"AVAIL ONE TIME FREE REPAIRING FOR WATCHES"</h2> */}
         <p>
@@ -16,12 +16,12 @@ function footer() {
 
         <small className="my-2 uppercase mt-5">Watch Shree</small>
        
-        <button href="#" className="btn !border-0 rounded-[20px]">
+        <button href="#" className="btn !border-0 rounded-[20px] !bg-black !text-white">
           Shop Now
         </button>
         </span>
       </div>
-      <div className="qna my-[1rem] py-[3rem] text-center bg-[#F5F5F7]">
+      <div className="qna my-[1rem] py-[3rem] text-center bg-[white]">
         <h1 className="mb-5">QUESTIONS & ANSWERS</h1>
         <div className="w-[750px] m-auto q-a">
         <details className="question py-[15px] border-b border-t border-[var(--border)]">
@@ -95,9 +95,9 @@ function footer() {
                 </div>
       </div>
      
-      <div className="end mt-[1rem] py-[3rem] bg-[#F5F5F7]">
+      <div className="end mt-[1rem] py-[3rem] bg-[var(--text)] text-[var(--background)]">
       
-      <button className='text-[var(--text)] flex flex-col  '><span className="mb-3">Country/region</span><span className='text-[13px] border border-[var(--border)] p-3'>India | INR ₹</span></button>
+      <button className='text-[var(--background)] flex flex-col  '><span className="mb-3">Country/region</span><span className='text-[13px] border border-[var(--background)] p-3'>India | INR ₹</span></button>
       <span>© 2025, Watch Shree Store Powered by Codx Venu</span>
       </div>
     </div>

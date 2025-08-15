@@ -12,6 +12,9 @@ h1{
 }
 :root{
   --background : White;
-  --text : #333;
+  --text : black;
   --border : rgba(0,0,0,0.4);
+}
+span h4{
+  color: #33333391 !important;
 }
