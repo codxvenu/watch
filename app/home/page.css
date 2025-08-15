@@ -86,12 +86,11 @@ li .content .btn{
             margin-left: 0;
     }
     .mn-w ul{
-        width: 100%;
-        gap: 10.3rem;
+        width: max-content;
         overflow: scroll;
     }
     .mn-w ul li{
-        width: 155px;
+        width: calc(50vw - 24px);
     }
     li .content .btn{
         width: 100%;

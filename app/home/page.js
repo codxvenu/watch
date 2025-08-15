@@ -5,8 +5,53 @@ import Footer from "../components/footer";
 import "./page.css";
 import { useUser } from "../context/UserContext";
 function home() {
+
   const [watches, setWatches] = useState([
     {
+        "id": 1,
+        "name": "Gold Chain",
+        "oprice": "1000.00",
+        "dprice": "500.00",
+        "description": "gold chain ,best for party , classic look",
+        "type": "bestseller",
+        "gender": "men",
+        "img": "https://nocash.cc/venu/shopping.webp",
+        "created_at": "2025-08-10T05:26:44.000Z"
+    },
+    {
+        "id": 2,
+        "name": "Ring Watch ",
+        "oprice": "599.00",
+        "dprice": "299.00",
+        "description": "A Ring u will always Love to carry along time",
+        "type": "bestseller",
+        "gender": "women",
+        "img": "https://nocash.cc/venu/IMG_20250806_123750.jpg",
+        "created_at": "2025-08-10T08:18:20.000Z"
+    },
+     {
+        "id": 1,
+        "name": "Gold Chain",
+        "oprice": "1000.00",
+        "dprice": "500.00",
+        "description": "gold chain ,best for party , classic look",
+        "type": "bestseller",
+        "gender": "men",
+        "img": "https://nocash.cc/venu/shopping.webp",
+        "created_at": "2025-08-10T05:26:44.000Z"
+    },
+    {
+        "id": 2,
+        "name": "Ring Watch ",
+        "oprice": "599.00",
+        "dprice": "299.00",
+        "description": "A Ring u will always Love to carry along time",
+        "type": "bestseller",
+        "gender": "women",
+        "img": "https://nocash.cc/venu/IMG_20250806_123750.jpg",
+        "created_at": "2025-08-10T08:18:20.000Z"
+    },
+     {
         "id": 1,
         "name": "Gold Chain",
         "oprice": "1000.00",
@@ -499,6 +544,7 @@ function home() {
         });
     }
   };
+ 
   useEffect(() => {
     handleWatches();
     localStorage.setItem("page", "home");
@@ -535,29 +581,32 @@ function home() {
             </button>
           </div>
         </div>
-        <div className=" max-[768px]:p-0 max-[768px]:pt-3 pl-[159px] pr-12 pt-10 bg-[#F5F5F7] ">
-          <h1 className="mb-8 text-center text-[48px]">Category</h1>
-          <div className="grid min-[768px]:grid-cols-[1fr_1fr_1fr] grid-cols-2  justify-items-center w-[75%] mx-auto">
+        <div className=" max-[768px]:p-0 max-[768px]:pt-3 min-[768px]:pt-16 bg-[#F5F5F7] mb-[20px] !pb-[30px]">
+          <h1 className="min-[768px]:-mb-8 max-[768px]:mb-3 text-center text-[48px]">Category</h1>
+          <div className="grid min-[768px]:grid-cols-[1fr_1fr_1fr] grid-cols-2  justify-items-center w-[75%] mx-auto max-[768px]:gap-5">
 
           
           {data.map((i,index)=>(
             <>
-            <div className="max-[768px]:w-[8rem] flex flex-col items-center h-full rounded-full bg-[white] group/cate">
+            <div className="max-[768px]:w-[8rem] flex flex-col items-center max-[768px]:gap-5 min-[768px]:rounded-full max-[768px]:rounded-[15px] bg-[white] group/cate min-[768px]:mt-[-70px] h-max">
               <img src={i.thumbnail} alt="" className="w-[15rem]" />
+              <h1 className={`${babu[index+1] === "Chronograph" && "!text-[16px]"} mb-3 text-center max-[768px]:block hidden`}>{babu[index+1]}</h1>
             </div>
-              <h1 className="mb-3 text-center">{babu[index]}</h1>
+              <h1 className="mb-3 text-center max-[768px]:hidden">{babu[index]}</h1>
             </>
           ))}
-          <h1 className="mb-3 text-center"></h1>
-          <h1 className="mb-3 text-center">Chronograph</h1>
+          <h1 className="mb-3 text-center max-[768px]:hidden"></h1>
+          <h1 className="mb-3 text-center max-[768px]:hidden">Chronograph</h1>
 
           
         </div></div>
-        <div className="pl-[159px] pr-12 mn-w bg-[#F5F5F7] min-h-[400px] py-10">
+        <div className="pl-[159px] pr-12 mn-w bg-[#F5F5F7] min-h-[400px] py-10 ">
           
           <h1 className="mb-3">Mens Watches</h1>
           <h3 className="mb-6">Best Seller Watches</h3>
-          <ul className="grid grid-cols-4 w-[87%] gap-2">
+          <div className="overflow-scroll">
+
+          <ul className="grid grid-cols-4 w-[87%] gap-2 " style={{ scrollbarWidth: "none"}}>
             {watches
               .filter(
                 (watch) => watch.gender === "men" && watch.type === "bestseller"
@@ -600,6 +649,7 @@ function home() {
                 </li>
               ))}
           </ul>
+          </div>
         </div>
 
         {/* <span className='flex justify-center mb-3 mt-2'>

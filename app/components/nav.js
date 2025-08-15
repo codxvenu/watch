@@ -8,7 +8,7 @@ function nav() {
     const [ival, setIval] = useState("");
   const [currentPage, setCurrentPage] = useState("");
   const { nav, setNav } = useUser();
-
+    const[snav,setSnav] = useState(true);
   const handleChange = (event) => {
     setIval(event.target.value); // Updates state with input value
   };
@@ -20,6 +20,26 @@ function nav() {
       handleSearch();
     }
   }, [ival]);
+   useEffect(() => {
+  function handleNav() {
+    if (window.scrollY > 100) {
+      console.log("false");
+      
+      setSnav(false);
+    } else {
+      setSnav(true);
+       console.log("true");
+      
+    }
+  }
+
+  window.addEventListener("scroll", handleNav);
+
+  // Cleanup when the component unmounts
+  return () => {
+    window.removeEventListener("scroll", handleNav);
+  };
+}, []);
   const handleProduct = (id) => {
     console.log(searched[id]);
 
@@ -139,11 +159,10 @@ console.log(handlePrice(1234567)); // "12,34,567" (Indian style)
    ): (
     <div className="main-nav bg-[var(--background)] z-50 ">
       <div
-        className={
-          nav
-            ? "social bg-[var(--background)] h-[38px] border-b-[0.25px] border-[#e5e7eb] flex justify-between items-center"
-            : "social bg-[var(--background)] h-[38px] border-b-[0.25px] border-[#e5e7eb] lg:flex max-sm:hidden justify-between items-center"
-        }
+        className=
+          {`social bg-[var(--background)] h-[38px] border-b-[0.25px] border-[#e5e7eb] ${!snav && "hidden"} flex justify-between items-center transition-all duration-200 ease-in-out`} 
+           
+        
       >
         <div className="social-icons flex gap-5">
           <a href="https://www.instagram.com/watch_shree?igsh=ZzY3eHZ4ZnRvY2tm">
