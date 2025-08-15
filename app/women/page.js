@@ -114,8 +114,8 @@ function page() {
 
       
         {watches.filter(watch => watch.type ==="automatic" && watch.gender === "women" ).slice(0,fvalue).map((watch,index)=>(
- <li className='' key={watch.id} onClick={()=>{handleProduct(index);}}>
- <img src={watch.img} className='mb-3 w-[213px] h-[213px]' alt="" />
+ <li className='rounded-[20px] bg-white w-[256.36px]' key={watch.id} onClick={()=>{handleProduct(index);}}>
+ <img src={watch.img} className='mb-3 w-[100%] object-cover h-[213px] rounded-[20px_20px_0_0]' alt="" />
 <div className="content p-2">
 
  <h4 className='text-[13px]'>{watch.name}</h4>
@@ -124,7 +124,7 @@ function page() {
 
  <h4 className='text-[13px] line-through'>Rs.{watch.oprice}</h4><h3>Rs.{watch.dprice}</h3>
  </span>
- <button href="#" className="btn z-50" onClick={(event)=>{event.stopPropagation();handleUser(index)}}>
+ <button href="#" className="btn !border-0 !rounded-xl !bg-[var(--text)] !text-white mx-auto" onClick={(event)=>{event.stopPropagation();handleUser(index)}}>
   Add To Cart
  </button>
 </div>
@@ -177,8 +177,8 @@ function page() {
 
       
         {watches.filter(watch => watch.type ==="analog" && watch.gender === "women" ).slice(0,fvalue).map((watch,index)=>(
- <li className='' key={watch.id} onClick={()=>{handleProduct(index);}}>
- <img src={watch.img} className='mb-3 w-[213px] h-[213px]' alt="" />
+ <li className='rounded-[20px] bg-white w-[256.36px]' key={watch.id} onClick={()=>{handleProduct(index);}}>
+ <img src={watch.img} className='mb-3 w-[100%] object-cover h-[213px] rounded-[20px_20px_0_0]' alt="" />
 <div className="content p-2">
 
  <h4 className='text-[13px]'>{watch.name}</h4>
@@ -187,7 +187,7 @@ function page() {
 
  <h4 className='text-[13px] line-through'>Rs.{watch.oprice}</h4><h3>Rs.{watch.dprice}</h3>
  </span>
- <button href="#" className="btn z-50" onClick={(event)=>{event.stopPropagation();handleUser(index)}}>
+ <button href="#" className="btn !border-0 !rounded-xl !bg-[var(--text)] !text-white mx-auto" onClick={(event)=>{event.stopPropagation();handleUser(index)}}>
   Add To Cart
  </button>
 </div>
@@ -239,8 +239,8 @@ function page() {
       <h3 className='mb-6'>Some lost vintage watches</h3>
       <ul className='grid gap-2 grid-cols-4 max-sm:grid-cols-2 w-[87%]' >
         {watches.filter(watch => watch.type ==="vintage" && watch.gender === "women").slice(0,fvalue).map((watch,index)=>(
- <li className='' key={watch.id} onClick={()=>{handleProduct(index);}}>
- <img src={watch.img} className='mb-3 w-[213px] h-[213px]' alt="" />
+ <li className='rounded-[20px] bg-white w-[256.36px]' key={watch.id} onClick={()=>{handleProduct(index);}}>
+ <img src={watch.img} className='mb-3 w-[100%] object-cover h-[213px] rounded-[20px_20px_0_0]' alt="" />
 <div className="content p-2">
 
  <h4 className='text-[13px]'>{watch.name}</h4>
@@ -249,7 +249,7 @@ function page() {
 
  <h4 className='text-[13px] line-through'>Rs.{watch.oprice}</h4><h3>Rs.{watch.dprice}</h3>
  </span>
- <button href="#" className="btn z-50" onClick={(event)=>{event.stopPropagation();handleUser(index)}}>
+ <button href="#" className="btn !border-0 !rounded-xl !bg-[var(--text)] !text-white mx-auto" onClick={(event)=>{event.stopPropagation();handleUser(index)}}>
   Add To Cart
  </button>
 </div>
@@ -292,8 +292,8 @@ function page() {
       <h3 className='mb-6'>Some lost vintage watches</h3>
       <ul className='grid gap-2 grid-cols-4 max-sm:grid-cols-2 w-[87%]' >
         {watches.filter(watch => watch.type ==="vintage" && watch.gender === "women").slice(0,fvalue).map((watch,index)=>(
- <li className='' key={watch.id} onClick={()=>{handleProduct(index);}}>
- <img src={watch.img} className='mb-3 w-[213px] h-[213px]' alt="" />
+ <li className='rounded-[20px] bg-white w-[256.36px]' key={watch.id} onClick={()=>{handleProduct(index);}}>
+ <img src={watch.img} className='mb-3 w-[100%] object-cover h-[213px] rounded-[20px_20px_0_0]' alt="" />
 <div className="content p-2">
 
  <h4 className='text-[13px]'>{watch.name}</h4>
@@ -302,7 +302,7 @@ function page() {
 
  <h4 className='text-[13px] line-through'>Rs.{watch.oprice}</h4><h3>Rs.{watch.dprice}</h3>
  </span>
- <button href="#" className="btn z-50" onClick={(event)=>{event.stopPropagation();handleUser(index)}}>
+ <button href="#" className="btn !border-0 !rounded-xl !bg-[var(--text)] !text-white mx-auto" onClick={(event)=>{event.stopPropagation();handleUser(index)}}>
   Add To Cart
  </button>
 </div>
@@ -345,8 +345,8 @@ function page() {
       <h3 className='mb-6'>Some lost vintage watches</h3>
       <ul className='grid gap-2 grid-cols-4 max-sm:grid-cols-2 w-[87%]' >
         {watches.filter(watch => watch.type ==="vintage" && watch.gender === "women").slice(0,fvalue).map((watch,index)=>(
- <li className='' key={watch.id} onClick={()=>{handleProduct(index);}}>
- <img src={watch.img} className='mb-3 w-[213px] h-[213px]' alt="" />
+ <li className='rounded-[20px] bg-white w-[256.36px]' key={watch.id} onClick={()=>{handleProduct(index);}}>
+ <img src={watch.img} className='mb-3 w-[100%] object-cover h-[213px] rounded-[20px_20px_0_0]' alt="" />
 <div className="content p-2">
 
  <h4 className='text-[13px]'>{watch.name}</h4>
@@ -355,7 +355,7 @@ function page() {
 
  <h4 className='text-[13px] line-through'>Rs.{watch.oprice}</h4><h3>Rs.{watch.dprice}</h3>
  </span>
- <button href="#" className="btn z-50" onClick={(event)=>{event.stopPropagation();handleUser(index)}}>
+ <button href="#" className="btn !border-0 !rounded-xl !bg-[var(--text)] !text-white mx-auto" onClick={(event)=>{event.stopPropagation();handleUser(index)}}>
   Add To Cart
  </button>
 </div>
@@ -401,8 +401,8 @@ function page() {
       <h3 className='mb-6'>Some lost vintage watches</h3>
       <ul className='grid gap-2 grid-cols-4 max-sm:grid-cols-2 w-[87%]' >
         {watches.filter(watch => watch.type ==="vintage" && watch.gender === "women").slice(0,fvalue).map((watch,index)=>(
- <li className='' key={watch.id} onClick={()=>{handleProduct(index);}}>
- <img src={watch.img} className='mb-3 w-[213px] h-[213px]' alt="" />
+ <li className='rounded-[20px] bg-white w-[256.36px]' key={watch.id} onClick={()=>{handleProduct(index);}}>
+ <img src={watch.img} className='mb-3 w-[100%] object-cover h-[213px] rounded-[20px_20px_0_0]' alt="" />
 <div className="content p-2">
 
  <h4 className='text-[13px]'>{watch.name}</h4>
@@ -411,7 +411,7 @@ function page() {
 
  <h4 className='text-[13px] line-through'>Rs.{watch.oprice}</h4><h3>Rs.{watch.dprice}</h3>
  </span>
- <button href="#" className="btn z-50" onClick={(event)=>{event.stopPropagation();handleUser(index)}}>
+ <button href="#" className="btn !border-0 !rounded-xl !bg-[var(--text)] !text-white mx-auto" onClick={(event)=>{event.stopPropagation();handleUser(index)}}>
   Add To Cart
  </button>
 </div>
