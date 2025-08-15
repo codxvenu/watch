@@ -601,12 +601,18 @@ function home() {
           
         </div></div>
         <div className="pl-[159px] pr-12 mn-w bg-[#F5F5F7] min-h-[400px] py-10 ">
+          <span className="flex justify-between items-center">
           
+          <span>
           <h1 className="mb-3">Mens Watches</h1>
           <h3 className="mb-6">Best Seller Watches</h3>
-          <div className="overflow-scroll">
+          </span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-ellipsis-vertical-icon lucide-ellipsis-vertical mb-6"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+          </span>
+         
+          <div className="overflow-scroll" style={{ scrollbarWidth: "none"}}>
 
-          <ul className="grid grid-cols-4 w-[87%] gap-2 " style={{ scrollbarWidth: "none"}}>
+          <ul className="grid grid-cols-4 w-[87%] gap-2 " >
             {watches
               .filter(
                 (watch) => watch.gender === "men" && watch.type === "bestseller"
@@ -683,8 +689,15 @@ function home() {
           </div>
         </div>
         <div className="pl-[159px] pr-12 mn-w bg-[#F5F5F7] min-h-[400px] py-10">
+         
+            <span className="flex justify-between items-center">
+          
+          <span>
           <h1 className="mb-3">Women Watches</h1>
           <h3 className="mb-6">Best Seller Watches </h3>
+          </span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-ellipsis-vertical-icon lucide-ellipsis-vertical mb-6"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+          </span>
           <ul className="grid gap-2 grid-cols-5 max-sm:grid-cols-2 ">
             {watches
               .filter(
