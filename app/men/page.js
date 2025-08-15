@@ -7,12 +7,39 @@ import { useUser } from "../context/UserContext";
 
 function page() {
     const [watches,setWatches] = useState([])
-    const [automatic , setAutomatic] = useState(true)
-    const [digital , setDigital] = useState(true)
-    const [smart , setSmart] = useState(true)
-    const [hybrid , setHybrid] = useState(true)
-    const [chronograph , setChronograph] = useState(true)
-    const [analog , setAnalog] = useState(true)
+  const watchCategories = [
+  {
+    type: "automatic",
+    title: "AUTOMATIC WATCH",
+    subtitle: "Some lost vintage watches"
+  },
+  {
+    type: "analog",
+    title: "ANALOG WATCH",
+    subtitle: "Some lost vintage watches"
+  },
+  {
+    type: "digital",
+    title: "DIGITAL WATCH",
+    subtitle: "Some lost vintage watches"
+  },
+  {
+    type: "smart",
+    title: "SMART WATCH",
+    subtitle: "Some lost vintage watches"
+  },
+  {
+    type: "hybrid",
+    title: "HYBRID WATCH",
+    subtitle: "Some lost vintage watches"
+  },
+  {
+    type: "chronograph",
+    title: "CHRONOGRAPH WATCH",
+    subtitle: "Some lost vintage watches"
+  }
+];
+
     const [fvalue, setFvalue] = useState(6)
     const { nav } = useUser();
     const handleWatches = ()=>{
@@ -99,22 +126,25 @@ function page() {
         }
       }
   return (
-    <div className="text-[var(--text)] mt-[110px] ">
+    <div className="text-[var(--text)] mt-[45px] bg-white">
       <Nav/>
-      <div className={nav? "hidden":""}>
-
-      {automatic && (
-        <div>
-      
-      <div className='ml-[159px] px-12 mt-10 mn-w'>
-      <h1 className='mb-3'>AUTOMATIC WATCH</h1>
-      <h3 className='mb-6'>Some lost vintage watches</h3>
+      {watchCategories.map((i)=>(
+      <div className='ml-[159px] px-12 mt-5 mn-w bg-[#f5f5f5] py-4 min-h-[220px]' key={i.type}>
+        <span className="flex justify-between items-center">
+          
+          <span>
+      <h1 className='mb-3'>{i.title}</h1>
+      <h3 className='mb-6'>{i.subtitle}</h3>
+          
+          </span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-ellipsis-vertical-icon lucide-ellipsis-vertical mb-6"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+          </span>
     <ul className='grid gap-3 grid-cols-4 max-sm:grid-cols-2 w-[93%]' >
        
 
       
-        {watches.filter(watch => watch.type ==="automatic" && watch.gender === "men" ).slice(0,fvalue).map((watch,index)=>(
- <li className='rounded-[20px] bg-white w-[256.36px]' key={watch.id} onClick={()=>{handleProduct(index);}}>
+        {watches.filter(watch => watch.type === i.type && watch.gender === "men" ).slice(0,fvalue).map((watch,index)=>(
+ <li className='rounded-[20px] bg-[#f5f5f5] w-[256.36px]' key={watch.id} onClick={()=>{handleProduct(index);}}>
  <img src={watch.img} className='mb-3 w-[100%] object-cover h-[213px] rounded-[20px_20px_0_0]' alt="" />
 <div className="content p-2">
 
@@ -135,322 +165,9 @@ function page() {
    
         </ul>   
        
-    </div>
- {automatic && chronograph && (
-
-
-    <span className='flex justify-center mb-3 mt-2'>
-          
-          <button onClick={
-          ()=>{
-            setFvalue();
-            if(automatic){
-              setSmart(false);
-              setHybrid(false);
-              setChronograph(false);
-              setDigital(false);
-              setAnalog(false);
-              
-             } else{
-              setSmart(false);
-              setHybrid(false);
-              setChronograph(false);
-              setDigital(false);
-              setAutomatic(true);
-              setAnalog(false);
-            }
-
-          }}
-         className="btn m-auto">View All</button>
-          </span>   
-           )}
+    
           </div>
-             )}
-      {analog && (
-        <div>
-      
-      <div className='ml-[159px] px-12 mt-10 mn-w'>
-      <h1 className='mb-3'>ANALOG WATCH</h1>
-      <h3 className='mb-6'>Some lost vintage watches</h3>
-    <ul className='grid gap-2 grid-cols-4 max-sm:grid-cols-2 w-[87%]' >
-       
-
-      
-        {watches.filter(watch => watch.type ==="analog" && watch.gender === "men" ).slice(0,fvalue).map((watch,index)=>(
- <li className='rounded-[20px] bg-white w-[256.36px]' key={watch.id} onClick={()=>{handleProduct(index);}}>
- <img src={watch.img} className='mb-3 w-[100%] object-cover h-[213px] rounded-[20px_20px_0_0]' alt="" />
-<div className="content p-2">
-
- <h4 className='text-[13px]'>{watch.name}</h4>
- <small className='text-[10px] text-[var(--border)] mt-2'>Watch Shree</small>
- <span className='flex gap-4 items-center mt-2'>
-
- <h4 className='text-[13px] line-through'>Rs.{watch.oprice}</h4><h3>Rs.{watch.dprice}</h3>
- </span>
- <button href="#" className="btn !border-0 !rounded-xl !bg-[var(--text)] !text-white mx-auto" onClick={(event)=>{event.stopPropagation();handleUser(index)}}>
-  Add To Cart
- </button>
-</div>
-
- </li>
-        ))}
-       
-   
-        </ul>   
-       
-    </div>
- {analog && chronograph && (
-
-
-    <span className='flex justify-center mb-3 mt-2'>
-          
-          <button onClick={
-          ()=>{
-            setFvalue();
-            if(analog){
-              setSmart(false);
-              setHybrid(false);
-              setChronograph(false);
-              setDigital(false);
-              setAutomatic(false);
-              
-              
-             } else{
-              setSmart(false);
-              setHybrid(false);
-              setChronograph(false);
-              setDigital(false);
-              setAutomatic(false);
-              setAnalog(true);
-            }
-
-          }}
-         className="btn m-auto">View All</button>
-          </span>   
-           )}
-          </div>
-             )}
-{digital && (
-
-<div>
-
-      <div className='ml-[159px] px-12 mt-10 mn-w'>
-      <h1 className='mb-3'>DIGITAL WATCH</h1>
-      <h3 className='mb-6'>Some lost vintage watches</h3>
-      <ul className='grid gap-2 grid-cols-4 max-sm:grid-cols-2 w-[87%]' >
-        {watches.filter(watch => watch.type ==="digital" && watch.gender === "men").slice(0,fvalue).map((watch,index)=>(
- <li className='rounded-[20px] bg-white w-[256.36px]' key={watch.id} onClick={()=>{handleProduct(index);}}>
- <img src={watch.img} className='mb-3 w-[100%] object-cover h-[213px] rounded-[20px_20px_0_0]' alt="" />
-<div className="content p-2">
-
- <h4 className='text-[13px]'>{watch.name}</h4>
- <small className='text-[10px] text-[var(--border)] mt-2'>Watch Shree</small>
- <span className='flex gap-4 items-center mt-2'>
-
- <h4 className='text-[13px] line-through'>Rs.{watch.oprice}</h4><h3>Rs.{watch.dprice}</h3>
- </span>
- <button href="#" className="btn !border-0 !rounded-xl !bg-[var(--text)] !text-white mx-auto" onClick={(event)=>{event.stopPropagation();handleUser(index)}}>
-  Add To Cart
- </button>
-</div>
-
- </li>
-        ))}
-       
-        
-        </ul>
-       
-    </div>
-    {digital && chronograph && (
-    <span className='flex justify-center mb-3 mt-2 '>
-          
-          <button onClick={
-          ()=>{
-            setFvalue();
-            if(digital){setSmart(false);
-              setHybrid(false);
-              setChronograph(false);
-              setSmart(false);
-              setAutomatic(false);
-              setAnalog(false);
-            }else{
-              setSmart(false);
-              setHybrid(false);
-              setChronograph(false);
-              setDigital(true);
-              setAutomatic(false);
-              setAnalog(false);
-            }
-
-          }}  className="btn m-auto">View All</button>
-          </span>)}   </div>   )}
-          {smart && (
-            <div>
-         
-      <div className='ml-[159px] px-12 mt-10 mn-w'>
-      <h1 className='mb-3'>SMART WATCH </h1>
-      <h3 className='mb-6'>Some lost vintage watches</h3>
-      <ul className='grid gap-2 grid-cols-4 max-sm:grid-cols-2 w-[87%]' >
-        {watches.filter(watch => watch.type ==="smart" && watch.gender === "men").slice(0,fvalue).map((watch,index)=>(
- <li className='rounded-[20px] bg-white w-[256.36px]' key={watch.id} onClick={()=>{handleProduct(index);}}>
- <img src={watch.img} className='mb-3 w-[100%] object-cover h-[213px] rounded-[20px_20px_0_0]' alt="" />
-<div className="content p-2">
-
- <h4 className='text-[13px]'>{watch.name}</h4>
- <small className='text-[10px] text-[var(--border)] mt-2'>Watch Shree</small>
- <span className='flex gap-4 items-center mt-2'>
-
- <h4 className='text-[13px] line-through'>Rs.{watch.oprice}</h4><h3>Rs.{watch.dprice}</h3>
- </span>
- <button href="#" className="btn !border-0 !rounded-xl !bg-[var(--text)] !text-white mx-auto" onClick={(event)=>{event.stopPropagation();handleUser(index)}}>
-  Add To Cart
- </button>
-</div>
-
- </li>
-        ))}
-
-        
-        </ul>
-       
-    </div>
-    {smart && chronograph && (
-    <span className='flex justify-center mb-3 mt-2'>
-          
-          <button onClick={
-          ()=>{
-            setFvalue();
-            if(smart){
-              setHybrid(false);
-              setChronograph(false);
-              setDigital(false);
-              setAutomatic(false);
-              setAnalog(false);
-            } else{
-              setSmart(true);
-              setHybrid(false);
-              setChronograph(false);
-              setDigital(false);
-              setAutomatic(false);
-              setAnalog(false);
-            }
-
-          }}  className="btn m-auto">View All</button>
-          </span>  )}
-          </div>   )}
-          {hybrid && ( 
-            <div>
-      <div className='ml-[159px] px-12 mt-10 mn-w'>
-      <h1 className='mb-3'>HYBRID WATCH</h1>
-      <h3 className='mb-6'>Some lost vintage watches</h3>
-      <ul className='grid gap-2 grid-cols-4 max-sm:grid-cols-2 w-[87%]' >
-        {watches.filter(watch => watch.type ==="hybrid" && watch.gender === "men").slice(0,fvalue).map((watch,index)=>(
- <li className='rounded-[20px] bg-white w-[256.36px]' key={watch.id} onClick={()=>{handleProduct(index);}}>
- <img src={watch.img} className='mb-3 w-[100%] object-cover h-[213px] rounded-[20px_20px_0_0]' alt="" />
-<div className="content p-2">
-
- <h4 className='text-[13px]'>{watch.name}</h4>
- <small className='text-[10px] text-[var(--border)] mt-2'>Watch Shree</small>
- <span className='flex gap-4 items-center mt-2'>
-
- <h4 className='text-[13px] line-through'>Rs.{watch.oprice}</h4><h3>Rs.{watch.dprice}</h3>
- </span>
- <button href="#" className="btn !border-0 !rounded-xl !bg-[var(--text)] !text-white mx-auto" onClick={(event)=>{event.stopPropagation();handleUser(index)}}>
-  Add To Cart
- </button>
-</div>
-
- </li>
-        ))}
-       
-        
-        </ul>
-       
-    </div>
-    {hybrid && chronograph && (
-    <span className='flex justify-center mb-3 mt-2'>
-          
-          <button onClick={
-          ()=>{
-            setFvalue();
-            if(hybrid){setSmart(false);
-              setAutomatic(false);
-              setChronograph(false);
-              setDigital(false);
-              setAutomatic(false);
-              setAnalog(false);
-            }else{
-              setSmart(false);
-              setHybrid(true);
-              setChronograph(false);
-              setDigital(false);
-              setAnalog(false);
-              setAutomatic(false);
-            }
-
-          }}  className="btn m-auto">View All</button>
-          </span>  )}
-          </div>    )}
-          {chronograph && (
-
-       <div>
-
-      
-      <div className='ml-[159px] px-12 mt-10 mn-w'>
-      <h1 className='mb-3'>CHRONOGRAPH WATCH</h1>
-      <h3 className='mb-6'>Some lost vintage watches</h3>
-      <ul className='grid gap-2 grid-cols-4 max-sm:grid-cols-2 w-[87%]' >
-        {watches.filter(watch => watch.type ==="chronograph" && watch.gender === "men").slice(0,fvalue).map((watch,index)=>(
- <li className='rounded-[20px] bg-white w-[256.36px]' key={watch.id} onClick={()=>{handleProduct(index);}}>
- <img src={watch.img} className='mb-3 w-[100%] object-cover h-[213px] rounded-[20px_20px_0_0]' alt="" />
-<div className="content p-2">
-
- <h4 className='text-[13px]'>{watch.name}</h4>
- <small className='text-[10px] text-[var(--border)] mt-2'>Watch Shree</small>
- <span className='flex gap-4 items-center mt-2'>
-
- <h4 className='text-[13px] line-through'>Rs.{watch.oprice}</h4><h3>Rs.{watch.dprice}</h3>
- </span>
- <button href="#" className="btn !border-0 !rounded-xl !bg-[var(--text)] !text-white mx-auto" onClick={(event)=>{event.stopPropagation();handleUser(index)}}>
-  Add To Cart
- </button>
-</div>
-
- </li>
-        ))}
-       
-        
-        </ul>
-       
-    </div> {automatic && chronograph && (
-     
-    <span className='flex justify-center max-lg:mb-12 mt-2'>
-          
-          <button onClick={
-            
-          ()=>{
-            setFvalue();
-            if(chronograph){
-              setSmart(false);
-              setHybrid(false);
-              setDigital(false);
-              setAutomatic(false);
-              setAnalog(false);
-            } else{
-              setSmart(false);
-              setHybrid(false);
-              setChronograph(true);
-              setDigital(false);
-              setAutomatic(false);
-              setAnalog(false);
-            }
-
-          }} 
-           className="btn m-auto">View All</button>
-          </span> )} 
-          </div> 
-            )}
-          </div>
+      ))}
       <Footer/>
     </div>
   )
