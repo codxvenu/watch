@@ -437,7 +437,7 @@ app.post("/api/addcart", (req, res) => {
       res.send({ message: 'Quantity Updated' });
     });
   }else{
-    db.query('INSERT INTO cart(name,img,oprice,dprice,description,type,username,quantity) values(?,?,?,?,?,?,?,1)', [item.name,item.img,item.oprice,item.dprice,item.description,item.type,username], (err, result) => {
+    db.query('INSERT INTO cart(name,img,oprice,dprice,description,type,username,quantity) values(?,?,?,?,?,?,?,1)', [item.name,item.img,item.oprice,item.dprice,item.description,item.type,username,0], (err, result) => {
       if (err) {
         console.error('Database Error:', err);
         return res.status(500).send({ message: 'Database Insert Failed' });
