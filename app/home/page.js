@@ -1,90 +1,13 @@
 "use client";
-import { React, useEffect, useState } from "react";
+import { React, useEffect, useState,Fragment } from "react";
 import Nav from "../components/nav";
 import Footer from "../components/footer";
 import "./page.css";
 import { useUser } from "../context/UserContext";
+import Link from "next/link";
 function home() {
 
-  const [watches, setWatches] = useState([
-    {
-        "id": 1,
-        "name": "Gold Chain",
-        "oprice": "1000.00",
-        "dprice": "500.00",
-        "description": "gold chain ,best for party , classic look",
-        "type": "bestseller",
-        "gender": "men",
-        "img": "https://nocash.cc/venu/shopping.webp",
-        "created_at": "2025-08-10T05:26:44.000Z"
-    },
-    {
-        "id": 2,
-        "name": "Ring Watch ",
-        "oprice": "599.00",
-        "dprice": "299.00",
-        "description": "A Ring u will always Love to carry along time",
-        "type": "bestseller",
-        "gender": "women",
-        "img": "https://nocash.cc/venu/IMG_20250806_123750.jpg",
-        "created_at": "2025-08-10T08:18:20.000Z"
-    },
-     {
-        "id": 1,
-        "name": "Gold Chain",
-        "oprice": "1000.00",
-        "dprice": "500.00",
-        "description": "gold chain ,best for party , classic look",
-        "type": "bestseller",
-        "gender": "men",
-        "img": "https://nocash.cc/venu/shopping.webp",
-        "created_at": "2025-08-10T05:26:44.000Z"
-    },
-    {
-        "id": 2,
-        "name": "Ring Watch ",
-        "oprice": "599.00",
-        "dprice": "299.00",
-        "description": "A Ring u will always Love to carry along time",
-        "type": "bestseller",
-        "gender": "women",
-        "img": "https://nocash.cc/venu/IMG_20250806_123750.jpg",
-        "created_at": "2025-08-10T08:18:20.000Z"
-    },
-     {
-        "id": 1,
-        "name": "Gold Chain",
-        "oprice": "1000.00",
-        "dprice": "500.00",
-        "description": "gold chain ,best for party , classic look",
-        "type": "bestseller",
-        "gender": "men",
-        "img": "https://nocash.cc/venu/shopping.webp",
-        "created_at": "2025-08-10T05:26:44.000Z"
-    },
-    {
-        "id": 2,
-        "name": "Ring Watch ",
-        "oprice": "599.00",
-        "dprice": "299.00",
-        "description": "A Ring u will always Love to carry along time",
-        "type": "bestseller",
-        "gender": "women",
-        "img": "https://nocash.cc/venu/IMG_20250806_123750.jpg",
-        "created_at": "2025-08-10T08:18:20.000Z"
-    },
-    {
-        "id": 3,
-        "name": "gold watch",
-        "oprice": "100000.00",
-        "dprice": "200.00",
-        "description": "kdjgshyfgysdfkGDFyuidgW",
-        "type": "bestseller",
-        "gender": "men",
-        "img": "https://nocash.cc/venu/Untitled.jpg",
-        "created_at": "2025-08-13T09:43:03.000Z"
-    }
-]);
+  const [watches, setWatches] = useState([]);
   const data = [
     {
       "id": 93,
@@ -584,16 +507,17 @@ function home() {
         <div className=" max-[768px]:p-0 max-[768px]:pt-3 min-[768px]:pt-16 bg-[white] mb-[20px] !pb-[30px]">
           <h1 className="min-[768px]:-mb-8 max-[768px]:mb-3 text-center text-[48px]">Category</h1>
           <div className="grid min-[768px]:grid-cols-[1fr_1fr_1fr] grid-cols-2  justify-items-center w-[75%] mx-auto max-[768px]:gap-5">
-
-          
           {data.map((i,index)=>(
-            <>
-            <div className="max-[768px]:w-[8rem] flex flex-col items-center max-[768px]:gap-5 min-[768px]:rounded-full max-[768px]:rounded-[15px] bg-[white] group/cate min-[768px]:mt-[-70px] h-max">
-              <img src={i.thumbnail} alt="" className="w-[15rem]" />
+            <Fragment key={index}>
+              <Link href={`/product/${babu[index+1]}/both`}>
+              
+            <div  className="max-[768px]:w-[8rem] flex flex-col items-center max-[768px]:gap-5 min-[768px]:rounded-full max-[768px]:rounded-[15px] bg-[white] group/cate min-[768px]:mt-[-70px] h-max">
+              <img src={i.thumbnail} alt="" className="w-[15rem] transition-transform duration-500 hover:scale-150 " />
               <h1 className={`${babu[index+1] === "Chronograph" && "!text-[16px]"} mb-3 text-center max-[768px]:block hidden`}>{babu[index+1]}</h1>
             </div>
+              </Link>
               <h1 className="mb-3 text-center max-[768px]:hidden">{babu[index]}</h1>
-            </>
+            </Fragment>
           ))}
           <h1 className="mb-3 text-center max-[768px]:hidden"></h1>
           <h1 className="mb-3 text-center max-[768px]:hidden">Chronograph</h1>
@@ -607,7 +531,12 @@ function home() {
           <h1 className="mb-3">Mens Watches</h1>
           <h3 className="mb-6">Best Seller Watches</h3>
           </span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-ellipsis-vertical-icon lucide-ellipsis-vertical mb-6"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+           <Link href={`/product/bestseller/${"women"}`}>
+          <div className="w-6 h-6">
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-ellipsis-vertical-icon lucide-ellipsis-vertical mb-6"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+          </div>
+          </Link>
           </span>
          
           <div className="overflow-scroll" style={{ scrollbarWidth: "none"}}>
@@ -621,7 +550,7 @@ function home() {
               .map((watch, index) => (
                 <li
                   className=" bg-white w-[256.36px] hover:shadow-md"
-                  key={watch.id}
+                  key={index}
                   onClick={() => {
                     handleProduct(index);
                   }}
@@ -655,6 +584,13 @@ function home() {
                 </li>
               ))}
           </ul>
+           {watches.filter((x)=>x.type==="bestseller" && x.gender === "men").length === 0 && 
+      <span className=" h-[50vh] flex items-start justify-center pt-28">
+        <svg aria-hidden="true" className="w-[30px] h-[30px] text-transparent animate-spin animate-duration-[.25s] rounded-full border-l-[2px] border-l-[#242424] border-[transparent] " viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+        <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
+    </svg>
+      </span>}
           </div>
         </div>
 
@@ -696,7 +632,12 @@ function home() {
           <h1 className="mb-3">Women Watches</h1>
           <h3 className="mb-6">Best Seller Watches </h3>
           </span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-ellipsis-vertical-icon lucide-ellipsis-vertical mb-6"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+          <Link href={`/product/bestseller/${"women"}`}>
+          <div className="w-6 h-6">
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-ellipsis-vertical-icon lucide-ellipsis-vertical mb-6"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+          </div>
+          </Link>
           </span>
           <ul className="grid gap-3 grid-cols-4 max-sm:grid-cols-2  w-max">
             {watches
@@ -708,7 +649,7 @@ function home() {
               .map((watch, index) => (
                 <li
                   className=" bg-white w-[256.36px] hover:shadow-md"
-                  key={watch.id}
+                  key={index}
                   onClick={() => {
                     handleProduct(index);
                   }}
@@ -742,6 +683,13 @@ function home() {
                 </li>
               ))}
           </ul>
+           {watches.filter((x)=>x.type==="bestseller" && x.gender === "women").length === 0 && 
+      <span className=" h-[50vh] flex items-start justify-center pt-28">
+        <svg aria-hidden="true" className="w-[30px] h-[30px] text-transparent animate-spin animate-duration-[.25s] rounded-full border-l-[2px] border-l-[#242424] border-[transparent] " viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+        <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
+    </svg>
+      </span>}
         </div>
 
         {/* <span className='flex justify-center mb-3 mt-2'>

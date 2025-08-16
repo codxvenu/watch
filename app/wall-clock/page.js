@@ -4,12 +4,120 @@ import Nav from "../components/nav";
 import Footer from "../components/footer";
 import "./page.css"
 import { useUser } from "../context/UserContext";
-
+import Link from 'next/link';
 function page() {
-    const [watches,setWatches] = useState([])
-    const [automatic , setAutomatic] = useState(true)
-    const [digital , setDigital] = useState(true)
-    const [analog , setAnalog] = useState(true)
+    const [watches, setWatches] = useState([
+        {
+            "id": 1,
+            "name": "Gold Chain",
+            "oprice": "1000.00",
+            "dprice": "500.00",
+            "description": "gold chain ,best for party , classic look",
+            "type": "automatic",
+            "gender": "wall-clocks",
+            "img": "https://nocash.cc/venu/shopping.webp",
+            "created_at": "2025-08-10T05:26:44.000Z"
+        },
+        {
+            "id": 2,
+            "name": "Ring Watch ",
+            "oprice": "599.00",
+            "dprice": "299.00",
+            "description": "A Ring u will always Love to carry along time",
+            "type": "automatic",
+            "gender": "wowall-clocks",
+            "img": "https://nocash.cc/venu/IMG_20250806_123750.jpg",
+            "created_at": "2025-08-10T08:18:20.000Z"
+        },
+         {
+            "id": 1,
+            "name": "Gold Chain",
+            "oprice": "1000.00",
+            "dprice": "500.00",
+            "description": "gold chain ,best for party , classic look",
+            "type": "automatic",
+            "gender": "wall-clocks",
+            "img": "https://nocash.cc/venu/shopping.webp",
+            "created_at": "2025-08-10T05:26:44.000Z"
+        },
+        {
+            "id": 2,
+            "name": "Ring Watch ",
+            "oprice": "599.00",
+            "dprice": "299.00",
+            "description": "A Ring u will always Love to carry along time",
+            "type": "automatic",
+            "gender": "wowall-clocks",
+            "img": "https://nocash.cc/venu/IMG_20250806_123750.jpg",
+            "created_at": "2025-08-10T08:18:20.000Z"
+        },
+         {
+            "id": 1,
+            "name": "Gold Chain",
+            "oprice": "1000.00",
+            "dprice": "500.00",
+            "description": "gold chain ,best for party , classic look",
+            "type": "automatic",
+            "gender": "wall-clocks",
+            "img": "https://nocash.cc/venu/shopping.webp",
+            "created_at": "2025-08-10T05:26:44.000Z"
+        },
+        {
+            "id": 2,
+            "name": "Ring Watch ",
+            "oprice": "599.00",
+            "dprice": "299.00",
+            "description": "A Ring u will always Love to carry along time",
+            "type": "automatic",
+            "gender": "wowall-clocks",
+            "img": "https://nocash.cc/venu/IMG_20250806_123750.jpg",
+            "created_at": "2025-08-10T08:18:20.000Z"
+        },
+        {
+            "id": 3,
+            "name": "gold watch",
+            "oprice": "100000.00",
+            "dprice": "200.00",
+            "description": "kdjgshyfgysdfkGDFyuidgW",
+            "type": "automatic",
+            "gender": "wall-clocks",
+            "img": "https://nocash.cc/venu/Untitled.jpg",
+            "created_at": "2025-08-13T09:43:03.000Z"
+        }
+    ]);
+  const watchCategories = [
+  {
+    type: "automatic",
+    title: "AUTOMATIC WATCH",
+    subtitle: "Some lost vintage watches"
+  },
+  {
+    type: "analog",
+    title: "ANALOG WATCH",
+    subtitle: "Some lost vintage watches"
+  },
+  {
+    type: "digital",
+    title: "DIGITAL WATCH",
+    subtitle: "Some lost vintage watches"
+  },
+  {
+    type: "smart",
+    title: "SMART WATCH",
+    subtitle: "Some lost vintage watches"
+  },
+  {
+    type: "hybrid",
+    title: "HYBRID WATCH",
+    subtitle: "Some lost vintage watches"
+  },
+  {
+    type: "chronograph",
+    title: "CHRONOGRAPH WATCH",
+    subtitle: "Some lost vintage watches"
+  }
+];
+
     const [fvalue, setFvalue] = useState(6)
     const { nav } = useUser();
     const handleWatches = ()=>{
@@ -22,7 +130,7 @@ function page() {
       }
       useEffect(()=>{
         handleWatches();
-        localStorage.setItem("page" , "men");
+        localStorage.setItem("page" , "wall-clocks");
         
       },[])
       useEffect(()=>{
@@ -32,7 +140,7 @@ function page() {
       },[watches])
       const handleProduct = (watch)=>{
     
-        localStorage.setItem('product',JSON.stringify(watch))
+        localStorage.setItem('product',JSON.stringify(watches[watch]))
         window.location.href = "/product";
       }
 
@@ -96,23 +204,33 @@ function page() {
         }
       }
   return (
-    <div className="text-[var(--text)] mt-[110px] ">
+    <div className="text-[var(--text)] max-[768px]:mt-[45px] mt-[85px] bg-white">
       <Nav/>
-      <div className={nav? "hidden":""}>
+      <img className="w-[100%] h-[250px] object-cover" src="https://static.helioswatchstore.com/media/catalog/category/all_watches_apr_2025.jpg" alt="" />
+      {watchCategories.map((i)=>(
+      <div className='px-[220px] mt-5 mn-w bg-[white] py-4 min-h-[220px]' key={i.type}>
+        <span className="flex justify-between items-center">
+          
+          <span>
+      <h1 className='mb-3'>{i.title}</h1>
+      <h3 className='mb-6'>{i.subtitle}</h3>
+          
+          </span>
+          <Link href={`/product/${i.type}/${"men"}`}>
+          <div className="w-6 h-6">
 
-      {automatic && (
-        <div>
-      
-      <div className='ml-[159px] px-12 mt-10 mn-w'>
-      <h1 className='mb-3'>AUTOMATIC CLOCKS</h1>
-      <h3 className='mb-6'>Some lost vintage CLOCKS</h3>
-    <ul className='grid gap-2 grid-cols-4 max-sm:grid-cols-2 w-[87%]' >
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-ellipsis-vertical-icon lucide-ellipsis-vertical mb-6"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+          </div>
+          </Link>
+          
+          </span>
+    <ul className='grid gap-3 grid-cols-[repeat(4,minmax(0,1fr))] max-sm:grid-cols-2 w-max' >
        
 
       
-        {watches.filter(watch => watch.type ==="automatic" && watch.gender === "wall-clocks" ).slice(0,fvalue).map((watch,index)=>(
- <li className='' key={watch.id} onClick={()=>{handleProduct(index);}}>
- <img src={watch.img} className='mb-3 w-[213px] h-[213px]' alt="" />
+        {watches.filter(watch => watch.type === i.type && watch.gender === "wall-clocks" ).slice(0,fvalue).map((watch,index)=>(
+ <li className=' bg-[white] w-[256.36px] hover:shadow-md' key={index} onClick={()=>{handleProduct(index);}}>
+ <img src={watch.img} className='mb-3 w-[100%] object-contain h-[213px] rounded-[20px_20px_0_0]' alt="" />
 <div className="content p-2">
 
  <h4 className='text-[13px]'>{watch.name}</h4>
@@ -121,7 +239,7 @@ function page() {
 
  <h4 className='text-[13px] line-through'>Rs.{watch.oprice}</h4><h3>Rs.{watch.dprice}</h3>
  </span>
- <button href="#" className="btn z-50" onClick={(event)=>{event.stopPropagation();handleUser(index)}}>
+ <button href="#" className="btn !border-0 !bg-[black] !text-white mx-auto" onClick={(event)=>{event.stopPropagation();handleUser(index)}}>
   Add To Cart
  </button>
 </div>
@@ -131,139 +249,16 @@ function page() {
        
    
         </ul>   
-       
-    </div>
- {automatic &&(
-
-
-    <span className='flex justify-center mb-3 mt-2'>
-          
-          <button onClick={
-          ()=>{
-            setFvalue();
-            if(automatic){
-              setAnalog(false);
-              setDigital(false);
-              
-             } else{
-              setAnalog(false);
-              setDigital(false);
-              setAutomatic(true);
-            }
-
-          }}
-         className="btn m-auto">View All</button>
-          </span>   
-           )}
+        {watches.filter((x)=>x.type===i.type && x.gender === "wall-clocks").length === 0 && 
+      <span className=" h-[50vh] flex items-start justify-center pt-28">
+        <svg aria-hidden="true" className="w-[30px] h-[30px] text-transparent animate-spin animate-duration-[.25s] rounded-full border-l-[2px] border-l-[#242424] border-[transparent] " viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+        <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
+    </svg>
+      </span>}
+    
           </div>
-             )}
-      {analog && (
-        <div>
-      
-      <div className='ml-[159px] px-12 mt-10 mn-w'>
-      <h1 className='mb-3'>ANALOG CLOCKS</h1>
-      <h3 className='mb-6'>Some lost vintage CLOCKS</h3>
-    <ul className='grid gap-2 grid-cols-4 max-sm:grid-cols-2 w-[87%]' >
-       
-
-      
-        {watches.filter(watch => watch.type ==="analog" && watch.gender === "wall-clocks" ).slice(0,fvalue).map((watch,index)=>(
- <li className='' key={watch.id} onClick={()=>{handleProduct(index);}}>
- <img src={watch.img} className='mb-3 w-[213px] h-[213px]' alt="" />
-<div className="content p-2">
-
- <h4 className='text-[13px]'>{watch.name}</h4>
- <small className='text-[10px] text-[var(--border)] mt-2'>Watch Shree</small>
- <span className='flex gap-4 items-center mt-2'>
-
- <h4 className='text-[13px] line-through'>Rs.{watch.oprice}</h4><h3>Rs.{watch.dprice}</h3>
- </span>
- <button href="#" className="btn z-50" onClick={(event)=>{event.stopPropagation();handleUser(index)}}>
-  Add To Cart
- </button>
-</div>
-
- </li>
-        ))}
-       
-   
-        </ul>   
-       
-    </div>
- {analog && (
-
-
-    <span className='flex justify-center mb-3 mt-2'>
-          
-          <button onClick={
-          ()=>{
-            setFvalue();
-            if(analog){
-              setAutomatic(false);
-              setDigital(false);
-              
-              
-             } else{
-              setDigital(false);
-              setAutomatic(false);
-              setAnalog(true);
-            }
-
-          }}
-         className="btn m-auto">View All</button>
-          </span>   
-           )}
-          </div>
-             )}
-{digital && (
-
-<div>
-
-      <div className='ml-[159px] px-12 mt-10 mn-w'>
-      <h1 className='mb-3'>DIGITAL CLOCKS</h1>
-      <h3 className='mb-6'>Some lost vintage CLOCKS</h3>
-      <ul className='grid gap-2 grid-cols-4 max-sm:grid-cols-2 w-[87%]' >
-        {watches.filter(watch => watch.type ==="digital" && watch.gender === "wall-clocks").slice(0,fvalue).map((watch,index)=>(
- <li className='' key={watch.id} onClick={()=>{handleProduct(index);}}>
- <img src={watch.img} className='mb-3 w-[213px] h-[213px]' alt="" />
-<div className="content p-2">
-
- <h4 className='text-[13px]'>{watch.name}</h4>
- <small className='text-[10px] text-[var(--border)] mt-2'>Watch Shree</small>
- <span className='flex gap-4 items-center mt-2'>
-
- <h4 className='text-[13px] line-through'>Rs.{watch.oprice}</h4><h3>Rs.{watch.dprice}</h3>
- </span>
- <button href="#" className="btn z-50" onClick={(event)=>{event.stopPropagation();handleUser(index)}}>
-  Add To Cart
- </button>
-</div>
-
- </li>
-        ))}
-       
-        
-        </ul>
-       
-    </div>
-    {digital &&  (
-    <span className='flex justify-center mb-3 mt-2 '>
-          
-          <button onClick={
-          ()=>{
-            setFvalue();
-            if(digital){
-              setAnalog(false);
-              setAutomatic(false);
-            }else{
-              setAnalog(false);
-              setDigital(true);
-              setAutomatic(false);
-            }
-
-          }}  className="btn m-auto">View All</button>
-          </span>)}   </div>   )}
-          </div>
+      ))}
       <Footer/>
     </div>
   )
