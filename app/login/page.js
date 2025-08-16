@@ -90,7 +90,7 @@ function profile() {
         </svg>
       </i>
 
-      <div className="mx-auto  max-sm:pl-[5px] max-sm:w-[90%] flex w-full flex-col justify-center px-5 pt-0 md:h-[unset] md:max-w-[50%] lg:h-[100vh] min-h-[100vh] lg:max-w-[50%] lg:px-6">
+      <div className="mx-auto max-sm:w-[90%] flex w-full flex-col justify-center px-5 pt-0 md:h-[unset] md:max-w-[50%] lg:h-[100vh] min-h-[100vh] lg:max-w-[50%] lg:px-6">
         <div className="my-auto min-[768px]:shadow-md mb-auto mt-8 flex flex-col md:mt-[70px] max-sm:w-[324px] w-[350px] md:w-[60vw] min-[768px]:p-[3rem] mx-auto md:max-w-[450px] lg:max-w-[450px]">
           <p className="text-[32px] font-bold max-sm:mt-[10px] text-zinc-950 dark:text-[var(--text)]">
             Sign In
