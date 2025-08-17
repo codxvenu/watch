@@ -386,6 +386,18 @@ app.get("/api/watches", (req, res) => {
         res.send(results);
     });
 });
+app.get("/api/product/:id", (req, res) => {
+  const {id} = req.params;
+    db.query('SELECT * FROM watches where id = ?',[id] , (err, results) => {
+        if (err) {
+            console.error('Database Error:', err);
+            console.log("Database Error:", err);
+            
+            return res.status(500).send({ message: 'Database Query Failed' });
+        }
+        res.send(results);
+    });
+});
 app.get("/api/cart", (req, res) => {
   const { username } = req.query; // Extract username
 
