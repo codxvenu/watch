@@ -146,12 +146,11 @@ function page() {
 
 
       const handleOrder = async(id)=>{
-        console.log(watches[id],"data");
         
         const username = localStorage.getItem('username');
         const requestBody = JSON.stringify({ 
               username: username,
-              item : watches[id]
+              item : id
           
         });
         try {
@@ -238,7 +237,7 @@ function page() {
 
  <h4 className='text-[13px] line-through'>Rs.{watch.oprice}</h4><h3>Rs.{watch.dprice}</h3>
  </span>
- <button href="#" className="btn !border-0 !bg-[black] !text-white mx-auto" onClick={(event)=>{event.stopPropagation();handleUser(index)}}>
+ <button href="#" className="btn !border-0 !bg-[black] !text-white mx-auto" onClick={(event)=>{event.stopPropagation();handleUser(watch)}}>
   Add To Cart
  </button>
 </div>
