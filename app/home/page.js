@@ -229,7 +229,7 @@ function home() {
                     className=" bg-white w-[256.36px] hover:shadow-md"
                     key={index}
                     onClick={() => {
-                      handleProduct(index);
+                      handleProduct(watch.id);
                     }}
                   >
                     <img
@@ -355,7 +355,7 @@ function home() {
                   className=" bg-white w-[256.36px] hover:shadow-md"
                   key={index}
                   onClick={() => {
-                    handleProduct(index);
+                    handleProduct(watch.id);
                   }}
                 >
                   <img
