@@ -31,12 +31,12 @@ function product() {
   const handleWatches = async()=>{
     console.log("wokred");
     
-   await fetch(`/api/product/${id}`)
+    fetch(`/api/product/${id}`)
      .then(response=>response.json())
      .then(data=>setItem(data))
      .catch(error=>console.log(error))
 
-  await fetch(`/api/watches`)
+   fetch(`/api/watches`)
      .then(response=>response.json())
      .then(data=>setWatches(data))
      .catch(error=>console.log(error))
