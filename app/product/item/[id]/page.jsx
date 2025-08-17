@@ -33,7 +33,7 @@ function product() {
     
     fetch(`/api/product/${id}`)
      .then(response=>response.json())
-     .then(data=>{setItem(data); console.log(item,data);
+     .then(data=>{setItem(data[0]); console.log(item,data[0]);
      })
      .catch(error=>console.log(error))
 
