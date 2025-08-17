@@ -38,8 +38,7 @@ function page() {
       const result = await response.json();
       if (result.message === "Signup successful.") {
         localStorage.setItem("username", username);
-        window.location.href = "/login";
-        alert(result.message);
+        router.push("/home");
         // Redirect to home page after login
       } else {
         alert(result.message);

@@ -54,7 +54,8 @@ function profile() {
       const result = await response.json();
 
       if (result.message === "Logged in successfully") {
-        alert(result.message);
+       // alert(result.message);
+        localStorage.setItem("username",result.username)
         router.push("/home"); // Redirect to home page after login
       } else {
         alert(result.message);
