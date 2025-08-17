@@ -2,7 +2,8 @@ table{
     border-spacing: 0;
     border-collapse: separate;
     box-shadow: none;
-    width: 1200px;
+    width: 100%;
+    padding-inline: 3rem;
     display: table;
     
 }
@@ -11,6 +12,9 @@ th{
     padding-bottom: 1.8rem;
     opacity: .85;
     font-weight: 400;
+}
+td{
+    border-bottom:1px solid rgba(0,0,0,0.1) ;
 }
 @media screen and (max-width: 600px) {
     tbody tr{grid-template-columns: repeat(2, 1fr);
