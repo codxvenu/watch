@@ -96,3 +96,6 @@ li .content .btn{
         width: 100%;
     }
 }
+.category img{
+    mix-blend-mode: multiply
+}

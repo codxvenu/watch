@@ -267,11 +267,10 @@ function page() {
         
         
       },[watches])
-      const handleProduct = (watch)=>{
-    
-        localStorage.setItem('product',JSON.stringify(watches[watch]))
-        window.location.href = "/product";
-      }
+       const handleProduct = (id) => {
+    // localStorage.setItem("product", JSON.stringify(watches[id]));
+    window.location.href = `/product/item/${id}`;
+  };
 
 
       const handleOrder = async(id)=>{

@@ -1,17 +1,20 @@
 "use client"
 import {React,useEffect,useState} from "react";
-import Nav from "../components/nav";
-import Footer from "../components/footer";
+import Nav from "../../../components/nav";
+import Footer from "../../../components/footer";
 import "./page.css";
-import CartOverlay from "../components/cart-overlay";
-import { useUser } from "../context/UserContext";
+import CartOverlay from "../../../components/cart-overlay";
+import { useUser } from "../../../context/UserContext";
+import { useParams } from "next/navigation";
 function product() {
   const [watches,setWatches] = useState([])
-  const [carts,setCart] = useState([])
+  const [carts,setCart] = useState([]);
   const [quantity, setQuantity] = useState(1);
   const [cart, showcart] = useState(false);
   const [item,setItem] = useState({});
+  const params = useParams();
   const { nav } = useUser();
+  const {id} = params;
   function count_inc() {
     if (quantity < 15) {
       setQuantity(quantity + 1);
@@ -25,10 +28,15 @@ function product() {
     }
     item.quantity = quantity;
   }
-  const handleWatches = ()=>{
+  const handleWatches = async()=>{
     console.log("wokred");
     
-    fetch('/api/watches')
+   await fetch(`/api/product/${id}`)
+     .then(response=>response.json())
+     .then(data=>setItem(data))
+     .catch(error=>console.log(error))
+
+  await fetch(`/api/watches`)
      .then(response=>response.json())
      .then(data=>setWatches(data))
      .catch(error=>console.log(error))
@@ -104,12 +112,6 @@ function product() {
     }
   };
   useEffect(() => {
-    const storedItem = localStorage.getItem("product");
-    if (storedItem.length > 0) {
-        const parsedItem = JSON.parse(storedItem); // Parse JSON first
-        setItem(parsedItem);
-        setQuantity(parseInt(parsedItem.quantity) || 1); // Ensure a number
-    }
     handleWatches(); 
     localStorage.setItem("page" , "product");
 }, []);

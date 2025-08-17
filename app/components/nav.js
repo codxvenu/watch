@@ -41,10 +41,8 @@ function nav() {
   };
 }, []);
   const handleProduct = (id) => {
-    console.log(searched[id]);
-
-    localStorage.setItem("product", JSON.stringify(searched[id]));
-    window.location.href = "/product";
+    // localStorage.setItem("product", JSON.stringify(watches[id]));
+    window.location.href = `/product/item/${id}`;
   };
   function handlePrice(price) {
   return Number(price).toLocaleString("en-IN");
