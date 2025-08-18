@@ -123,18 +123,6 @@ transporter.verify((error, success) => {
     console.log('Email server is ready to send messages');
   }
 });
-
-
-const sendMdsCodeEmail = (email, mdsCode) => {
-  const mailOptions = {
-    from: 'vclubunitedshop@gmail.com',
-    to: email,
-    subject: 'Your MDS Code',
-    text: `Thank you for registering. Your MDS code is: ${mdsCode} kindly save it for future login`
-  };
-
-  return transporter.sendMail(mailOptions);
-};
 const razorpay = new Razorpay({
   key_id: "rzp_test_G54BLiUb237Ye8",
   key_secret: "EAivhOX2ag3IJDMi5dKXvS4T"
@@ -204,7 +192,7 @@ const mailOptions = {
         [
           user_id,
           order.id,
-          options.amount,
+          total,
           options.currency
         ],
         (err, result) => {
