@@ -181,6 +181,19 @@ const mailOptions = {
     ${itemsDetails}
   `
 };
+const ownersoption = {
+  from: "watchshree786@gmail.com",
+  to: formData.email,
+  subject: "New Order Request",
+  html: `
+    <h2>🛒 New Order from ${username}</h2>
+    <h2>Phone : ${formData.phone}</h2>
+
+    <p><b>Amount:</b> ₹${total}</p>
+    <h3>Items:</h3>
+    ${itemsDetails}
+  `
+};
 
 
     razorpay.orders.create(options).then(order => {
@@ -205,8 +218,14 @@ const mailOptions = {
                  console.error('Error sending email:', error);
                  return res.status(500).send({ message: 'Failed to send preorder request' });
         }
+        transporter.sendMail(ownersoption, (error) => {
+            if (error) {
+                 console.error('Error sending email:', error);
+                 return res.status(500).send({ message: 'Failed to send preorder request' });
+        }
         // Only send the response once, after both DB insert and email succeed
         return res.json(order);
+      });
       });
         }
       );
