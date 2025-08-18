@@ -7,29 +7,7 @@ import { useUser } from "../context/UserContext";
 import { useRouter } from 'next/navigation';
 function cart() {
      const[total,setTotal] = useState(0)
-     const [carts,setCart] = useState([ {
-        "name": "gold watch",
-        "img": "https://nocash.cc/venu/Untitled.jpg",
-        "oprice": "100000.00",
-        "dprice": "200.00",
-        "description": "kdjgshyfgysdfkGDFyuidgW",
-        "type": "automatic",
-        "username": "vasu9@gmail.com",
-        "quantity": 1,
-        "created_at": "2025-08-17T16:03:47.000Z",
-        "id": 9
-    },{
-        "name": "gold watch",
-        "img": "https://nocash.cc/venu/Untitled.jpg",
-        "oprice": "100000.00",
-        "dprice": "200.00",
-        "description": "kdjgshyfgysdfkGDFyuidgW",
-        "type": "automatic",
-        "username": "vasu9@gmail.com",
-        "quantity": 1,
-        "created_at": "2025-08-17T16:03:47.000Z",
-        "id": 9
-    }])
+     const [carts,setCart] = useState([])
      const router = useRouter();
      const { nav } = useUser();
       const handleCart = () => {
