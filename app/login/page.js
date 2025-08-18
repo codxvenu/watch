@@ -29,8 +29,7 @@ function profile() {
     fetch("/api/profile", { credentials: "include" })
       .then((response) => response.json())
       .then((data) => {
-        localStorage.setItem("userEmail", data.email);
-        localStorage.setItem("username",data.email)
+        localStorage.setItem("userEmail", data.user.email);
       })
       .catch((error) => console.error("Error fetching profile:", error));
   }, []);
