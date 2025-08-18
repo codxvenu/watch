@@ -2,7 +2,9 @@ import {useEffect,useState,React} from 'react';
 import "./cart-overlay.css"
 import Link from 'next/link';
 const CartOverlay = ({ onClose , item }) => {
-    if (!item) return
+    if (!item) {
+      console.log(item,"item");
+    }
     useEffect(() => {
         const storedItem = localStorage.getItem("cart");
         if (storedItem) {
