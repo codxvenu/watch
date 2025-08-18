@@ -264,6 +264,7 @@ function page() {
       },[])
       useEffect(()=>{
         console.log(watches);
+        console.log(watches.filter(watch => watch.type === type).slice(start, (page + 1) * 10),"filtered");
         
         
       },[watches])
