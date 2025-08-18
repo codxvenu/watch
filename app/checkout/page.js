@@ -2,7 +2,10 @@
 import {React,useEffect, useState} from 'react'
 import Nav from '../components/nav'
 import Script from "next/script";
+import { redirect } from 'next/dist/server/api-utils';
+import { useRouter } from 'next/navigation';
 function checkout() {
+  const router = useRouter();
   const[cart,setCart] = useState([]);
   const [formValues, setFormValues] = useState({
     firstName: "",
@@ -77,7 +80,18 @@ const handlePayment = async () => {
       alert('Please login to continue with payment.');
       return;
     }
-
+    const handleRCart= async()=>{
+      const response = await fetch("/api/removecart",{
+        method : "POST",
+        body : JSON.stringify({username : username})
+      })
+      const data = response.json();
+      if(!response.ok){
+        console.log(data.error);
+      }else{
+        router.push("/")
+      }
+    }
     // Show loading state
     const button = document.querySelector('.paynow');
     const originalText = button.textContent;
@@ -111,7 +125,7 @@ const handlePayment = async () => {
       key: "rzp_test_G54BLiUb237Ye8",
       amount: data.amount,
       currency: data.currency,
-      name: "Watch Store",
+      name: "Watch Shree",
       description: "Watch Purchase",
       order_id: data.id,
       handler: async function (paymentResult) {
@@ -134,6 +148,7 @@ const handlePayment = async () => {
           
           if (verifyData.status === "success") {
             alert("🎉 Payment verified successfully! Your order has been placed.");
+            handleRCart();
             // Clear cart or redirect to success page
             // You can add logic here to clear cart or redirect
           } else {
