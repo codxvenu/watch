@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const passport = require('passport');
+const nodemailer = require('nodemailer');
 const bcrypt = require('bcryptjs');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const mysql = require('mysql2');
@@ -111,8 +112,8 @@ handleDisconnect();
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'vclubunitedshop@gmail.com',
-    pass: 'ssdr cclq gyuk xqqu' // Your app password
+    user: 'watchshree786@gmail.com',
+    pass: 'ahiz qkdk ltwn dckr' // Your app password
   }
 });
 transporter.verify((error, success) => {
