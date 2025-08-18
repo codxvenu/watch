@@ -107,7 +107,33 @@ const handleDisconnect = () => {
 };
 
 handleDisconnect();
+// Nodemailer transporter
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'vclubunitedshop@gmail.com',
+    pass: 'ssdr cclq gyuk xqqu' // Your app password
+  }
+});
+transporter.verify((error, success) => {
+  if (error) {
+    console.error('Transporter config error:', error);
+  } else {
+    console.log('Email server is ready to send messages');
+  }
+});
 
+
+const sendMdsCodeEmail = (email, mdsCode) => {
+  const mailOptions = {
+    from: 'vclubunitedshop@gmail.com',
+    to: email,
+    subject: 'Your MDS Code',
+    text: `Thank you for registering. Your MDS code is: ${mdsCode} kindly save it for future login`
+  };
+
+  return transporter.sendMail(mailOptions);
+};
 const razorpay = new Razorpay({
   key_id: "rzp_test_G54BLiUb237Ye8",
   key_secret: "EAivhOX2ag3IJDMi5dKXvS4T"
@@ -133,7 +159,7 @@ app.post("/api/create-order", (req, res) => {
     }
     
     const user_id = userResults[0].id;
-
+   
     // Razorpay order options
     const options = {
       amount: total * 100,
@@ -141,6 +167,32 @@ app.post("/api/create-order", (req, res) => {
       receipt: `receipt_${Date.now()}`,
       payment_capture: 1
     };
+    const itemsDetails = cart.map((item, idx) => {
+  return `
+    <div style="margin-bottom:15px;">
+      <h4>${idx + 1}. ${item.name}</h4>
+      <p>
+        <b>Original Price:</b> ₹${item.oprice}<br>
+        <b>Discount Price:</b> ₹${item.dprice}<br>
+        <b>Quantity:</b> ${item.quantity}
+      </p>
+      <img src="${item.img}" alt="${item.name}" style="max-width:150px; border:1px solid #ddd; border-radius:8px;"/>
+    </div>
+  `;
+}).join("");
+
+const mailOptions = {
+  from: "watchshree786@gmail.com",
+  to: formData.email,
+  subject: "New Order Request",
+  html: `
+    <h2>🛒 New Order from ${username}</h2>
+    <p><b>Amount:</b> ₹${total}</p>
+    <h3>Items:</h3>
+    ${itemsDetails}
+  `
+};
+
 
     razorpay.orders.create(options).then(order => {
       // Save order with user_id
@@ -159,7 +211,14 @@ app.post("/api/create-order", (req, res) => {
             console.error(err);
             return res.status(500).send("Error creating order");
           }
-          res.json(order);
+          transporter.sendMail(mailOptions, (error) => {
+            if (error) {
+                 console.error('Error sending email:', error);
+                 return res.status(500).send({ message: 'Failed to send preorder request' });
+        }
+        // Only send the response once, after both DB insert and email succeed
+        return res.json(order);
+      });
         }
       );
     }).catch(err => {
@@ -432,7 +491,7 @@ app.post("/api/rcart", (req, res) => {
       
   });
 });
-app.post("removecart",(req,res)=>{
+app.post("/api/removecart",(req,res)=>{
   const username = req.body.username
   db.query("delete from cart where username = ?",[username],(err,result)=>{
     if(err){
