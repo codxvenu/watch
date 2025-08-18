@@ -5,12 +5,6 @@ const CartOverlay = ({ onClose , item }) => {
     if (!item) {
       console.log(item,"item");
     }
-    useEffect(() => {
-        const storedItem = localStorage.getItem("cart");
-        if (storedItem) {
-          setCart(JSON.parse(storedItem)); // Convert back to object
-        } 
-      }, []);
     return (
       <div className="backdrop-blur-md w-[100%] h-screen absolute top-0">
 
