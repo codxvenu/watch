@@ -7,85 +7,7 @@ import { useUser } from "../context/UserContext";
 import Link from 'next/link';
 
 function page() {
-    const [watches, setWatches] = useState([
-        {
-            "id": 1,
-            "name": "Gold Chain",
-            "oprice": "1000.00",
-            "dprice": "500.00",
-            "description": "gold chain ,best for party , classic look",
-            "type": "automatic",
-            "gender": "men",
-            "img": "https://nocash.cc/venu/shopping.webp",
-            "created_at": "2025-08-10T05:26:44.000Z"
-        },
-        {
-            "id": 2,
-            "name": "Ring Watch ",
-            "oprice": "599.00",
-            "dprice": "299.00",
-            "description": "A Ring u will always Love to carry along time",
-            "type": "automatic",
-            "gender": "women",
-            "img": "https://nocash.cc/venu/IMG_20250806_123750.jpg",
-            "created_at": "2025-08-10T08:18:20.000Z"
-        },
-         {
-            "id": 1,
-            "name": "Gold Chain",
-            "oprice": "1000.00",
-            "dprice": "500.00",
-            "description": "gold chain ,best for party , classic look",
-            "type": "automatic",
-            "gender": "men",
-            "img": "https://nocash.cc/venu/shopping.webp",
-            "created_at": "2025-08-10T05:26:44.000Z"
-        },
-        {
-            "id": 2,
-            "name": "Ring Watch ",
-            "oprice": "599.00",
-            "dprice": "299.00",
-            "description": "A Ring u will always Love to carry along time",
-            "type": "automatic",
-            "gender": "women",
-            "img": "https://nocash.cc/venu/IMG_20250806_123750.jpg",
-            "created_at": "2025-08-10T08:18:20.000Z"
-        },
-         {
-            "id": 1,
-            "name": "Gold Chain",
-            "oprice": "1000.00",
-            "dprice": "500.00",
-            "description": "gold chain ,best for party , classic look",
-            "type": "automatic",
-            "gender": "men",
-            "img": "https://nocash.cc/venu/shopping.webp",
-            "created_at": "2025-08-10T05:26:44.000Z"
-        },
-        {
-            "id": 2,
-            "name": "Ring Watch ",
-            "oprice": "599.00",
-            "dprice": "299.00",
-            "description": "A Ring u will always Love to carry along time",
-            "type": "automatic",
-            "gender": "women",
-            "img": "https://nocash.cc/venu/IMG_20250806_123750.jpg",
-            "created_at": "2025-08-10T08:18:20.000Z"
-        },
-        {
-            "id": 3,
-            "name": "gold watch",
-            "oprice": "100000.00",
-            "dprice": "200.00",
-            "description": "kdjgshyfgysdfkGDFyuidgW",
-            "type": "automatic",
-            "gender": "men",
-            "img": "https://nocash.cc/venu/Untitled.jpg",
-            "created_at": "2025-08-13T09:43:03.000Z"
-        }
-    ]);
+    const [watches, setWatches] = useState([]);
   const watchCategories = [
   {
     type: "automatic",
@@ -150,7 +72,7 @@ function page() {
         const username = localStorage.getItem('username');
         const requestBody = JSON.stringify({ 
               username: username,
-              item : id
+              item : id.id
           
         });
         try {
