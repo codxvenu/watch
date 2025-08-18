@@ -375,7 +375,7 @@ app.get('/api/test-db', (req, res) => {
 });
 app.get('/api/profile', (req, res) => {
   if (req.isAuthenticated()) {
-      res.json({ success: true, user: req.user });
+      res.json({ success: true, email: req.user });
   } else {
       res.status(401).json({ success: false, message: 'Not authenticated' });
   }
