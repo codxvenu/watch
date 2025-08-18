@@ -343,7 +343,7 @@ function page() {
        
 
       
-        {watches.filter(watch => watch.type === type && gender === "both" ? true : watch.gender === gender).slice(start, (page + 1) * 10).map((watch,index)=>(
+        {watches.filter(watch => watch.type === type).slice(start, (page + 1) * 10).map((watch,index)=>(
  <li className=' bg-[white] w-[256.36px] hover:shadow-md' key={index} onClick={()=>{handleProduct(watch.id);}}>
  <img src={watch.img} className='mb-3 w-[100%] object-contain h-[213px] rounded-[20px_20px_0_0]' alt="" />
 <div className="content p-2">
