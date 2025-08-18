@@ -432,7 +432,15 @@ app.post("/api/rcart", (req, res) => {
       
   });
 });
-
+app.post("removecart",(req,res)=>{
+  const username = req.body.username
+  db.query("delete from cart where username = ?",[username],(err,result)=>{
+    if(err){
+      return res.status(400).json({error : err})
+    }
+    return res.status(200).json({message : "Cart Cleared"})
+  })
+})
 app.post("/api/addcart", (req, res) => {
   const {item,username} = req.body;
   db.query("SELECT * FROM cart WHERE username = ? AND name = ?", [username,item.name], (err, results) => {
