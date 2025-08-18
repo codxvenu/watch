@@ -84,7 +84,7 @@ const handlePayment = async () => {
     button.textContent = 'Creating Order...';
     button.disabled = true;
 
-    const response = await fetch("/create-order", {
+    const response = await fetch("/api/create-order", {
       method: "POST",
       body: JSON.stringify({
         cart: cart,
@@ -120,7 +120,7 @@ const handlePayment = async () => {
           alert('Payment successful! Verifying your payment...');
           
           // Verify payment
-          const verifyResponse = await fetch("/verify-payment", {
+          const verifyResponse = await fetch("/api/verify-payment", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -190,10 +190,10 @@ const handlePayment = async () => {
     />
       <Nav/>
       <div className="main-checkout-menu flex justify-center ">
-      <div className="personal_details w-1/2 pt-[6rem] overflow-y-auto">
+      <div className="personal_details max-[768px]:w-[100%] w-1/2 pt-[6rem] overflow-y-auto">
        
  <div
-      className="bg-[var(--background)] text-[var(--border)] shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2 border-[1px] border-[whitesmoke]"
+      className="bg-[var(--background)] text-[var(--border)] shadow-md rounded max-[764px]:px-4 px-8 pt-6 pb-8 mb-4 flex flex-col my-2 border-[1px] border-[whitesmoke]"
     >
       <h1 className="mb-5 text-[18px] text-[var(--text)]">Personal Details</h1>
 
@@ -317,7 +317,7 @@ const handlePayment = async () => {
         <h1 className="mt-2 text-[18px] text-[var(--text)]"> Payment</h1>
         <small className="text-[var(--border)]">All transactions are secure and encrypted.</small>
         <div className="border-[1px] border-[#E5E7EB] rounded">
-          <span className="border-[2px] flex mb-2 p-4">
+          <span className="border-[2px] flex mb-2 p-4 flex-col">
             <h1 className="flex gap-2">
               Razorpay Secure (UPI, Cards, Wallets, NetBanking)
               <div className="flex">

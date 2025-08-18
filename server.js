@@ -112,7 +112,7 @@ const razorpay = new Razorpay({
   key_id: "rzp_test_G54BLiUb237Ye8",
   key_secret: "EAivhOX2ag3IJDMi5dKXvS4T"
 });
-app.post("/create-order", (req, res) => {
+app.post("/api/create-order", (req, res) => {
   const { cart, formData, username } = req.body;
 
   if (!cart || !Array.isArray(cart) || cart.length === 0) {
@@ -171,7 +171,7 @@ app.post("/create-order", (req, res) => {
 
 
 // ✅ Verify Payment API
-app.post("/verify-payment", (req, res) => {
+app.post("/api/verify-payment", (req, res) => {
   const { order_id, payment_id, signature } = req.body;
 
   // Generate expected signature

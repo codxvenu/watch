@@ -3,12 +3,10 @@ import {React,useEffect,useState} from "react";
 import Nav from "../../../components/nav";
 import Footer from "../../../components/footer";
 import "./page.css";
-import CartOverlay from "../../../components/cart-overlay";
 import { useUser } from "../../../context/UserContext";
 import { useParams } from "next/navigation";
 function product() {
   const [watches,setWatches] = useState([])
-  const [carts,setCart] = useState([]);
   const [quantity, setQuantity] = useState(1);
   const [cart, showcart] = useState(false);
   const [item,setItem] = useState({});
@@ -50,13 +48,9 @@ function product() {
   //    .then(data=>setCart(data))
   //    .catch(error=>console.log(error))
   // }
-  function OpenCart(){
-    cart===true? showcart(false): showcart(true);
-  }
   const handleUser= ()=>{
     const username = localStorage.getItem('username');
     if(username){
-      OpenCart();
       localStorage.setItem("cart", JSON.stringify(item));
       handleOrder();
     }else{
@@ -193,7 +187,6 @@ function product() {
         </div>
         </div> 
       <Footer />
-     { cart && <CartOverlay  item={item} onClose={()=>{showcart(false)}}/>}
     </div>
   );
 }
