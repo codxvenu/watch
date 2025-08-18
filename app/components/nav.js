@@ -136,7 +136,7 @@ console.log(handlePrice(1234567)); // "12,34,567" (Indian style)
                     className="flex gap-5 p-4 text-[var(--text)]"
                     key={swatch.id}
                     onClick={() => {
-                      handleProduct(watch.id);
+                      handleProduct(swatch.id);
                     }}
                   >
                     <img className="w-10" src={swatch.img} alt="" />
