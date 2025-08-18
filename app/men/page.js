@@ -72,7 +72,7 @@ function page() {
         const username = localStorage.getItem('username');
         const requestBody = JSON.stringify({ 
               username: username,
-              item : id.id
+              item : id
           
         });
         try {
