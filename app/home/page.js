@@ -32,12 +32,12 @@ function home() {
   ];
   const babu = [
     "",
-    "Automatic",
-    "Analog",
-    "Smart",
-    "Digital",
-    "Hybrid",
-    "Chronograph",
+    "automatic",
+    "analog",
+    "smart",
+    "digital",
+    "hybrid",
+    "chronograph",
   ];
   const { nav } = useUser();
   const handleProduct = (id) => {
@@ -161,7 +161,7 @@ function home() {
                 <Link href={`/product/${babu[index + 1]}/both`}>
                   <div
                     className={`${
-    ["Automatic", "Digital", "Chronograph", "Smart"].includes(babu[index + 1]) &&
+    ["automatic", "digital", "chronograph", "smart"].includes(babu[index + 1]) &&
     "min-[768px]:p-[1.5rem]"
   } max-[768px]:w-[8rem] max-w-[240px] flex flex-col items-center max-[768px]:gap-5  bg-[white] group/cate min-[768px]:mt-[-70px] h-max `}
                   >
@@ -172,14 +172,14 @@ function home() {
                     />
                     <h1
                       className={`${
-                        babu[index + 1] === "Chronograph" && "!text-[16px]"
-                      } mb-3 text-center max-[768px]:block hidden`}
+                        babu[index + 1] === "chronograph" && "!text-[16px]"
+                      } mb-3 text-center max-[768px]:block hidden capitalize `}
                     >
                       {babu[index + 1]}
                     </h1>
                   </div>
                 </Link>
-                <h1 className="mb-3 text-center max-[768px]:hidden">
+                <h1 className="mb-3 text-center max-[768px]:hidden capitalize">
                   {babu[index]}
                 </h1>
               </Fragment>
