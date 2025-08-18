@@ -193,7 +193,7 @@ function product() {
         </div>
         </div> 
       <Footer />
-     { cart && <CartOverlay  onClose={()=>{showcart(false)}}/>}
+     { cart && <CartOverlay  item={item} onClose={()=>{showcart(false)}}/>}
     </div>
   );
 }
