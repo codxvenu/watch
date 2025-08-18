@@ -30,6 +30,7 @@ function profile() {
       .then((response) => response.json())
       .then((data) => {
         localStorage.setItem("userEmail", data.email);
+        localStorage.setItem("username",data.username)
       })
       .catch((error) => console.error("Error fetching profile:", error));
   }, []);
