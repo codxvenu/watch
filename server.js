@@ -518,7 +518,7 @@ app.post("/api/addcart", (req, res) => {
       return res.status(500).send({ message: 'Database Query Failed' });
   }
   if(results.length > 0){
-    db.query('UPDATE cart SET quantity = quantity + ? WHERE id =?', [item.quantity, results[0].id], (err, result) => {
+    db.query('UPDATE cart SET quantity = quantity + ? WHERE id = ?', [item.quantity ? item.quantity : 1, results[0].id], (err, result) => {
       if (err) {
         console.error('Database Error:', err);
         return res.status(500).send({ message: 'Database Update Failed' });
